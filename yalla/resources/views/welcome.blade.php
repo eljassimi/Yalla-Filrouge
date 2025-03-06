@@ -147,7 +147,7 @@
                         <!-- Service Card 3 -->
                         <div class=" card-arc w-full md:w-1/6 min-w-[320px] h-[520px] relative shadow-lg transform transition-transform hover:-translate-y-2">
                             <img src="assets/elements/YallaHealth.jpg" alt="Yalla Health" class="w-full absolute top-0 left-0 h-full object-cover">
-                            <div class="p-6">
+                            <div class=" absolute bottom-0 p-6 bg-gradient-to-t from-darkgray to-transparent">
                                 <h3 class="text-xl font-bold mb-3">Yalla Health</h3>
                                 <p class="text-lightgray text-sm">
                                     Stay healthy and safe during the 2030 World Cup with Yalla Health services, offering complete medical support and emergency assistance throughout the tournament.
@@ -159,6 +159,65 @@
             </div>
         </div>
     </section>
+    <!-- Events Section -->
+    <section class="py-16 bg-darkgray">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 relative">
+                <h2 class="text-3xl md:text-5xl font-bold">Morocco Events</h2>
+                
+                <!-- Carousel Navigation - Positioned next to the heading -->
+                <div class="absolute right-0 top-1/2 transform -translate-y-1/2 flex space-x-4">
+                    <button class="bg-transparent border border-primary hover:bg-primary/10 rounded-full w-12 h-12 flex items-center justify-center text-primary transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+                    <button class="bg-primary hover:bg-primary/90 rounded-full w-12 h-12 flex items-center justify-center text-white transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="flex justify-center gap-12">
+                <!-- Event Card 1 -->
+                <div class="bg-darkgray border border-gray-900 w-[400px] rounded-xl overflow-hidden">
+                    <img src="assets/elements/TheatreEvent.jpg" alt="Theatre Mohammed VI" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Théâtre Mohammed VI</h3>
+                        <p class="text-lightgray text-sm">
+                            Enjoy world-class performances, from plays to concerts in this iconic cultural venue.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Event Card 2 -->
+                <div class="bg-darkgray border border-gray-900 w-[400px] rounded-xl overflow-hidden">
+                    <img src="assets/elements/GnaouaEvent2.jpg" alt="Gnaoua Festival" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Gnaoua Festival</h3>
+                        <p class="text-lightgray text-sm">
+                            Immerse yourself in the soulful sounds and rich traditions of Gnaoua music at this captivating festival.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Event Card 3 -->
+                <div class="bg-darkgray border border-gray-900 w-[400px] rounded-xl overflow-hidden">
+                    <img src="assets/elements/MawazineEvent.jpg" alt="Mawazine Festival" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Mawazine Festival</h3>
+                        <p class="text-lightgray text-sm">
+                            Celebrate the rhythm of the world with one of Morocco's most renowned music festivals featuring international and local performers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
 
 
     <style>
