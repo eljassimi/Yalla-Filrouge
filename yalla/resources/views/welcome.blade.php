@@ -216,10 +216,31 @@
             </div>
         </div>
     </section>
-
-    
-
-
+    <!-- Mobile Section  -->
+    <section class="py-16 bg-gradient-to-b from-darkgray to-darkgray/90">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Yalla Mobile App</h2>
+            
+            <div class="flex flex-col bg-lightgray md:flex-row items-center">
+                <div class="w-full md:w-1/2 mb-8 md:mb-0 flex justify-center">
+                    <img src="assets/elements/mobileApp.png" alt="Yalla Mobile App" class="w-3/5 md:w-2/3 max-w-xs">
+                </div>
+                <div class="w-full md:w-1/2">
+                    <h3 class="text-2xl text-darkgray md:text-3xl font-bold mb-4">Master your Morocco experience with the Yalla Mobile App.</h3>
+                    <p class=" mb-8 text-darkgray">
+                        Experience Morocco to the fullest by managing every aspect of your journey with the Yalla Mobile app.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#">
+                           <img src="assets/elements/google-play.png" alt="" class="w-56">
+                        </a>
+                        <a href="#">
+                            <img src="assets/elements/app-store.png" class="w-56">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <style>
         
         .hide-scrollbar::-webkit-scrollbar {
