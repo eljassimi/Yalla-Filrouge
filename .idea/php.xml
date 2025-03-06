@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="LaravelPint">
+    <laravel_pint_settings>
+      <LaravelPintConfiguration tool_path="$PROJECT_DIR$/yalla/vendor/bin/pint" />
+    </laravel_pint_settings>
+  </component>
   <component name="MessDetectorOptionsConfiguration">
     <option name="transferred" value="true" />
   </component>
@@ -10,8 +15,129 @@
     <option name="highlightLevel" value="WARNING" />
     <option name="transferred" value="true" />
   </component>
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/yalla/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/yalla/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/yalla/vendor/fruitcake/php-cors" />
+      <path value="$PROJECT_DIR$/yalla/vendor/carbonphp/carbon-doctrine-types" />
+      <path value="$PROJECT_DIR$/yalla/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/yalla/vendor/fakerphp/faker" />
+      <path value="$PROJECT_DIR$/yalla/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/yalla/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/yalla/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/yalla/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/yalla/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/yalla/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/yalla/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/yalla/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/yalla/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/yalla/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/yalla/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/yalla/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/yalla/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/yalla/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/yalla/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/yalla/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/yalla/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/yalla/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/yalla/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/yalla/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/yalla/vendor/nunomaduro/termwind" />
+      <path value="$PROJECT_DIR$/yalla/vendor/nunomaduro/collision" />
+      <path value="$PROJECT_DIR$/yalla/vendor/guzzlehttp/uri-template" />
+      <path value="$PROJECT_DIR$/yalla/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/yalla/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/yalla/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/yalla/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/yalla/vendor/composer" />
+      <path value="$PROJECT_DIR$/yalla/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/yalla/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/yalla/vendor/psr/clock" />
+      <path value="$PROJECT_DIR$/yalla/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/yalla/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/yalla/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/yalla/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/yalla/vendor/voku/portable-ascii" />
+      <path value="$PROJECT_DIR$/yalla/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/yalla/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/yalla/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/yalla/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/yalla/vendor/nette/utils" />
+      <path value="$PROJECT_DIR$/yalla/vendor/nette/schema" />
+      <path value="$PROJECT_DIR$/yalla/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/yalla/vendor/league/flysystem-local" />
+      <path value="$PROJECT_DIR$/yalla/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/yalla/vendor/league/config" />
+      <path value="$PROJECT_DIR$/yalla/vendor/league/commonmark" />
+      <path value="$PROJECT_DIR$/yalla/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/yalla/vendor/league/uri-interfaces" />
+      <path value="$PROJECT_DIR$/yalla/vendor/league/uri" />
+      <path value="$PROJECT_DIR$/yalla/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/yalla/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/yalla/vendor/staabm/side-effects-detector" />
+      <path value="$PROJECT_DIR$/yalla/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/yalla/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/yalla/vendor/laravel/pail" />
+      <path value="$PROJECT_DIR$/yalla/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/yalla/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/yalla/vendor/dflydev/dot-access-data" />
+      <path value="$PROJECT_DIR$/yalla/vendor/laravel/serializable-closure" />
+      <path value="$PROJECT_DIR$/yalla/vendor/laravel/sail" />
+      <path value="$PROJECT_DIR$/yalla/vendor/laravel/prompts" />
+      <path value="$PROJECT_DIR$/yalla/vendor/laravel/pint" />
+      <path value="$PROJECT_DIR$/yalla/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/yalla/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/yalla/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/yalla/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/yalla/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/yalla/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/yalla/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/yalla/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/yalla/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/yalla/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/yalla/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/yalla/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/yalla/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/yalla/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/yalla/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/yalla/vendor/symfony/clock" />
+      <path value="$PROJECT_DIR$/yalla/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/yalla/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/yalla/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/yalla/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/yalla/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/yalla/vendor/symfony/mailer" />
+      <path value="$PROJECT_DIR$/yalla/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/yalla/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/yalla/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/yalla/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/yalla/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/yalla/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/yalla/vendor/symfony/polyfill-uuid" />
+      <path value="$PROJECT_DIR$/yalla/vendor/symfony/polyfill-php83" />
+      <path value="$PROJECT_DIR$/yalla/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/yalla/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/yalla/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/yalla/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/yalla/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/yalla/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/yalla/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/yalla/vendor/symfony/uid" />
+      <path value="$PROJECT_DIR$/yalla/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/yalla/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/yalla/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/yalla/vendor/symfony/yaml" />
+    </include_path>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />
   <component name="PhpStanOptionsConfiguration">
     <option name="transferred" value="true" />
+  </component>
+  <component name="PhpUnit">
+    <phpunit_settings>
+      <PhpUnitSettings configuration_file_path="$PROJECT_DIR$/yalla/phpunit.xml" custom_loader_path="$PROJECT_DIR$/yalla/vendor/autoload.php" use_configuration_file="true" />
+    </phpunit_settings>
   </component>
   <component name="PsalmOptionsConfiguration">
     <option name="transferred" value="true" />
