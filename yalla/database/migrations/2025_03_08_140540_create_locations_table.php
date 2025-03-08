@@ -8,18 +8,17 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('locations', function (Blueprint $table) {
             $table->id();
-            $table->string('current_city');
-            $table->string('email')->unique();
-            $table->string('telephone');
-            $table->boolean('is_admin')->default(false);
+            $table->string('city');
+            $table->string('address');
+            $table->string('coordinates')->nullable();
             $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('locations');
     }
 };

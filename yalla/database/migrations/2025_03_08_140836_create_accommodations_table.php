@@ -8,18 +8,17 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('accommodations', function (Blueprint $table) {
             $table->id();
-            $table->string('current_city');
-            $table->string('email')->unique();
-            $table->string('telephone');
-            $table->boolean('is_admin')->default(false);
+            $table->string('name');
+            $table->float('price_per_night');
+            $table->integer('available_rooms');
             $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('accommodations');
     }
 };

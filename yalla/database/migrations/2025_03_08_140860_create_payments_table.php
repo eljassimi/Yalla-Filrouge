@@ -8,18 +8,17 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->string('current_city');
-            $table->string('email')->unique();
-            $table->string('telephone');
-            $table->boolean('is_admin')->default(false);
+            $table->float('amount');
+            $table->dateTime('payment_date');
+            $table->string('status'); // Will store enum value
             $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('payments');
     }
 };

@@ -8,18 +8,16 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('transport_services', function (Blueprint $table) {
             $table->id();
-            $table->string('current_city');
-            $table->string('email')->unique();
-            $table->string('telephone');
-            $table->boolean('is_admin')->default(false);
+            $table->float('price_per_km');
+            $table->integer('available_seats');
             $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('transport_services');
     }
 };
