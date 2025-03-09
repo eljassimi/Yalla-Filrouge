@@ -66,6 +66,7 @@
         </div>
 
         <form action="/register" method="POST" class="space-y-4">
+            @csrf
             <div>
                 <label class="block text-[#B9BAA3] mb-2">Email Address*</label>
                 <input type="email" name="email" placeholder="Email Address" class="w-full px-4 py-3 bg-gray-100 border border-[#B9BAA3] focus:outline-none focus:border-[#B9BAA3]">
@@ -88,9 +89,9 @@
 
             <div>
                 <label class="block text-[#B9BAA3] mb-2">Current City*</label>
-                <select name="current_city" class="w-full px-4 py-3 bg-gray-100 border border-[#B9BAA3] focus:outline-none focus:border-[#B9BAA3]">
+                <select  name="current_city" class="w-full px-4 py-3 bg-gray-100 border border-[#B9BAA3] focus:outline-none focus:border-[#B9BAA3]" required>
                     @foreach($cities as $city)
-                        <option value="{{ $city }}">{{ $city }}</option>
+                        <option value="{{ $city }}" >{{ $city }}</option>
                     @endforeach
                 </select>
             </div>
