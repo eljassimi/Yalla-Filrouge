@@ -65,7 +65,7 @@
             <p class="text-white text-sm">Let's get your Account created, so you can enjoy the Hayya experience!</p>
         </div>
 
-        <form class="space-y-4">
+        <form action="/register" method="POST" class="space-y-4">
             <div>
                 <label class="block text-[#B9BAA3] mb-2">Email Address*</label>
                 <input type="email" name="email" placeholder="Email Address" class="w-full px-4 py-3 bg-gray-100 border border-[#B9BAA3] focus:outline-none focus:border-[#B9BAA3]">
@@ -87,8 +87,12 @@
             </div>
 
             <div>
-                <label class="block text-[#B9BAA3] mb-2">City*</label>
-                <input type="text" name="city" placeholder="City" class="w-full px-4 py-3 bg-gray-100 border border-[#B9BAA3] focus:outline-none focus:border-[#B9BAA3]">
+                <label class="block text-[#B9BAA3] mb-2">Current City*</label>
+                <select name="current_city" class="w-full px-4 py-3 bg-gray-100 border border-[#B9BAA3] focus:outline-none focus:border-[#B9BAA3]">
+                    @foreach($cities as $city)
+                        <option value="{{ $city }}">{{ $city }}</option>
+                    @endforeach
+                </select>
             </div>
 
             <div class="space-y-4 mt-6">
