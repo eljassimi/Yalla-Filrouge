@@ -68,27 +68,27 @@
         <form class="space-y-4">
             <div>
                 <label class="block text-[#B9BAA3] mb-2">Email Address*</label>
-                <input type="email" placeholder="Email Address" class="w-full px-4 py-3 bg-gray-100 border border-[#B9BAA3] focus:outline-none focus:border-[#B9BAA3]">
+                <input type="email" name="email" placeholder="Email Address" class="w-full px-4 py-3 bg-gray-100 border border-[#B9BAA3] focus:outline-none focus:border-[#B9BAA3]">
             </div>
 
             <div>
                 <label class="block text-[#B9BAA3] mb-2">New Password*</label>
-                <input type="password" placeholder="New Password" class="w-full px-4 py-3 bg-gray-100 border border-[#B9BAA3] focus:outline-none focus:border-[#B9BAA3]">
+                <input type="password" name="password" placeholder="New Password" class="w-full px-4 py-3 bg-gray-100 border border-[#B9BAA3] focus:outline-none focus:border-[#B9BAA3]">
             </div>
 
             <div>
                 <label class="block text-[#B9BAA3] mb-2">Confirm New Password*</label>
-                <input type="password" placeholder="Confirm New Password" class="w-full px-4 py-3 bg-gray-100 border border-[#B9BAA3] focus:outline-none focus:border-[#B9BAA3]">
+                <input type="password" name="password_confirmation" placeholder="Confirm New Password" class="w-full px-4 py-3 bg-gray-100 border border-[#B9BAA3] focus:outline-none focus:border-[#B9BAA3]">
             </div>
 
             <div>
                 <label class="block text-[#B9BAA3] mb-2">Given Name*</label>
-                <input type="text" placeholder="Given Name" class="w-full px-4 py-3 bg-gray-100 border border-[#B9BAA3] focus:outline-none focus:border-[#B9BAA3]">
+                <input type="text" name="name" placeholder="name" class="w-full px-4 py-3 bg-gray-100 border border-[#B9BAA3] focus:outline-none focus:border-[#B9BAA3]">
             </div>
 
             <div>
-                <label class="block text-[#B9BAA3] mb-2">Surname*</label>
-                <input type="text" placeholder="Surname" class="w-full px-4 py-3 bg-gray-100 border border-[#B9BAA3] focus:outline-none focus:border-[#B9BAA3]">
+                <label class="block text-[#B9BAA3] mb-2">City*</label>
+                <input type="text" name="city" placeholder="City" class="w-full px-4 py-3 bg-gray-100 border border-[#B9BAA3] focus:outline-none focus:border-[#B9BAA3]">
             </div>
 
             <div class="space-y-4 mt-6">
@@ -109,7 +109,7 @@
                 </div>
             </div>
 
-            <button class="custom-button w-full custom-color text-gray-900 py-3 px-6 font-medium custom-color-hover transition-colors mt-6">
+            <button type="submit" class="custom-button w-full custom-color text-gray-900 py-3 px-6 font-medium custom-color-hover transition-colors mt-6">
                 Create
             </button>
 

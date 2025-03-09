@@ -31,25 +31,25 @@
             border-radius: 1000px 1000px 0 0;
             overflow: hidden;
         }
-        
+
         .hero-overlay {
             background: linear-gradient(to right, rgba(31, 31, 31, 0.9), rgba(31, 31, 31, 0.7));
         }
-        
+
         .carousel-container {
             scroll-behavior: smooth;
             scrollbar-width: none;
             -ms-overflow-style: none;
         }
-        
+
         .carousel-container::-webkit-scrollbar {
             display: none;
         }
-        
+
         .carousel-card {
             scroll-snap-align: start;
         }
-        
+
         .dot {
             height: 8px;
             width: 8px;
@@ -58,7 +58,7 @@
             margin: 0 4px;
             transition: background-color 0.3s ease;
         }
-        
+
     </style>
 </head>
 <body class="font-publica bg-darkgray text-white">
@@ -71,12 +71,12 @@
                 </a>
             </div>
             <div class="flex items-center space-x-2">
-                <button class="bg-lightgray/80 hover:bg-lightgray/30 text-white px-4 py-2 rounded-md text-sm transition">
+                <a href="/register" class="bg-lightgray/80 hover:bg-lightgray/30 text-white px-4 py-2 rounded-md text-sm transition">
                     Start Yalla Journey
-                </button>
-                <button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-md flex items-center text-sm transition">
+                </a>
+                <a href="/login" class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-md flex items-center text-sm transition">
                    Login
-                </button>
+                </a>
             </div>
         </div>
     </header>
@@ -109,7 +109,7 @@
                     <p class="text-lightgray uppercase tracking-wider mb-2">THE YALLA EXPERIENCE</p>
                     <h2 class="text-3xl md:text-4xl font-bold">Yalla Services</h2>
                 </div>
-                
+
                 <!-- Carousel Navigation - Positioned absolutely -->
                 <div class="absolute right-4 top-1/2 transform -translate-y-1/2 flex space-x-4">
                     <button id="prevService" class="bg-transparent border border-primary hover:bg-primary/10 rounded-full w-10 h-10 flex items-center justify-center text-primary transition-all z-10">
@@ -124,7 +124,7 @@
                     </button>
                 </div>
             </div>
-        
+
             <div class="relative">
                 <div id="servicesCarousel" class="overflow-x-auto justify-center gap-32 carousel-container pb-4 flex snap-x snap-mandatory">
                     <!-- Service Card 1 -->
@@ -147,7 +147,7 @@
                                 </p>
                             </div>
                         </div>
-                        
+
                         <!-- Service Card 3 -->
                         <div class=" card-arc w-full md:w-1/6 min-w-[320px] h-[520px] relative shadow-lg transform transition-transform hover:-translate-y-2">
                             <img src="assets/elements/YallaHealth.jpg" alt="Yalla Health" class="w-full absolute top-0 left-0 h-full object-cover">
@@ -159,7 +159,7 @@
                             </div>
                         </div>
                 </div>
-                
+
                 <!-- Dots Navigation -->
                 <div class="flex justify-center mt-4">
                     <span class="dot bg-primary"></span>
@@ -178,7 +178,7 @@
                 <div class="text-center">
                     <h2 class="text-3xl md:text-4xl font-bold">Morocco Events</h2>
                 </div>
-                
+
                 <!-- Carousel Navigation - Positioned absolutely -->
                 <div class="absolute right-4 top-1/2 transform -translate-y-1/2 flex space-x-4">
                     <button id="prevEvent" class="bg-transparent border border-primary hover:bg-primary/10 rounded-full w-10 h-10 flex items-center justify-center text-primary transition-all z-10">
@@ -193,10 +193,10 @@
                     </button>
                 </div>
             </div>
-            
+
             <div class="relative">
                 <div id="eventsCarousel" class="overflow-x-auto justify-center gap-32 carousel-container pb-4 flex snap-x snap-mandatory">
-                    
+
                         <!-- Event Card 1 -->
                         <div class="carousel-card min-w-full md:min-w-[320px] rounded-xl w-[400px]">
                             <img src="assets/elements/TheatreEvent.jpg" alt="Theatre Mohammed VI" class="w-full rounded-xl h-48 object-cover">
@@ -230,7 +230,7 @@
                             </div>
                         </div>
                 </div>
-                
+
                 <!-- Dots Navigation -->
                 <div class="flex justify-center mt-4">
                     <span class="dot bg-primary"></span>
@@ -298,7 +298,7 @@
                 <div class="mt-8 pt-8 border-t border-gray-800 text-center text-lightgray text-sm">
                     <p>© 2025 Yalla | All rights reserved</p>
                 </div>
-                
+
                 <div class=" mt-8  pt-8 flex space-x-4 ">
                     <a href="#" class="text-lightgray hover:text-white transition">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
