@@ -22,7 +22,8 @@
             clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 10px 100%, 0 50%);
         }
 
-        .custom-color {
+
+                                                      .custom-color {
             background-color: #B9BAA3;
         }
 
