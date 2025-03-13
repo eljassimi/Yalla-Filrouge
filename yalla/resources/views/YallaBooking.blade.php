@@ -139,6 +139,32 @@
                     </div>
                 </div>
             </div>
+            <div class="shadow-xl rounded-lg overflow-hidden  transform transition-transform hover:-translate-y-2">
+                <div class="h-56 bg-gray-800 relative">
+                    <img src="/assets/stay/stay3.png" alt="Mountain View Villa" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4">
+                    <div class="flex justify-between items-start mb-1 text-darkgray">
+                        <h3 class="text-lg font-bold">Mountain View Villa</h3>
+                        <div class="flex items-center gap-1">
+                            <span class="text-yellow-400">★</span>
+                            <span class="text-sm font-medium">4.9</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-darkgray mb-2">Chefchaouen, Morocco</p>
+                    <p class="text-sm mb-4 text-darkgray">Charming 4-bedroom villa with garden and Atlas Mountains view</p>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="font-bold text-darkgray text-lg">$320</span>
+                            <span class="text-darkgray">/night</span>
+                        </div>
+                        <button class="bg-primary hover:bg-primary/90 text-white px-4 py-1.5 text-sm font-medium rounded-md transition">
+                            Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
     </div>
