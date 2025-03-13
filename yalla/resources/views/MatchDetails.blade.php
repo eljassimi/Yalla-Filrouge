@@ -154,6 +154,23 @@
                     </div>
                 </div>
 
+                <!-- Pricing Details -->
+                <div class="mb-6 bg-white bg-opacity-50 p-4 rounded">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm text-gray-600">Ticket price</span>
+                        <span class="text-sm text-background">750 DH × 2</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm text-gray-600">Service fee</span>
+                        <span class="text-sm text-background">0 DH</span>
+                    </div>
+                    <div class="border-t border-gray-300 my-2"></div>
+                    <div class="flex justify-between text-background items-center font-medium">
+                        <span>Total</span>
+                        <span>1500 DH</span>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
