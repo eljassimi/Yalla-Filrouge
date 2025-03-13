@@ -133,9 +133,9 @@
 
                 <div class="mb-4">
                     <div class="relative inline-block w-full group">
-                        <select class="w-full bg-black text-white border-none rounded-none h-12 px-4 flex justify-between items-center">
+                        <select id="ticketType" class="w-full bg-black text-white border-none rounded-none h-12 px-4 flex justify-between items-center">
                             @foreach($ticket_types as $ticket_type)
-                            <option class="py-3 px-4 block  text-black hover:bg-[#f1f1f1]">{{$ticket_type["name"]}}</option>
+                                <option class="py-3 px-4 block text-black hover:bg-[#f1f1f1]" value="{{$ticket_type['price']}}"> {{$ticket_type["name"]}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -143,11 +143,11 @@
 
                 <div class="mb-8">
                     <div class="relative inline-block w-full group">
-                        <select class="w-full bg-black text-white border-none rounded-none h-12 px-4 flex justify-between items-center">
-                            <option class="py-3 px-4 block text-black hover:bg-[#f1f1f1]">1 Ticket</option>
-                            <option class="py-3 px-4 block text-black hover:bg-[#f1f1f1]">2 Ticket</option>
-                            <option class="py-3 px-4 block text-black hover:bg-[#f1f1f1]">3 Ticket</option>
-                            <option class="py-3 px-4 block text-black hover:bg-[#f1f1f1]">4 Ticket</option>
+                        <select id="ticketQuantity" class="w-full bg-black text-white border-none rounded-none h-12 px-4 flex justify-between items-center">
+                            <option class="py-3 px-4 block text-black hover:bg-[#f1f1f1]" value="1">1 Ticket</option>
+                            <option class="py-3 px-4 block text-black hover:bg-[#f1f1f1]" value="2">2 Tickets</option>
+                            <option class="py-3 px-4 block text-black hover:bg-[#f1f1f1]" value="3">3 Tickets</option>
+                            <option class="py-3 px-4 block text-black hover:bg-[#f1f1f1]" value="4">4 Tickets</option>
                         </select>
                     </div>
                 </div>
@@ -155,7 +155,7 @@
                 <div class="mb-6 bg-white bg-opacity-50 p-4 rounded">
                     <div class="flex justify-between items-center mb-2">
                         <span class="text-sm text-gray-600">Ticket price</span>
-                        <span class="text-sm text-background">750 DH × 2</span>
+                        <span id="ticketPrice" class="text-sm text-background">0 DH</span>
                     </div>
                     <div class="flex justify-between items-center mb-2">
                         <span class="text-sm text-gray-600">Service fee</span>
@@ -164,7 +164,7 @@
                     <div class="border-t border-gray-300 my-2"></div>
                     <div class="flex justify-between text-background items-center font-medium">
                         <span>Total</span>
-                        <span>1500 DH</span>
+                        <span id="totalPrice">0 DH</span>
                     </div>
                 </div>
 
@@ -187,5 +187,27 @@
     </div>
 
 </main>
+
+
+<script>
+
+    function updatePrice() {
+        const ticketType = document.getElementById('ticketType');
+        const ticketQuantity = document.getElementById('ticketQuantity');
+
+        const ticketPrice = parseFloat(ticketType.value);
+        const quantity = parseInt(ticketQuantity.value);
+
+        const totalPrice = ticketPrice * quantity;
+
+        document.getElementById('ticketPrice').textContent = `${ticketPrice} DH`;
+        document.getElementById('totalPrice').textContent = `${totalPrice} DH`;
+    }
+
+    document.getElementById('ticketType').addEventListener('change', updatePrice);
+    document.getElementById('ticketQuantity').addEventListener('change', updatePrice);
+
+    updatePrice();
+</script>
 </body>
 </html>
