@@ -25,4 +25,5 @@ Route::get('/logout', [SessionController::class, 'destroy']);
 Route::get('/ticket/{id}',[EventController::class,'matchDetails']);
 
 Route::post('/ticketpurshase',[EventController::class,'PurshaseEvent']);
+Route::view('/booking','YallaBooking');
 
