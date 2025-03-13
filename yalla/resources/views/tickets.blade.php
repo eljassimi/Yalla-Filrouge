@@ -93,29 +93,31 @@
 
     <div class="space-y-4">
         <div class="bg-[#0a0a0a] w-[70%] mx-auto rounded p-4">
+            @foreach($matches as $match)
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-4">
-                    <img class="w-[80px] h-auto" src="assets\flags\morocco.png" alt="logo">
+                    <img class="w-[80px] h-auto" src="{{$match["flag_team_1"]}}" alt="logo">
                     <div>
-                        <h3 class="text-xl font-semibold">Morocco</h3>
+                        <h3 class="text-xl font-semibold">{{$match["team_1_name"]}}</h3>
                     </div>
                 </div>
                 <div class="flex flex-col align-center ">
-                    <div class="text-xl self-center font-bold text-gray-500">VS</div>
-                    <p class="text-xs text-gray-400">Stadium Moulay Abdellah | Sat, 20:00</p>
+                    <div class="text-xl self-center font-bold text-[#b9baa3]">VS</div>
+                    <p class="text-xs text-[#b9baa3]">{{$match->location["address"]}}</p>
                 </div>
 
                 <div class="flex items-center space-x-4">
                     <div>
-                        <h3 class="text-xl font-semibold text-right">Brazil</h3>
+                        <h3 class="text-xl font-semibold text-right">{{$match["team_2_name"]}}</h3>
                     </div>
-                    <img class="h-auto w-[80px]" src="assets\flags\brazil.png" alt="logo">
+                    <img class="h-auto w-[80px]" src="{{$match["flag_team_2"]}}" alt="logo">
                 </div>
 
-                <button class="bg-[#a22c29] text-white px-10 py-2 rounded hover:bg-[#8a2624] transition-colors">
+                <button class="bg-[#a22c29] text-white px-10 py-2  hover:bg-[#8a2624] transition-colors">
                     Get Your Ticket
                 </button>
             </div>
+            @endforeach
         </div>
 
     </div>

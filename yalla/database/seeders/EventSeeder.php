@@ -15,10 +15,12 @@ class EventSeeder extends Seeder
     public function run(): void
     {
         Event::create([
-            'name' => 'Morocco vs France',
+            'name' => 'Morocco vs Brazil',
+            'team_1_name' => 'Morocco',
+            'team_2_name' => 'Brazil',
             'date' => now(),
             'available_spots' => 50000,
-            'description' => 'A friendly match between Morocco and France.',
+            'description' => 'A Group match between Morocco and Brazil.',
             'event_type' => EventType::MATCH,
             'location_id' => 1,
             'flag_team_1' => 'assets\flags\morocco.png',

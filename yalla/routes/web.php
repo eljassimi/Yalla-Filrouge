@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionController;
@@ -9,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::view('/login','login');
-Route::view('/tickets','tickets');
+Route::get("/tickets",[EventController::class,"index"]);
 Route::post('/login',[LoginController::class,'login']);
 Route::get('/register', [RegisterController::class, 'index']);
 Route::view('/privacy', 'privacy');
