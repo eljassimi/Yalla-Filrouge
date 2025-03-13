@@ -120,6 +120,26 @@
 
     </div>
 
+    <div class="flex justify-center mt-8">
+        <div class="inline-flex bg-[#b9baa3]/80 rounded">
+            <button class="px-4 py-2 text-white hover:bg-[#3b3b3b]">
+                Previous
+            </button>
+            <button class="px-4 py-2 text-white bg-[#b9baa3]">
+                1
+            </button>
+            <button class="px-4 py-2 text-white hover:bg-[#3b3b3b]">
+                2
+            </button>
+            <button class="px-4 py-2 text-white hover:bg-[#3b3b3b]">
+                3
+            </button>
+            <button class="px-4 py-2 text-white hover:bg-[#3b3b3b]">
+                Next
+            </button>
+        </div>
+    </div>
+
 </main>
 </body>
 </html>
