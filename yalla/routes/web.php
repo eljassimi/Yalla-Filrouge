@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::view('/login','login');
+Route::view('/tickets','tickets');
 Route::post('/login',[LoginController::class,'login']);
 Route::get('/register', [RegisterController::class, 'index']);
 Route::view('/privacy', 'privacy');

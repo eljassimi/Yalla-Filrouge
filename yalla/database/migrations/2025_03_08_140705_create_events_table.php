@@ -14,8 +14,11 @@ return new class extends Migration
             $table->dateTime('date');
             $table->integer('available_spots');
             $table->text('description')->nullable();
-            $table->string('event_type'); // Will store enum value
+            $table->string('event_type'); // 'match' or 'fan_zone'
             $table->foreignId('location_id')->constrained();
+            $table->string('flag_team_1')->nullable();
+            $table->string('flag_team_2')->nullable();
+            $table->string('affiche_image')->nullable();
             $table->timestamps();
         });
     }

@@ -9,7 +9,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Bundle extends Model
 {
-    protected $fillable = ['bundle_name', 'price', 'event_id'];
+    protected $fillable = ['bundle_name', 'price', 'event_id', 'transport_service_id', 'accommodation_id'];
+
 
     public function event(): BelongsTo
     {

@@ -66,7 +66,7 @@
     <header class="fixed w-full top-0 z-50 backdrop-blur-sm border-b border-gray-800">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center">
-                <a href="#" class="text-2xl font-bold flex items-center">
+                <a href="/" class="text-2xl font-bold flex items-center">
                     <img class="w-1/4" src="assets/logo/Yalla2.png" alt="logo">
                 </a>
             </div>

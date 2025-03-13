@@ -21,6 +21,8 @@ class EventSeeder extends Seeder
             'description' => 'A friendly match between Morocco and France.',
             'event_type' => EventType::MATCH,
             'location_id' => 1,
+            'flag_team_1' => 'assets\flags\morocco.png',
+            'flag_team_2' => 'assets\flags\brazil.png'
         ]);
     }
 }
