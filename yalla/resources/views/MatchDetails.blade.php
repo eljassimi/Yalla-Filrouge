@@ -129,6 +129,21 @@
                 </div>
             </div>
 
+            <div class="bg-accent p-6 rounded shadow-lg relative overflow-hidden ">
+                <h2 class="text-2xl font-bold mb-6 text-background">Ticket Summary</h2>
+
+                <div class="mb-4">
+                    <div class="relative inline-block w-full group">
+                        <select class="w-full bg-black text-white border-none rounded-none h-12 px-4 flex justify-between items-center">
+                            <option class="py-3 px-4 block  text-black hover:bg-[#f1f1f1]">Family Stand</option>
+                            <option class="py-3 px-4 block  text-black hover:bg-[#f1f1f1]">East Stand</option>
+                            <option class="py-3 px-4 block  text-black hover:bg-[#f1f1f1]">South Stand</option>
+                            <option class="py-3 px-4 block  text-black hover:bg-[#f1f1f1]">Colin Bell Stand</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 
