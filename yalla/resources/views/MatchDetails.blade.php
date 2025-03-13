@@ -143,6 +143,17 @@
                     </div>
                 </div>
 
+                <div class="mb-8">
+                    <div class="relative inline-block w-full group">
+                        <select class="w-full bg-black text-white border-none rounded-none h-12 px-4 flex justify-between items-center">
+                            <option class="py-3 px-4 block text-black hover:bg-[#f1f1f1]">1 Ticket</option>
+                            <option class="py-3 px-4 block text-black hover:bg-[#f1f1f1]">2 Ticket</option>
+                            <option class="py-3 px-4 block text-black hover:bg-[#f1f1f1]">3 Ticket</option>
+                            <option class="py-3 px-4 block text-black hover:bg-[#f1f1f1]">4 Ticket</option>
+                        </select>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
