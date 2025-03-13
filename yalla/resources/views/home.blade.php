@@ -60,8 +60,9 @@
         }
 
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="font-publica bg-darkgray text-white">
+<body class="font-publica bg-darkgray text-white font-['Poppins']">
     <!-- Header -->
     <header class="fixed w-full top-0 z-50 backdrop-blur-sm border-b border-gray-800">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">

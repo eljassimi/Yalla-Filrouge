@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yalla Tickets</title>
+    <title>Yalla Match Details</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -49,7 +50,7 @@
         }
     </style>
 </head>
-<body>
+<body class="font-['Poppins']">
 <!-- Header/Navbar -->
 <header class="bg-[#1f1f1f] border-b border-[#313131]">
     <div class="container mx-auto px-4">
@@ -64,9 +65,9 @@
                 <a href="#" class="text-white hover:text-gray-300">Booking</a>
             </nav>
             <div>
-                <button class="bg-[#a22c29] text-white px-6 py-1 hover:bg-[#8a2624] transition-colors">
+                <a href="/logout" class="bg-[#a22c29] text-white px-6 py-1 hover:bg-[#8a2624] transition-colors">
                     Logout
-                </button>
+                </a>
             </div>
         </div>
     </div>
@@ -121,8 +122,7 @@
         </div>
 
     </div>
-
-    <div class="flex justify-center mt-8">
+   <div class="flex justify-center mt-8">
         <div class="inline-flex bg-[#b9baa3]/80 rounded">
             <button class="px-4 py-2 text-white hover:bg-[#3b3b3b]">
                 Previous

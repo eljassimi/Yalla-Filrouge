@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::view('/login','login');
+Route::view('/MatchDetails','MatchDetails');
 Route::get("/tickets",[EventController::class,"index"]);
 Route::post('/login',[LoginController::class,'login']);
 Route::get('/register', [RegisterController::class, 'index']);
