@@ -56,7 +56,7 @@
     <div class="container mx-auto px-4">
         <div class="flex items-center justify-between h-16">
             <div class="flex items-center w-[150px]">
-                <a href="/"><img class="w-full h-auto" src="assets/logo/Yalla2.png" alt="logo"></a>
+                <a href="/"><img class="w-full h-auto" src="/assets/logo/Yalla2.png" alt="logo"></a>
             </div>
             <nav class="hidden md:flex space-x-8 ">
                 <a href="/tickets" class="text-white hover:text-gray-300">Tickets</a>
@@ -114,9 +114,9 @@
                     <img class="h-auto w-[80px]" src="{{$match["flag_team_2"]}}" alt="logo">
                 </div>
 
-                <button class="bg-[#a22c29] text-white px-10 py-2  hover:bg-[#8a2624] transition-colors">
+                <a href="/ticket/{{$match['id']}}" class="bg-[#a22c29] text-white px-10 py-2  hover:bg-[#8a2624] transition-colors">
                     Get Your Ticket
-                </button>
+                </a>
             </div>
             @endforeach
         </div>

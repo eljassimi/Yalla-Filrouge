@@ -56,13 +56,13 @@
     <div class="container mx-auto px-4">
         <div class="flex items-center justify-between h-16">
             <div class="flex items-center w-[150px]">
-                <a href="/"><img class="w-full h-auto" src="assets/logo/Yalla2.png" alt="logo"></a>
+                <a href="/"><img class="w-full h-auto" src="/assets/logo/Yalla2.png" alt="logo"></a>
             </div>
             <nav class="hidden md:flex space-x-8 ">
                 <a href="/tickets" class="text-white hover:text-gray-300">Tickets</a>
-                <a href="#" class="text-white hover:text-gray-300">Events</a>
-                <a href="#" class="text-white hover:text-gray-300">Transport</a>
-                <a href="#" class="text-white hover:text-gray-300">Booking</a>
+                <a href="/" class="text-white hover:text-gray-300">Events</a>
+                <a href="/" class="text-white hover:text-gray-300">Transport</a>
+                <a href="/" class="text-white hover:text-gray-300">Booking</a>
             </nav>
             <div>
                 <a href="/logout" class="bg-[#a22c29] text-white px-6 py-1 hover:bg-[#8a2624] transition-colors">
@@ -78,26 +78,25 @@
         <div class="container mx-auto relative z-10">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
                 <div>
-                    <h1 class="text-3xl md:text-4xl font-bold text-background">World Cup Match - Morocco vs Brazil</h1>
+                    <h1 class="text-3xl md:text-4xl font-bold text-background">{{$match['name']}}</h1>
                     <div class="flex flex-col sm:flex-row gap-4 mt-2">
                         <div class="flex items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-background" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                             </svg>
-                            <span class="text-background">March 15, 2025</span>
-                        </div>
+                            <span class="text-background">{{ \Carbon\Carbon::parse($match['date'])->format('Y-m-d') }}</span>                        </div>
                         <div class="flex items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-background" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
-                            <span class="text-background">20:00 GMT+1</span>
+                            <span class="text-background"><span class="text-background">{{ \Carbon\Carbon::parse($match['date'])->format('H:i') }}</span></span>
                         </div>
                         <div class="flex items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-background" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
-                            <span class="text-background">Grand Stadium, Rabat</span>
+                            <span class="text-background">{{$match->location["address"]}}</span>
                         </div>
                     </div>
                 </div>
@@ -110,8 +109,8 @@
             </div>
         </div>
         <!-- Decorative elements -->
-        <div class="absolute top-0 right-0 w-32 h-32 bg-yalla-red opacity-5 rounded-bl-full"></div>
-        <div class="absolute bottom-0 left-0 w-24 h-24 bg-yalla-dark opacity-5 rounded-tr-full"></div>
+        <div class="absolute top-0 right-0 w-32 h-32 bg-primary opacity-5 rounded-bl-full"></div>
+        <div class="absolute bottom-0 left-0 w-24 h-24 bg-primary opacity-5 rounded-tr-full"></div>
     </div>
 
     <div class="container mx-auto px-4 py-8">
@@ -119,7 +118,7 @@
             <div class="lg:col-span-2 bg-accent p-4 rounded shadow-lg">
                 <div class="relative">
                     <div class="w-full aspect-[4/3] rounded  relative overflow-hidden ">
-                        <img class="w-[90%] m-auto " src="assets/Terrain/terran.png">
+                        <img alt="feild" class="w-[90%] m-auto " src="/assets/Terrain/terran.png">
                     </div>
                 </div>
 
@@ -135,10 +134,9 @@
                 <div class="mb-4">
                     <div class="relative inline-block w-full group">
                         <select class="w-full bg-black text-white border-none rounded-none h-12 px-4 flex justify-between items-center">
-                            <option class="py-3 px-4 block  text-black hover:bg-[#f1f1f1]">Family Stand</option>
-                            <option class="py-3 px-4 block  text-black hover:bg-[#f1f1f1]">East Stand</option>
-                            <option class="py-3 px-4 block  text-black hover:bg-[#f1f1f1]">South Stand</option>
-                            <option class="py-3 px-4 block  text-black hover:bg-[#f1f1f1]">Colin Bell Stand</option>
+                            @foreach($ticket_types as $ticket_type)
+                            <option class="py-3 px-4 block  text-black hover:bg-[#f1f1f1]">{{$ticket_type["name"]}}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
@@ -172,14 +170,16 @@
 
                 <div class="space-y-4">
                     <button class="w-full bg-primary hover:bg-opacity-90 text-white py-4 rounded-none transition-all duration-300 hover:shadow-lg flex items-center justify-center">
-                        <span>Complete Purchase</span>
+                        <span>Continue</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
                     </button>
-                    <button class="w-full border border-primary text-primary hover:bg-primaey hover:bg-opacity-10 py-4 rounded-none transition-all duration-300">
-                        Reset Selection
+                    <form action="/tickets" method="get">
+                    <button type="submit" class="w-full border border-primary text-primary hover:bg-primary hover:bg-opacity-10 py-4 rounded-none transition-all duration-300">
+                        Back to Matches
                     </button>
+                    </form>
                 </div>
 
             </div>

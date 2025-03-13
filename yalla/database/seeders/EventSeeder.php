@@ -18,7 +18,7 @@ class EventSeeder extends Seeder
             'name' => 'Morocco vs Brazil',
             'team_1_name' => 'Morocco',
             'team_2_name' => 'Brazil',
-            'date' => now(),
+            'date' => '2025-03-13 11:02:11',
             'available_spots' => 50000,
             'description' => 'A Group match between Morocco and Brazil.',
             'event_type' => EventType::MATCH,
