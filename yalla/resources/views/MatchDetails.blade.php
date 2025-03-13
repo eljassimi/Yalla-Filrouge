@@ -114,6 +114,23 @@
         <div class="absolute bottom-0 left-0 w-24 h-24 bg-yalla-dark opacity-5 rounded-tr-full"></div>
     </div>
 
+    <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2 bg-accent p-4 rounded shadow-lg">
+                <div class="relative">
+                    <div class="w-full aspect-[4/3] rounded  relative overflow-hidden ">
+                        <img class="w-[90%] m-auto " src="assets/Terrain/terran.png">
+                    </div>
+                </div>
+
+                <div class="mt-4 flex items-center">
+                    <span class="inline-block w-3 h-3 bg-green-500 rounded-full mr-2 animate-pulse"></span>
+                    <span class="text-sm text-gray-700">Seats are being booked in real-time. Don't miss out!</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
 </main>
 </body>
