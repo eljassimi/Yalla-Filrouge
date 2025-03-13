@@ -154,7 +154,6 @@
                     </div>
                 </div>
 
-                <!-- Pricing Details -->
                 <div class="mb-6 bg-white bg-opacity-50 p-4 rounded">
                     <div class="flex justify-between items-center mb-2">
                         <span class="text-sm text-gray-600">Ticket price</span>
@@ -169,6 +168,18 @@
                         <span>Total</span>
                         <span>1500 DH</span>
                     </div>
+                </div>
+
+                <div class="space-y-4">
+                    <button class="w-full bg-primary hover:bg-opacity-90 text-white py-4 rounded-none transition-all duration-300 hover:shadow-lg flex items-center justify-center">
+                        <span>Complete Purchase</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </button>
+                    <button class="w-full border border-primary text-primary hover:bg-primaey hover:bg-opacity-10 py-4 rounded-none transition-all duration-300">
+                        Reset Selection
+                    </button>
                 </div>
 
             </div>
