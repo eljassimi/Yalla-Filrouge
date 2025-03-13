@@ -130,12 +130,14 @@
 
             <div class="bg-accent p-6 rounded shadow-lg relative overflow-hidden ">
                 <h2 class="text-2xl font-bold mb-6 text-background">Ticket Summary</h2>
-
+                <form action="/ticketpurshase" method="POST">
+                    @csrf
+                    <input type="hidden" name="event_id" value="{{$match['id']}}">
                 <div class="mb-4">
                     <div class="relative inline-block w-full group">
-                        <select id="ticketType" class="w-full bg-black text-white border-none rounded-none h-12 px-4 flex justify-between items-center">
+                        <select id="ticketType" name="ticket_type_id" class="w-full bg-black text-white border-none rounded-none h-12 px-4 flex justify-between items-center">
                             @foreach($ticket_types as $ticket_type)
-                                <option class="py-3 px-4 block text-black hover:bg-[#f1f1f1]" value="{{$ticket_type['price']}}"> {{$ticket_type["name"]}}</option>
+                                <option class="py-3 px-4 block text-black hover:bg-[#f1f1f1]" data-price="{{$ticket_type['price']}}" value="{{$ticket_type['id']}}"> {{$ticket_type["name"]}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -143,7 +145,7 @@
 
                 <div class="mb-8">
                     <div class="relative inline-block w-full group">
-                        <select id="ticketQuantity" class="w-full bg-black text-white border-none rounded-none h-12 px-4 flex justify-between items-center">
+                        <select id="ticketQuantity" name="ticket_quantity" class="w-full bg-black text-white border-none rounded-none h-12 px-4 flex justify-between items-center">
                             <option class="py-3 px-4 block text-black hover:bg-[#f1f1f1]" value="1">1 Ticket</option>
                             <option class="py-3 px-4 block text-black hover:bg-[#f1f1f1]" value="2">2 Tickets</option>
                             <option class="py-3 px-4 block text-black hover:bg-[#f1f1f1]" value="3">3 Tickets</option>
@@ -169,18 +171,17 @@
                 </div>
 
                 <div class="space-y-4">
-                    <button class="w-full bg-primary hover:bg-opacity-90 text-white py-4 rounded-none transition-all duration-300 hover:shadow-lg flex items-center justify-center">
+                    <button type="submit" class="w-full bg-primary hover:bg-opacity-90 text-white py-4 rounded-none transition-all duration-300 hover:shadow-lg flex items-center justify-center">
                         <span>Continue</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
                     </button>
-                    <form action="/tickets" method="get">
                     <button type="submit" class="w-full border border-primary text-primary hover:bg-primary hover:bg-opacity-10 py-4 rounded-none transition-all duration-300">
                         Back to Matches
                     </button>
-                    </form>
                 </div>
+                </form>
 
             </div>
         </div>
@@ -195,7 +196,8 @@
         const ticketType = document.getElementById('ticketType');
         const ticketQuantity = document.getElementById('ticketQuantity');
 
-        const ticketPrice = parseFloat(ticketType.value);
+        const selectedTicket = ticketType.options[ticketType.selectedIndex];
+        const ticketPrice = parseFloat(selectedTicket.getAttribute('data-price'));
         const quantity = parseInt(ticketQuantity.value);
 
         const totalPrice = ticketPrice * quantity;
@@ -208,6 +210,7 @@
     document.getElementById('ticketQuantity').addEventListener('change', updatePrice);
 
     updatePrice();
+
 </script>
 </body>
 </html>
