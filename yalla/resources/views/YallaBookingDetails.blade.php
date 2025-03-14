@@ -117,6 +117,72 @@
             </div>
         </div>
 
+        <!-- Booking Panel -->
+        <div class="w-full  lg:w-[380px] shrink-0">
+            <div class="bg-white p-6 rounded-lg shadow-md border border-[#d9d9d9]">
+                <div class="flex justify-between items-baseline mb-6">
+                    <div class="text-2xl font-bold">$250 <span class="text-[#afafaf] text-lg font-normal">/night</span></div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <div>
+                        <label class="block text-sm mb-2">Check-in</label>
+                        <div class="relative">
+                            <input type="date" placeholder="jj/mm/aa" class="w-full border border-[#d9d9d9] rounded-md p-2"/>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm mb-2">Check-out</label>
+                        <div class="relative">
+                            <input type="date" placeholder="jj/mm/aa" class="w-full border border-[#d9d9d9] rounded-md p-2"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-sm mb-2">Guests</label>
+                    <div class="relative">
+                        <select class="w-full p-2 border border-[#d9d9d9] rounded-md appearance-none">
+                            <option>2 adults, 0 childrens</option>
+                            <option>2 adults, 1 children</option>
+                            <option>2 adults, 2 childrens</option>
+                            <option>3 adults, 0 childrens</option>
+                        </select>
+                        <div class="absolute right-3 top-1/2 transform -translate-y-1/2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#afafaf]">
+                                <path d="m6 9 6 6 6-6"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-3 mb-6">
+                    <div class="flex justify-between">
+                        <span>$250 x 5 nights</span>
+                        <span>$1,250</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Cleaning Fee</span>
+                        <span>$20</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Service Fee</span>
+                        <span>$10</span>
+                    </div>
+                    <div class="border-t border-[#d9d9d9] pt-3 mt-3">
+                        <div class="flex justify-between font-bold">
+                            <span>Total</span>
+                            <span>$1,280</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="w-full bg-[#a22c29] hover:bg-[#8a2624] text-white py-3 rounded-md">
+                    Book Now
+                </button>
+            </div>
+        </div>
+
     </div>
 </main>
 </body>
