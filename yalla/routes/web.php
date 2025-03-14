@@ -26,4 +26,5 @@ Route::get('/ticket/{id}',[EventController::class,'matchDetails']);
 
 Route::post('/ticketpurshase',[EventController::class,'PurshaseEvent']);
 Route::view('/booking','YallaBooking');
+Route::view('/bookingDetails','YallaBookingDetails');
 
