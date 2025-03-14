@@ -108,7 +108,13 @@
                     preserving its original charm and character.
                 </p>
             </div>
-
+            <!-- Location -->
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold mb-6 text-[#222222]">Location</h2>
+                <div class="h-[300px] relative rounded-lg overflow-hidden mb-6 bg-gray-200">
+                    <img src="/assets/stay/maps.png" alt="Map of Marrakech" class="w-full h-full object-cover"/>
+                </div>
+            </div>
         </div>
 
     </div>
