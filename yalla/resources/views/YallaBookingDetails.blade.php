@@ -40,5 +40,27 @@
         </button>
     </div>
 </header>
+
+<main class="flex-1 container mx-auto px-4 py-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+        <div class="md:col-span-2 h-[400px] md:h-[500px] relative rounded-lg overflow-hidden">
+            <img src="/assets/stay/stay2.png" alt="Moroccan Riad with Pool" class="w-full h-full object-cover"/>
+        </div>
+        <div class="grid grid-cols-1 gap-4">
+            <div class="h-[160px] md:h-[240px] relative rounded-lg overflow-hidden">
+                <img src="/assets/stay/stay1.png" alt="Bedroom" class="w-full h-full object-cover"/>
+            </div>
+            <div class="h-[160px] md:h-[240px] relative rounded-lg overflow-hidden">
+                <img src="/assets/stay/stay3.png" alt="Living Room" class="w-full h-full object-cover"/>
+            </div>
+        </div>
+        <div class="h-[160px] md:h-[240px] relative rounded-lg overflow-hidden">
+            <img src="/assets/stay/stay4.png" alt="Bathroom" class="w-full h-full object-cover"/>
+        </div>
+        <div class="h-[160px] md:h-[240px] relative rounded-lg overflow-hidden">
+            <img src="/assets/stay/stay5.png" alt="Bedroom 2" class="w-full h-full object-cover"/>
+        </div>
+    </div>
+</main>
 </body>
 </html>
