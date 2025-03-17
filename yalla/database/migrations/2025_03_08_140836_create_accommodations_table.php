@@ -10,8 +10,11 @@ return new class extends Migration
     {
         Schema::create('accommodations', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('location_id')->constrained()->onDelete('cascade');
             $table->string('name');
-            $table->float('price_per_night');
+            $table->text('description');
+            $table->string('main_image');
+            $table->json('gallery_images');
             $table->integer('available_rooms');
             $table->timestamps();
         });

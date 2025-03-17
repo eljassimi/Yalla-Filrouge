@@ -6,6 +6,5 @@ enum LocationType: string
 {
     case Event = 'Event';
     case Accommodation = 'Accommodation';
-
     case User = 'User';
 }

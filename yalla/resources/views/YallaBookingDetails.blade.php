@@ -65,42 +65,6 @@
         <div class="flex-1">
             <div class="mb-8">
                 <h2 class="text-2xl font-bold mb-6 text-[#222222]">Property Overview</h2>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                    <div class="bg-[#f0f0f0] p-4 rounded-lg flex flex-col items-center justify-center">
-                        <div class="w-8 h-8 mb-2 flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#A22C29" d="M8 5c-.5 0-1 .21-1.39.6S6 6.45 6 7v3c-.53 0-1 .19-1.41.59S4 11.47 4 12v5h1.34L6 19h1l.69-2h8.67l.64 2h1l.66-2H20v-5c0-.53-.19-1-.59-1.41S18.53 10 18 10V7c0-.55-.2-1-.61-1.4S16.5 5 16 5M8 7h3v3H8m5-3h3v3h-3m-7 2h12v3H6Z"/></svg>
-                        </div>
-                        <p class="text-center">
-                            <span class="font-bold">3</span> Bedrooms
-                        </p>
-                    </div>
-                    <div class="bg-[#f0f0f0] p-4 rounded-lg flex flex-col items-center justify-center">
-                        <div class="w-8 h-8 mb-2 flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="#A22C29" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M21 13v3a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4v-2.4a.6.6 0 0 1 .6-.6zm-5 7l1 2m-9-2l-1 2m14-9V7a4 4 0 0 0-4-4h-5"/><path d="M15.4 8H8.6c-.331 0-.596-.268-.56-.598C8.186 6.075 8.863 3 12 3s3.814 3.075 3.96 4.402c.036.33-.229.598-.56.598"/></g></svg>
-                        </div>
-                        <p class="text-center">
-                            <span class="font-bold">3</span> Bathrooms
-                        </p>
-                    </div>
-                    <div class="bg-[#f0f0f0] p-4 rounded-lg flex flex-col items-center justify-center">
-                        <div class="w-8 h-8 mb-2 flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-6 h-6 text-[#a22c29]"><circle cx="12" cy="7" r="4" /><path d="M5 21v-2a7 7 0 0 1 14 0v2" />
-                            </svg>
-                        </div>
-                        <p class="text-center">
-                            <span class="font-bold">6</span> Guests
-                        </p>
-                    </div>
-                    <div class="bg-[#f0f0f0] p-4 rounded-lg flex flex-col items-center justify-center">
-                        <div class="w-8 h-8 mb-2 flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-6 h-6 text-[#a22c29]"><path d="M3 3h18v18H3z" /><path d="M3 9h18M9 21V9" />
-                            </svg>
-                        </div>
-                        <p class="text-center">
-                            <span class="font-bold">250</span> m²
-                        </p>
-                    </div>
-                </div>
                 <p class="text-[#222222] leading-relaxed">
                     Experience authentic Moroccan luxury in this stunning 3-bedroom riad. Featured with a private pool,
                     traditional courtyard, and modern amenities, this property perfectly blends traditional
@@ -123,63 +87,39 @@
                 <div class="flex justify-between items-baseline mb-6">
                     <div class="text-2xl font-bold">$250 <span class="text-[#afafaf] text-lg font-normal">/night</span></div>
                 </div>
-
+                  <form action="" method="POST">
+                      @csrf
                 <div class="grid grid-cols-2 gap-4 mb-6">
                     <div>
                         <label class="block text-sm mb-2">Check-in</label>
                         <div class="relative">
-                            <input type="date" placeholder="jj/mm/aa" class="w-full border border-[#d9d9d9] rounded-md p-2"/>
+                            <input type="date" name="check-in-date" placeholder="jj/mm/aa" class="w-full border border-[#d9d9d9] rounded-md p-2"/>
                         </div>
                     </div>
                     <div>
                         <label class="block text-sm mb-2">Check-out</label>
                         <div class="relative">
-                            <input type="date" placeholder="jj/mm/aa" class="w-full border border-[#d9d9d9] rounded-md p-2"/>
+                            <input type="date" name="check-out-date" placeholder="jj/mm/aa" class="w-full border border-[#d9d9d9] rounded-md p-2"/>
                         </div>
                     </div>
                 </div>
-
-                <div class="mb-6">
-                    <label class="block text-sm mb-2">Guests</label>
-                    <div class="relative">
-                        <select class="w-full p-2 border border-[#d9d9d9] rounded-md appearance-none">
-                            <option>2 adults, 0 childrens</option>
-                            <option>2 adults, 1 children</option>
-                            <option>2 adults, 2 childrens</option>
-                            <option>3 adults, 0 childrens</option>
-                        </select>
-                        <div class="absolute right-3 top-1/2 transform -translate-y-1/2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#afafaf]">
-                                <path d="m6 9 6 6 6-6"/>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="space-y-3 mb-6">
                     <div class="flex justify-between">
                         <span>$250 x 5 nights</span>
                         <span>$1,250</span>
                     </div>
-                    <div class="flex justify-between">
-                        <span>Cleaning Fee</span>
-                        <span>$20</span>
-                    </div>
-                    <div class="flex justify-between">
-                        <span>Service Fee</span>
-                        <span>$10</span>
-                    </div>
                     <div class="border-t border-[#d9d9d9] pt-3 mt-3">
                         <div class="flex justify-between font-bold">
                             <span>Total</span>
-                            <span>$1,280</span>
+                            <span>$1,250</span>
                         </div>
                     </div>
                 </div>
 
-                <button class="w-full bg-[#a22c29] hover:bg-[#8a2624] text-white py-3 rounded-md">
+                <button type="submit" class="w-full bg-[#a22c29] hover:bg-[#8a2624] text-white py-3 rounded-md">
                     Book Now
                 </button>
+                  </form>
             </div>
         </div>
 
