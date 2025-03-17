@@ -82,36 +82,37 @@
                     <div class="mb-4">
                         <select id="roomSelect" name="room_type" class="w-full border border-[#d9d9d9] rounded-md p-2">
                             @foreach($rooms as $room)
-                            <option value="{{$room['price_per_night']}}">{{$room->roomType["type"]}}</option>
+                                <option selected value="{{ $room->price_per_night }}">
+                                    {{ $room->roomType->type }}
+                                </option>
                             @endforeach
                         </select>
                     </div>
+
                     <div class="grid grid-cols-2 gap-4 mb-6">
                         <div>
                             <label class="block text-sm mb-2">Check-in</label>
-                            <div class="relative">
-                                <input type="date" name="check-in-date" class="w-full border border-[#d9d9d9] rounded-md p-2"/>
-                            </div>
+                            <input type="date" id="checkIn" name="check-in-date" class="w-full border border-[#d9d9d9] rounded-md p-2"/>
                         </div>
                         <div>
                             <label class="block text-sm mb-2">Check-out</label>
-                            <div class="relative">
-                                <input type="date" name="check-out-date" class="w-full border border-[#d9d9d9] rounded-md p-2"/>
-                            </div>
+                            <input type="date" id="checkOut" name="check-out-date" class="w-full border border-[#d9d9d9] rounded-md p-2"/>
                         </div>
                     </div>
+
                     <div class="space-y-3 mb-6">
                         <div class="flex justify-between">
-                            <span>$250 x 5 nights</span>
-                            <span>$1,250</span>
+                            <span id="nightDetails">0 DH x 0 nights</span>
+                            <span id="subtotal">0 DH</span>
                         </div>
                         <div class="border-t border-[#d9d9d9] pt-3 mt-3">
                             <div class="flex justify-between font-bold">
                                 <span>Total</span>
-                                <span>$1,250</span>
+                                <span id="total">0 DH</span>
                             </div>
                         </div>
                     </div>
+
                     <button type="submit" class="w-full bg-[#a22c29] hover:bg-[#8a2624] text-white py-3 rounded-md">
                         Book Now
                     </button>
@@ -124,12 +125,40 @@
 </main>
 
 <script>
+
     const roomSelect = document.getElementById('roomSelect');
+    const checkIn = document.getElementById('checkIn');
+    const checkOut = document.getElementById('checkOut');
+    const nightDetails = document.getElementById('nightDetails');
+    const subtotal = document.getElementById('subtotal');
+    const total = document.getElementById('total');
+
     const priceDiv = document.getElementById('price');
 
     roomSelect.addEventListener('change', function() {
         priceDiv.textContent = `${this.value} DH`;
     });
+    function calculateTotal() {
+
+        const pricePerNight = parseFloat(roomSelect.value) || 0;
+
+        const startDate = new Date(checkIn.value);
+        const endDate = new Date(checkOut.value);
+
+        const diffTime = endDate - startDate;
+        const nights = diffTime > 0 ? Math.ceil(diffTime / (1000 * 60 * 60 * 24)) : 0;
+
+        const subTotal = pricePerNight * nights;
+
+        nightDetails.textContent = `${pricePerNight} DH x ${nights} nights`;
+        subtotal.textContent = `${subTotal} DH`;
+        total.textContent = `${subTotal} DH`;
+    }
+
+    // Ensure calculations on change
+    roomSelect.addEventListener('change', calculateTotal);
+    checkIn.addEventListener('change', calculateTotal);
+    checkOut.addEventListener('change', calculateTotal);
 </script>
 </body>
 </html>
