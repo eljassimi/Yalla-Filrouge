@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Accommodation extends Model
 {
@@ -13,4 +14,5 @@ class Accommodation extends Model
     {
         return $this->belongsToMany(Bundle::class, 'bundle_accommodation');
     }
+
 }

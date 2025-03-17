@@ -17,7 +17,7 @@ return new class extends Migration
             $table->float('price');
             $table->foreignId('event_id')->constrained();
             $table->foreignId('transport_service_id')->nullable()->constrained();
-            $table->foreignId('accommodation_id')->nullable()->constrained();
+            $table->foreignId('hotel_id')->nullable()->constrained();
             $table->timestamps();
         });
     }

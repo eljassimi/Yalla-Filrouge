@@ -12,22 +12,19 @@ class LocationSeeder extends Seeder
         Location::create([
             'city' => 'Safi',
             'address' => '123 Main Street',
-            'coordinates' => '32.2588° N, 9.2395° W',
-            'LocationType' => 'Accommodation',
+            'coordinates' => '32.2588° N, 9.2395° W'
         ]);
 
         Location::create([
             'city' => 'Casablanca',
             'address' => '456 Ocean Avenue',
-            'coordinates' => '33.5731° N, 7.5898° W',
-            'LocationType' => 'Event',
+            'coordinates' => '33.5731° N, 7.5898° W'
         ]);
 
         Location::create([
             'city' => 'Rabat',
             'address' => '789 Central Park',
-            'coordinates' => '34.0209° N, 6.8416° W',
-            'LocationType' => 'User',
+            'coordinates' => '34.0209° N, 6.8416° W'
         ]);
     }
 }

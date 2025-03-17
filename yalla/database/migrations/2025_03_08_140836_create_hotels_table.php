@@ -8,20 +8,20 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('accommodations', function (Blueprint $table) {
+        Schema::create('hotels', function (Blueprint $table) {
             $table->id();
             $table->foreignId('location_id')->constrained()->onDelete('cascade');
             $table->string('name');
             $table->text('description');
             $table->string('main_image');
             $table->json('gallery_images');
-            $table->integer('available_rooms');
+            $table->integer('rooms');
             $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('accommodations');
+        Schema::dropIfExists('hotels');
     }
 };
