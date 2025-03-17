@@ -44,21 +44,14 @@
 <main class="flex-1 container mx-auto px-4 py-6">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
         <div class="md:col-span-2 h-[400px] md:h-[500px] relative rounded-lg overflow-hidden">
-            <img src="/assets/stay/stay2.png" alt="Moroccan Riad with Pool" class="w-full h-full object-cover"/>
+            <img src="/assets/{{$hotel["main_image"]}}" alt="Moroccan Riad with Pool" class="w-full h-full object-cover"/>
         </div>
         <div class="grid grid-cols-1 gap-4">
+            @foreach($hotel->gallery_images as $image)
             <div class="h-[160px] md:h-[240px] relative rounded-lg overflow-hidden">
-                <img src="/assets/stay/stay1.png" alt="Bedroom" class="w-full h-full object-cover"/>
+                <img src="/assets/{{ $image }}" alt="Bedroom" class="w-full h-full object-cover"/>
             </div>
-            <div class="h-[160px] md:h-[240px] relative rounded-lg overflow-hidden">
-                <img src="/assets/stay/stay3.png" alt="Living Room" class="w-full h-full object-cover"/>
-            </div>
-        </div>
-        <div class="h-[160px] md:h-[240px] relative rounded-lg overflow-hidden">
-            <img src="/assets/stay/stay4.png" alt="Bathroom" class="w-full h-full object-cover"/>
-        </div>
-        <div class="h-[160px] md:h-[240px] relative rounded-lg overflow-hidden">
-            <img src="/assets/stay/stay5.png" alt="Bedroom 2" class="w-full h-full object-cover"/>
+        @endforeach
         </div>
     </div>
     <div class="flex  flex-col lg:flex-row gap-8">
@@ -66,10 +59,7 @@
             <div class="mb-8">
                 <h2 class="text-2xl font-bold mb-6 text-[#222222]">Property Overview</h2>
                 <p class="text-[#222222] leading-relaxed">
-                    Experience authentic Moroccan luxury in this stunning 3-bedroom riad. Featured with a private pool,
-                    traditional courtyard, and modern amenities, this property perfectly blends traditional
-                    architecture with contemporary comfort. The house has been recently renovated while
-                    preserving its original charm and character.
+                    {{$hotel["description"]}}
                 </p>
             </div>
             <!-- Location -->

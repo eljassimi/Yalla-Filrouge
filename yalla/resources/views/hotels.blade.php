@@ -134,9 +134,9 @@
                             <span class="font-bold text-darkgray text-lg">{{$hotel->room[0]["price_per_night"]}} DH</span>
                             <span class="text-darkgray">/night</span>
                         </div>
-                        <button class="bg-primary hover:bg-primary/90 text-white px-4 py-1.5 text-sm font-medium rounded-md transition">
+                        <a href="/bookingDetails/{{$hotel['id']}}" class="bg-primary hover:bg-primary/90 text-white px-4 py-1.5 text-sm font-medium rounded-md transition">
                             Details
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
