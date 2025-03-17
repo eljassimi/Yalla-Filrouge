@@ -16,4 +16,9 @@ class Location extends Model
     {
         return $this->hasMany(Event::class);
     }
+
+    public function hotels(): HasMany
+    {
+        return $this->hasMany(Hotel::class);
+    }
 }

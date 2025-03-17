@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\accommodationController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\HotelController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionController;
@@ -26,6 +26,6 @@ Route::get('/logout', [SessionController::class, 'destroy']);
 Route::get('/ticket/{id}',[EventController::class,'matchDetails']);
 
 Route::post('/ticketpurshase',[EventController::class,'PurshaseEvent']);
-Route::get('/booking',[accommodationController::class,'index']);
+Route::get('/booking',[HotelController::class,'index']);
 Route::view('/bookingDetails','YallaBookingDetails');
 

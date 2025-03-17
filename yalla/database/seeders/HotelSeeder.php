@@ -43,7 +43,7 @@ class HotelSeeder extends Seeder
         ]);
 
 
-        DB::table('room')->insert([
+        DB::table('rooms')->insert([
             'hotel_id' => $hotel_1,
             'room_type_id' => 1,
             'price_per_night' => 100,
@@ -53,7 +53,7 @@ class HotelSeeder extends Seeder
         ]);
 
 
-        DB::table('room')->insert([
+        DB::table('rooms')->insert([
             'hotel_id' => $hotel_1,
             'room_type_id' => 2,
             'price_per_night' => 200,
@@ -62,7 +62,7 @@ class HotelSeeder extends Seeder
             'updated_at' => now(),
         ]);
 
-        DB::table('room')->insert([
+        DB::table('rooms')->insert([
             'hotel_id' => $hotel_2,
             'room_type_id' => 1,
             'price_per_night' => 150,
@@ -71,7 +71,7 @@ class HotelSeeder extends Seeder
             'updated_at' => now(),
         ]);
 
-        DB::table('room')->insert([
+        DB::table('rooms')->insert([
             'hotel_id' => $hotel_2,
             'room_type_id' => 2,
             'price_per_night' => 250,

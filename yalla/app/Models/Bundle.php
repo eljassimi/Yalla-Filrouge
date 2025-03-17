@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Bundle extends Model
 {
-    protected $fillable = ['bundle_name', 'price', 'event_id', 'transport_service_id', 'accommodation_id'];
+    protected $fillable = ['bundle_name', 'price', 'event_id', 'transport_service_id', 'Hotel_id'];
 
 
     public function event(): BelongsTo
@@ -17,9 +17,9 @@ class Bundle extends Model
         return $this->belongsTo(Event::class);
     }
 
-    public function accommodations(): BelongsToMany
+    public function Hotel(): BelongsToMany
     {
-        return $this->belongsToMany(Accommodation::class, 'bundle_accommodation');
+        return $this->belongsToMany(Hotel::class, 'bundle_Hotel');
     }
 
     public function transportBookings(): BelongsToMany
@@ -38,8 +38,8 @@ class Bundle extends Model
 
         $transportPrice = $this->transportBookings->sum('total_price');
 
-        $accommodationPrice = $this->accommodations->sum('price_per_night');
+        $HotelPrice = $this->Hotel->sum('price_per_night');
 
-        return $bundleBasePrice + $transportPrice + $accommodationPrice;
+        return $bundleBasePrice + $transportPrice + $HotelPrice;
     }
 }
