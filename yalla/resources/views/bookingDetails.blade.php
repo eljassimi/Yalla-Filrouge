@@ -155,10 +155,21 @@
         total.textContent = `${subTotal} DH`;
     }
 
-    // Ensure calculations on change
     roomSelect.addEventListener('change', calculateTotal);
     checkIn.addEventListener('change', calculateTotal);
     checkOut.addEventListener('change', calculateTotal);
+
+
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1);
+
+    const todayFormatted = today.toISOString().split('T')[0];
+    const tomorrowFormatted = tomorrow.toISOString().split('T')[0];
+
+    document.getElementById('checkIn').setAttribute('min', todayFormatted);
+
+    document.getElementById('checkOut').setAttribute('min', tomorrowFormatted);
 </script>
 </body>
 </html>
