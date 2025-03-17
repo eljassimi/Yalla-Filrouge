@@ -75,12 +75,12 @@
         <div class="w-full lg:w-[380px] shrink-0">
             <div class="bg-white p-6 rounded-lg shadow-md border border-[#d9d9d9]">
                 <div class="flex justify-between items-baseline mb-6">
-                    <div class="text-2xl font-bold"><div id="price">$250</div><span class="text-[#afafaf] text-lg font-normal">/night</span></div>
+                    <div class="text-2xl font-bold"><div id="price">{{ $rooms[0]->price_per_night ?? 0 }} DH</div><span class="text-[#afafaf] text-lg font-normal">/night</span></div>
                 </div>
                 <form action="" method="POST">
                     @csrf
                     <div class="mb-4">
-                        <select name="room_type" class="w-full border border-[#d9d9d9] rounded-md p-2">
+                        <select id="roomSelect" name="room_type" class="w-full border border-[#d9d9d9] rounded-md p-2">
                             @foreach($rooms as $room)
                             <option value="{{$room['price_per_night']}}">{{$room->roomType["type"]}}</option>
                             @endforeach
@@ -122,5 +122,14 @@
 
     </div>
 </main>
+
+<script>
+    const roomSelect = document.getElementById('roomSelect');
+    const priceDiv = document.getElementById('price');
+
+    roomSelect.addEventListener('change', function() {
+        priceDiv.textContent = `${this.value} DH`;
+    });
+</script>
 </body>
 </html>
