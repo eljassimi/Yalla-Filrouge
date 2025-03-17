@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Hotel;
+use App\Models\room;
 use Illuminate\Http\Request;
 
 class HotelController extends Controller
@@ -12,8 +13,9 @@ class HotelController extends Controller
          return view('hotels', compact('hotels'));
      }
      public function bookingDetails($id){
-         $hotel = Hotel::with('location','room')->find($id);
+         $hotel = Hotel::with('location')->findOrFail($id);
+         $rooms = Room::where('hotel_id', $id)->with('roomType')->get();
          $hotel->gallery_images = json_decode($hotel->gallery_images, true);
-         return view('bookingDetails', compact('hotel'));
+         return view('bookingDetails', compact('hotel','rooms'));
      }
 }

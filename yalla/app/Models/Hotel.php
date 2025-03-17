@@ -25,4 +25,9 @@ class Hotel extends Model
         return $this->belongsTo(Location::class);
     }
 
+    public function roomTypes()
+    {
+        return $this->hasManyThrough(RoomType::class, Room::class, 'hotel_id', 'id', 'id', 'room_type_id');
+    }
+
 }

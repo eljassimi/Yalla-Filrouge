@@ -10,4 +10,14 @@ class room extends Model
 {
     protected $fillable = ['hotel_id', 'room_type_id', 'price_per_night','number_of_rooms'];
 
+    public function hotel()
+    {
+        return $this->belongsTo(Hotel::class);
+    }
+
+    public function roomType()
+    {
+        return $this->belongsTo(RoomType::class);
+    }
+
 }
