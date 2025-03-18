@@ -66,7 +66,7 @@
             <div class="text-center text-sm mt-4">
                 <p class="text-white">Don't have an account? <a href="/register"  class="text-[#B9BAA3] hover:text-[#a8a994]">Click here to Sign Up</a></p>
                 <p class="text-white">If you have registered previously using another method please</p>
-                <p class="text-white"> create a new Hayya account using the same email address</p>
+                <p class="text-white"> create a new Yalla account using the same email address</p>
                 <p class="text-white">to retrieve your data <a href="/register" class="text-[#B9BAA3] hover:text-[#a8a994]">Click here to Sign Up</a></p>
             </div>
     </div>

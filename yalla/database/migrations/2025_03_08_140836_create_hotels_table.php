@@ -15,6 +15,7 @@ return new class extends Migration
             $table->text('description');
             $table->string('main_image');
             $table->json('gallery_images');
+            $table->json('amenities')->nullable();
             $table->integer('rooms');
             $table->timestamps();
         });
