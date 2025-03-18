@@ -118,7 +118,7 @@
                 <div class="flex justify-between items-baseline mb-6">
                     <div class="text-2xl font-bold"><div id="price">{{ $rooms[0]->price_per_night ?? 0 }} DH</div><span class="text-[#afafaf] text-lg font-normal">/night</span></div>
                 </div>
-                <form action="" method="POST">
+                <form action="/bookingDetails" method="POST">
                     @csrf
                     <div class="mb-4">
                         <select id="roomSelect" name="room_type" class="w-full border border-[#d9d9d9] rounded-md p-2">

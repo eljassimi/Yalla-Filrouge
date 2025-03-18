@@ -26,6 +26,7 @@ Route::get('/logout', [SessionController::class, 'destroy']);
 Route::get('/ticket/{id}',[EventController::class,'matchDetails']);
 
 Route::post('/ticketpurshase',[EventController::class,'PurshaseEvent']);
-Route::get('/booking',[HotelController::class,'index']);
-Route::get('/bookingDetails/{id}',[HotelController::class,'bookingDetails']);
+Route::get('/hotels',[HotelController::class,'index']);
+Route::get('/hotel-details/{id}',[HotelController::class,'hotelDetails']);
+Route::post('/bookingHotel',[HotelController::class,'booking']);
 
