@@ -5,6 +5,8 @@
       <list>
         <option value="$PROJECT_DIR$/yalla/tests/Unit" />
         <option value="$PROJECT_DIR$/yalla/tests/Feature" />
+        <option value="$PROJECT_DIR$/yalla/yalla/tests/Unit" />
+        <option value="$PROJECT_DIR$/yalla/yalla/tests/Feature" />
       </list>
     </option>
   </component>

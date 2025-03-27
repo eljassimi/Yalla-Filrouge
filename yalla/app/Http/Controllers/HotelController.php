@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
 use App\Models\Hotel;
 use App\Models\room;
 use App\Models\userSelections;
@@ -10,10 +11,17 @@ use Illuminate\Support\Facades\Auth;
 
 class HotelController extends Controller
 {
-     public function index(){
-         $hotels = Hotel::with('location','room')->paginate(6);
-         return view('hotels', compact('hotels'));
-     }
+    public function index()
+    {
+        $eventId = session('event_id');
+        $event = Event::with('location')->find($eventId);
+        $eventCity = $event->location->city;
+        $hotels = Hotel::with('location', 'room')
+            ->whereHas('location', function ($query) use ($eventCity) {
+                $query->where('city', $eventCity);
+            })->paginate(6);
+        return view('hotels', compact('hotels'));
+    }
      public function hotelDetails($id){
          $hotel = Hotel::with('location')->findOrFail($id);
          $rooms = Room::where('hotel_id', $id)->with('roomType')->get();
@@ -54,7 +62,7 @@ class HotelController extends Controller
             'check_out_date' => $request->check_out,
         ]);
 
-        return redirect()->back()->withErrors(['error' => 'successss']);
+        return redirect('/transports');
     }
 
 }
