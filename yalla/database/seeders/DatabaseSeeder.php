@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             LocationSeeder::class,
             HotelSeeder::class,
             EventSeeder::class,
+            TicketTypeSeeder::class,
         ]);
     }
 }

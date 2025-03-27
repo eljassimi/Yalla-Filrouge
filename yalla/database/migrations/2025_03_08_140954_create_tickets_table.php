@@ -14,7 +14,7 @@ return new class extends Migration
             $table->decimal('price', 8, 2);
             $table->integer('quantity');
             $table->dateTime('purchase_date');
-            $table->enum('ticket_type', array_column(TicketType::cases(), 'value'));
+            $table->foreignId('ticket_type_id')->constrained('ticket_types')->onDelete('cascade');
             $table->foreignId('bundle_id')->nullable()->constrained()->onDelete('cascade');
             $table->foreignId('payment_id')->constrained()->onDelete('cascade');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');

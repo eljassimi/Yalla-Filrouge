@@ -31,6 +31,7 @@ class EventController extends Controller
         $attributes['user_id'] = Auth::id();
         userSelections::create($attributes);
 
-        return redirect()->back();
+        session(['event_id' => $attributes['event_id']]);
+        return redirect('/hotels');
     }
 }

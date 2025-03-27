@@ -118,10 +118,10 @@
                 <div class="flex justify-between items-baseline mb-6">
                     <div class="text-2xl font-bold"><div id="price">{{ $rooms[0]->price_per_night ?? 0 }} DH</div><span class="text-[#afafaf] text-lg font-normal">/night</span></div>
                 </div>
-                <form action="/bookingDetails" method="POST">
+                <form action="/bookingHotel" method="POST">
                     @csrf
                     <div class="mb-4">
-                        <select id="roomSelect" name="room_type" class="w-full border border-[#d9d9d9] rounded-md p-2">
+                        <select id="roomSelect" name="room_price" class="w-full border border-[#d9d9d9] rounded-md p-2">
                             @foreach($rooms as $room)
                                 <option selected value="{{ $room->price_per_night }}">
                                     {{ $room->roomType->type }}
@@ -129,15 +129,15 @@
                             @endforeach
                         </select>
                     </div>
-
+                    <input type="hidden" name="hotel_id" value="{{$hotel["id"]}}">
                     <div class="grid grid-cols-2 gap-4 mb-6">
                         <div>
                             <label class="block text-sm mb-2">Check-in</label>
-                            <input type="date" id="checkIn" name="check-in-date" class="w-full border border-[#d9d9d9] rounded-md p-2"/>
+                            <input type="date" id="checkIn" name="check_in" class="w-full border border-[#d9d9d9] rounded-md p-2"/>
                         </div>
                         <div>
                             <label class="block text-sm mb-2">Check-out</label>
-                            <input type="date" id="checkOut" name="check-out-date" class="w-full border border-[#d9d9d9] rounded-md p-2"/>
+                            <input type="date" id="checkOut" name="check_out" class="w-full border border-[#d9d9d9] rounded-md p-2"/>
                         </div>
                     </div>
 
@@ -160,6 +160,15 @@
                 </form>
             </div>
         </div>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 
 
     </div>

@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Hotel;
 use App\Models\room;
+use App\Models\userSelections;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HotelController extends Controller
 {
@@ -20,7 +22,39 @@ class HotelController extends Controller
          return view('bookingDetails', compact('hotel','rooms','amenities'));
      }
 
-     public function booking(Request $request){
+    public function booking(Request $request)
+    {
+        $request->validate([
+            'room_price' => 'required|numeric',
+            'hotel_id' => 'required|exists:hotels,id',
+            'check_in' => 'required|date',
+            'check_out' => 'required|date|after:check_in',
+        ]);
 
-     }
+        $userId = auth()->id();
+        $eventId = session('event_id');
+
+        if (!$eventId) {
+            return redirect()->back()->withErrors(['error' => 'No event selected.']);
+        }
+
+        $userSelection = userSelections::where('user_id', $userId)
+            ->where('event_id', $eventId)
+            ->latest()
+            ->first();
+
+        if (!$userSelection) {
+            return redirect()->back()->withErrors(['error' => 'User selection not found.']);
+        }
+
+        $userSelection->update([
+            'hotel_id' => $request->hotel_id,
+            'room_price'=>$request->room_price,
+            'check_in_date' => $request->check_in,
+            'check_out_date' => $request->check_out,
+        ]);
+
+        return redirect()->back()->withErrors(['error' => 'successss']);
+    }
+
 }
