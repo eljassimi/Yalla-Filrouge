@@ -46,6 +46,7 @@
             Logout
         </button>
     </div>
+</header>
     <div class="pt-24 bg-lightgray py-12 px-6 relative overflow-hidden">
         <div class="max-w-4xl mx-auto relative z-10">
             <div class="flex flex-col md:flex-row items-center justify-between mb-8">
@@ -107,6 +108,5 @@
             </div>
         </div>
     </div>
-</header>
 </body>
 </html>
