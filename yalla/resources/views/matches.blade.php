@@ -59,7 +59,7 @@
                 <a href="/"><img class="w-full h-auto" src="/assets/logo/Yalla2.png" alt="logo"></a>
             </div>
             <nav class="hidden md:flex space-x-8 ">
-                <a href="/tickets" class="text-white hover:text-gray-300">Tickets</a>
+                <a href="/matches" class="text-white hover:text-gray-300">Matches</a>
                 <a href="#" class="text-white hover:text-gray-300">Events</a>
                 <a href="#" class="text-white hover:text-gray-300">Transport</a>
                 <a href="#" class="text-white hover:text-gray-300">Booking</a>

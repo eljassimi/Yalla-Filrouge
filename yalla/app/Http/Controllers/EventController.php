@@ -12,7 +12,7 @@ class EventController extends Controller
 {
     public function index(){
         $matches = Event::with('location')->where("event_type", "=", "Match")->paginate(6);
-        return view('tickets', compact('matches'));
+        return view('matches', compact('matches'));
     }
 
     public function matchDetails($id){

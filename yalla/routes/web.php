@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::view('/login','login');
-Route::get("/tickets",[EventController::class,"index"]);
 Route::post('/login',[LoginController::class,'login']);
 Route::get('/register', [RegisterController::class, 'index']);
 Route::view('/privacy', 'privacy');
@@ -23,9 +22,10 @@ Route::get('/', function () {return view('home');});
 Route::post('/register', [RegisterController::class, 'register']);
 Route::get('/logout', [SessionController::class, 'destroy']);
 
+Route::get("/matches",[EventController::class,"index"]);
 Route::get('/ticket/{id}',[EventController::class,'matchDetails']);
-
 Route::post('/ticketpurshase',[EventController::class,'PurshaseEvent']);
+
 Route::get('/hotels',[HotelController::class,'index']);
 Route::get('/hotel-details/{id}',[HotelController::class,'hotelDetails']);
 Route::post('/bookingHotel',[HotelController::class,'booking']);
