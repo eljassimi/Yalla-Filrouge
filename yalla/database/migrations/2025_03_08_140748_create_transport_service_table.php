@@ -10,6 +10,8 @@ return new class extends Migration
     {
         Schema::create('transport_services', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->text('description');
             $table->float('price_per_km');
             $table->integer('available_seats');
             $table->timestamps();
