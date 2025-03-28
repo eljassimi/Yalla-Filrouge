@@ -77,6 +77,7 @@
                     <div class="flex flex-col items-center">
                         <span class="text-white font-bold text-base mt-1">ACCOMMODATION</span>
                         <span class=" text-xs font-medium">In progress</span>
+                        <a href="/transport" class="px-6 py-2 rounded mt-2 bg-primary text-white">Skip</a>
                     </div>
                 </div>
 
