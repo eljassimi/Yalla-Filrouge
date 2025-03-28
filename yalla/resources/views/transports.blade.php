@@ -108,5 +108,31 @@
             </div>
         </div>
     </div>
+<main class="flex-1 py-6 px-6">
+    <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="shadow-xl rounded-lg overflow-hidden transform transition-transform hover:-translate-y-2">
+                    <div class="h-56 bg-gray-800 relative">
+                        <img src="/assets/stay/stay6.png" alt=" Logo" class="w-full h-full object-contain">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start mb-1 text-darkgray">
+                            <h3 class="text-lg font-bold">CTM</h3>
+                        </div>
+                        <p class="text-sm text-darkgray mb-2">CTM est une societé de </p>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="font-bold text-darkgray text-lg">50 DH</span>
+                                <span class="text-darkgray">/trip</span>
+                            </div>
+                            <a href="/transport-details/1" class="bg-primary hover:bg-primary/90 text-white px-4 py-1.5 text-sm font-medium rounded-md transition">
+                                Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</main>
 </body>
 </html>
