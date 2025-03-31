@@ -12,6 +12,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('description');
+            $table->string('logo')->nullable();
             $table->float('price_per_km');
             $table->integer('available_seats');
             $table->timestamps();

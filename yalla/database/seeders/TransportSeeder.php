@@ -16,6 +16,7 @@ class TransportSeeder extends Seeder
         TransportService::create([
             'name' => 'CTM',
             'description' => 'CTM est une societé de transport national et internationale',
+            'logo'=>'assets/Tansport/ctm.png',
             'price_per_km' => 10,
             'available_seats' => 50,
         ]);
