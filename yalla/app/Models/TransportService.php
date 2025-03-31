@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class TransportService extends Model
 {
-    protected $fillable = ['price_per_km', 'available_seats'];
+    protected $fillable = ['name','description','logo','price_per_km', 'available_seats'];
 
     public function transportBookings(): HasMany
     {
