@@ -10,6 +10,6 @@ class TransportController extends Controller
 {
     public function index(){
         $transports = TransportService::all();
-        return view('transport', compact('transports'));
+        return view('transports', compact('transports'));
     }
 }

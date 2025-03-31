@@ -5,6 +5,7 @@ use App\Http\Controllers\HotelController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\TransportController;
 use App\Http\Middleware\AuthMiddleware;
 use Illuminate\Support\Facades\Route;
 
@@ -30,6 +31,6 @@ Route::get('/hotels',[HotelController::class,'index']);
 Route::get('/hotel-details/{id}',[HotelController::class,'hotelDetails']);
 Route::post('/bookingHotel',[HotelController::class,'booking']);
 
-Route::view('/transport', 'transports');
+Route::get('/transport',[TransportController::class,'index']);
 
 
