@@ -15,7 +15,9 @@ class TransportSeeder extends Seeder
     {
         TransportService::create([
             'name' => 'CTM',
-            'price' => 100,
+            'description' => 'CTM est une societé de transport national et internationale',
+            'price_per_km' => 10,
+            'available_seats' => 50,
         ]);
     }
 }
