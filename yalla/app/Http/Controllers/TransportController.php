@@ -8,5 +8,8 @@ use App\Models\TransportService;
 
 class TransportController extends Controller
 {
-
+    public function index(){
+        $transports = TransportService::all();
+        return view('transport', compact('transports'));
+    }
 }
