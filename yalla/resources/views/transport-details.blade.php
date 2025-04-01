@@ -285,6 +285,7 @@
     $eventLocation = $event->location->coordinates;
  @endphp
 <script>
+
     let userLocation = JSON.parse('<?php echo $userLocation; ?>');
     let eventLocation = JSON.parse('<?php echo $eventLocation; ?>');
     console.log("User Coordinates:", userLocation.latitude, userLocation.longitude);
@@ -321,11 +322,13 @@
             console.log("Data fetched  : ", data);
             let route = data.features[0].geometry.coordinates;
             let distance = data.features[0].properties.summary.distance;
-            let routeDistance = (distance / 1000).toFixed(2); // Convert to km
+            let routeDistance = (distance / 1000).toFixed(2);
             console.log('route : ', route);
             console.log('distance : ', routeDistance, " KM");
 
-            const routeCoordinates = route.map(coord => [coord[1], coord[0]]); // Convert to [lat, lon]
+            document.getElementById("distance").innerHTML = `${routeDistance} KM`
+
+            const routeCoordinates = route.map(coord => [coord[1], coord[0]]);
             const routePolyline = L.polyline(routeCoordinates, {
                 color: '#1F1F1F',
                 weight: 4,
@@ -339,8 +342,6 @@
             console.error(error);
         }
     }
-
-    // Fetch and display the route
     getRoute(userLat, userLon, eventLat, eventLon);
 </script>
 </body>
