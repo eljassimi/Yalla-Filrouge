@@ -198,7 +198,7 @@
                         </div>
                         <div class="text-center md:text-right">
                             <h3 class="text-sm text-gray-400">To</h3>
-                            <p id="destination" class="text-lg font-medium">Marrakech</p>
+                            <p id="destination" class="text-lg font-medium">{{$event->location->city}}</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
