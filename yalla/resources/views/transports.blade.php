@@ -126,7 +126,7 @@
                                 <span class="font-bold text-darkgray text-lg">{{$transport["price_per_km"]}}</span>
                                 <span class="text-darkgray">/trip</span>
                             </div>
-                            <a href="/transport-details/1" class="bg-primary hover:bg-primary/90 text-white px-4 py-1.5 text-sm font-medium rounded-md transition">
+                            <a href="/transport-details/{{$transport["id"]}}" class="bg-primary hover:bg-primary/90 text-white px-4 py-1.5 text-sm font-medium rounded-md transition">
                                 Details
                             </a>
                         </div>
