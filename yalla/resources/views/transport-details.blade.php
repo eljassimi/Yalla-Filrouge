@@ -292,11 +292,15 @@
     let eventLat = eventLocation.latitude;
     let eventLon = eventLocation.longitude;
 
-    const map = L.map('map').setView([userLat, userLon], 10);
+    const map = L.map('map').setView([userLat, userLon], 10); // Adjust zoom level as needed
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
 
     const userMarker = L.marker([userLat, userLon]).addTo(map)
         .bindPopup("<b>User Location</b>")
-        .openPopup()
+        .openPopup();
 
     const eventMarker = L.marker([eventLat, eventLon]).addTo(map)
         .bindPopup("<b>Event Location</b>")
@@ -313,14 +317,14 @@
             console.log("Data fetched  : ", data);
             let route = data.features[0].geometry.coordinates;
             let distance = data.features[0].properties.summary.distance;
-            let routeDistance = (distance / 1000).toFixed(2);
-            console.log('route : ',route);
-            console.log('distance : ',routeDistance," KM");
+            let routeDistance = (distance / 1000).toFixed(2); // Convert to km
+            console.log('route : ', route);
+            console.log('distance : ', routeDistance, " KM");
 
-            const routeCoordinates = route.map(coord => [coord[1], coord[0]]);
+            const routeCoordinates = route.map(coord => [coord[1], coord[0]]); // Convert to [lat, lon]
             const routePolyline = L.polyline(routeCoordinates, {
-                color: 'blue',
-                weight: 4,
+                color: 'red',
+                weight: 3,
                 opacity: 0.7
             }).addTo(map);
 
@@ -331,8 +335,9 @@
             console.error(error);
         }
     }
-    getRoute(userLat, userLon, eventLat, eventLon);
 
+    // Fetch and display the route
+    getRoute(userLat, userLon, eventLat, eventLon);
 </script>
 </body>
 </html>
