@@ -285,6 +285,30 @@
     let eventLocation = JSON.parse('<?php echo $eventLocation; ?>');
     console.log("User Coordinates:", userLocation.latitude, userLocation.longitude);
     console.log("Event Coordinates:", eventLocation.latitude, eventLocation.longitude);
+
+    let userLat = userLocation.latitude;
+    let userLon = userLocation.longitude;
+
+    let eventLat = eventLocation.latitude;
+    let eventLon = eventLocation.longitude;
+
+    async function getRoute(userLat, userLon, eventLat, eventLon) {
+        const apiKey = "5b3ce3597851110001cf6248b8005c6e48ee4d18a01bea4f9b109e7c";
+        const url = `https://api.openrouteservice.org/v2/directions/driving-car?api_key=${apiKey}&start=${userLon},${userLat}&end=${eventLon},${eventLat}`;
+
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+
+            console.log("Data fetched  : ", data);
+
+        } catch (error) {
+            alert("Error fetching route data.");
+            console.error(error);
+        }
+    }
+    getRoute(userLat, userLon, eventLat, eventLon);
+
 </script>
 </body>
 </html>
