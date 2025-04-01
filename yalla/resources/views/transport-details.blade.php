@@ -317,6 +317,8 @@
             console.log('route : ',route);
             console.log('distance : ',routeDistance," KM");
 
+            const routeCoordinates = route.map(coord => [coord[1], coord[0]]);
+
 
         } catch (error) {
             alert("Error fetching route data.");
