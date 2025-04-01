@@ -301,6 +301,10 @@
             const data = await response.json();
 
             console.log("Data fetched  : ", data);
+            let route = data.features[0].geometry.coordinates;
+            let distance = data.features[0].properties.summary.distance/1000;
+            console.log('route : ',route);
+            console.log('distance : ',distance," KM");
 
         } catch (error) {
             alert("Error fetching route data.");
