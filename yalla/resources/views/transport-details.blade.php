@@ -23,6 +23,8 @@
             }
         }
     </script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -302,9 +304,10 @@
 
             console.log("Data fetched  : ", data);
             let route = data.features[0].geometry.coordinates;
-            let distance = data.features[0].properties.summary.distance/1000;
+            let distance = data.features[0].properties.summary.distance;
+            let routeDistance = (distance / 1000).toFixed(2);
             console.log('route : ',route);
-            console.log('distance : ',distance," KM");
+            console.log('distance : ',routeDistance," KM");
 
         } catch (error) {
             alert("Error fetching route data.");
