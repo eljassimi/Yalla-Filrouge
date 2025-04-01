@@ -12,4 +12,8 @@ class TransportController extends Controller
         $transports = TransportService::all();
         return view('transports', compact('transports'));
     }
+    public function show($id){
+        $transport = TransportService::where('id', $id)->first();
+        return view('transport-details', compact('transport'));
+    }
 }
