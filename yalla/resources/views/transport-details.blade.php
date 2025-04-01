@@ -296,6 +296,10 @@
 
     const userMarker = L.marker([userLat, userLon]).addTo(map)
         .bindPopup("<b>User Location</b>")
+        .openPopup()
+
+    const eventMarker = L.marker([eventLat, eventLon]).addTo(map)
+        .bindPopup("<b>Event Location</b>")
         .openPopup();
 
     async function getRoute(userLat, userLon, eventLat, eventLon) {
