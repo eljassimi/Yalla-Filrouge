@@ -215,7 +215,9 @@
                             <p id="travelTime" class="text-xl font-bold">3h 15min</p>
                         </div>
                     </div>
-                    <div id="map"></div>
+                    <div id="map" class="">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d612.8732090729193!2d-7.671812680675286!3d31.711966612469695!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafee8d96179e51%3A0x5950b6534f87adb8!2sMarrakech!5e0!3m2!1sfr!2sma!4v1743468423919!5m2!1sfr!2sma" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
                 </div>
             </div>
 
