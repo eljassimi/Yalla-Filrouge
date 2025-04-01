@@ -12,7 +12,7 @@ class LocationSeeder extends Seeder
         Location::create([
             'city' => 'Safi',
             'address' => '123 Main Street',
-            'coordinates' => '32.2588° N, 9.2395° W'
+            'coordinates' => '{"latitude":"32.2833322","longitude":"-9.2333324"}'
         ]);
 
         Location::create([

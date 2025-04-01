@@ -278,5 +278,13 @@
         </div>
     </div>
 </main>
+{{$userLocation = Auth::user()->location->coordinates}}
+{{$eventLocation = $event->location->coordinates}}
+<script>
+    let userLocation = JSON.parse('<?php echo $userLocation; ?>');
+    let eventLocation = JSON.parse('<?php echo $eventLocation; ?>');
+    console.log("User Coordinates:", userLocation.latitude, userLocation.longitude);
+    console.log("Event Coordinates:", eventLocation.latitude, eventLocation.longitude);
+</script>
 </body>
 </html>
