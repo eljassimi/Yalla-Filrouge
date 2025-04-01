@@ -323,6 +323,12 @@
             console.log("Data fetched  : ", data);
             let route = data.features[0].geometry.coordinates;
             let distance = data.features[0].properties.summary.distance;
+            let duration = data.features[0].properties.summary.duration;
+            let hours = Math.floor(duration / 3600);
+            let minutes = Math.floor((duration % 3600) / 60);
+            console.log("hours : ", duration)
+            console.log("minutes : ", minutes)
+            let routeTime = hours > 0 ? `${hours}h ${minutes}min`: `${minutes}min`;
             let routeDistance = (distance / 1000).toFixed(2);
             console.log('route : ', route);
             console.log('distance : ', routeDistance, " KM");
@@ -331,6 +337,7 @@
             let price_per_km = '<?php echo $price_per_km?>';
             let totalPrice =  price_per_km * routeDistance;
             document.getElementById('totalPrice').innerHTML = `${totalPrice} DH`;
+            document.getElementById('travelTime').innerHTML = `${routeTime}`;
 
             const routeCoordinates = route.map(coord => [coord[1], coord[0]]);
             const routePolyline = L.polyline(routeCoordinates, {
