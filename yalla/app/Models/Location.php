@@ -8,9 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Location extends Model
 {
-    protected $fillable = ['city', 'address', 'coordinates','LocationType'];
-
-    protected $casts = ['LocationType' => LocationType::class];
+    protected $fillable = ['city', 'address', 'coordinates'];
 
     public function events(): HasMany
     {

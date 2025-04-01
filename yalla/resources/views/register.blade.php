@@ -87,6 +87,8 @@
                 <input type="text" name="name" placeholder="name" class="w-full px-4 py-3 bg-gray-100 border border-[#B9BAA3] focus:outline-none focus:border-[#B9BAA3]">
             </div>
 
+
+
             <div>
                 <label class="block text-[#B9BAA3] mb-2">Current City*</label>
                 <select  name="current_city" class="w-full px-4 py-3 bg-gray-100 border border-[#B9BAA3] focus:outline-none focus:border-[#B9BAA3]" required>
@@ -94,6 +96,13 @@
                         <option value="{{ $city }}" >{{ $city }}</option>
                     @endforeach
                 </select>
+            </div>
+
+            <div class="space-y-4 mt-6">
+                <!-- Location Permission -->
+                <button type="button" onclick="getLocation()" class="w-full bg-[#B9BAA3] text-white py-3 px-6 font-medium transition-colors mt-6">Get My Location</button>
+                <input type="hidden" name="latitude" id="latitude">
+                <input type="hidden" name="longitude" id="longitude">
             </div>
 
             <div class="space-y-4 mt-6">
@@ -124,6 +133,5 @@
         </form>
     </div>
 </div>
-
 </body>
 </html>
