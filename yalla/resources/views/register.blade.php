@@ -146,6 +146,21 @@
                 document.getElementById('longitude').value = longitude;
                 console.log(latitude);
                 console.log(longitude);
+                fetch(`https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const address = data.address.town;
+                        const city = data.address.city || data.address.town || data.address.village || "Unknown";
+
+                        document.getElementById('city').value = city;
+                        document.getElementById('address').value = address;
+
+                        console.log("City:", city);
+                        console.log("Address:", address);
+                    })
+                    .catch(error => {
+                        alert("Error retrieving the address.");
+                    });
             }, function(error) {
                 alert('Unable to retrieve your location.');
             });
