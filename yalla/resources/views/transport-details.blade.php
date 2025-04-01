@@ -324,6 +324,7 @@
                 opacity: 0.7
             }).addTo(map);
 
+            map.fitBounds(routePolyline.getBounds());
 
         } catch (error) {
             alert("Error fetching route data.");
