@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Location;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -29,16 +30,40 @@ class RegisterController extends Controller
         return view('register', compact('cities'));
     }
 
-    public function register(Request $request){
-       $attributes =  $request->validate([
+
+    public function register(Request $request)
+    {
+        $attributes = $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|confirmed',
-            'current_city'=>'required'
+            'current_city'=>'required',
+            'latitude' => 'required',
+            'longitude' => 'required',
+            'city' => 'required',
+            'address' => 'required',
         ]);
-       $user = User::create($attributes);
-       Auth::login($user);
-       return redirect('/login');
+
+        $location = Location::create([
+            'coordinates' => json_encode([
+                'latitude' => $attributes['latitude'],
+                'longitude' => $attributes['longitude'],
+            ]),
+            'city' => $attributes['city'],
+            'address' => $attributes['address'],
+        ]);
+
+        $user = User::create([
+            'name' => $attributes['name'],
+            'email' => $attributes['email'],
+            'password' => bcrypt($attributes['password']),
+            'current_city'=>$attributes['current_city'],
+            'location_id' => $location->id,
+        ]);
+
+        Auth::login($user);
+        return redirect('/login');
     }
+
 
 }
