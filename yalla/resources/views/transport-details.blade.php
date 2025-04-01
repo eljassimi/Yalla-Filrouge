@@ -278,8 +278,12 @@
         </div>
     </div>
 </main>
-{{$userLocation = Auth::user()->location->coordinates}}
-{{$eventLocation = $event->location->coordinates}}
+
+@php
+    use Illuminate\Support\Facades\Auth;
+    $userLocation = Auth::user()->location->coordinates;
+    $eventLocation = $event->location->coordinates;
+ @endphp
 <script>
     let userLocation = JSON.parse('<?php echo $userLocation; ?>');
     let eventLocation = JSON.parse('<?php echo $eventLocation; ?>');
@@ -323,8 +327,8 @@
 
             const routeCoordinates = route.map(coord => [coord[1], coord[0]]); // Convert to [lat, lon]
             const routePolyline = L.polyline(routeCoordinates, {
-                color: 'red',
-                weight: 3,
+                color: '#1F1F1F',
+                weight: 4,
                 opacity: 0.7
             }).addTo(map);
 
