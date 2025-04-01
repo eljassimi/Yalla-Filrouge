@@ -318,6 +318,11 @@
             console.log('distance : ',routeDistance," KM");
 
             const routeCoordinates = route.map(coord => [coord[1], coord[0]]);
+            const routePolyline = L.polyline(routeCoordinates, {
+                color: 'blue',
+                weight: 4,
+                opacity: 0.7
+            }).addTo(map);
 
 
         } catch (error) {
