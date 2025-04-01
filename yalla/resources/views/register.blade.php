@@ -103,6 +103,8 @@
                 <button type="button" onclick="getLocation()" class="w-full bg-[#B9BAA3] text-white py-3 px-6 font-medium transition-colors mt-6">Get My Location</button>
                 <input type="hidden" name="latitude" id="latitude">
                 <input type="hidden" name="longitude" id="longitude">
+                <input type="hidden" name="city" id="city">
+                <input type="hidden" name="address" id="address">
             </div>
 
             <div class="space-y-4 mt-6">
