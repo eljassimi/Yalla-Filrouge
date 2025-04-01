@@ -212,7 +212,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                         <div class="bg-gray-800/50 p-4 rounded-lg">
                             <h3 class="text-sm text-gray-400 mb-1">Distance</h3>
-                            <p id="distance" class="text-xl font-bold">240 KM</p>
+                            <p id="distance" class="text-xl font-bold"></p>
                         </div>
                         <div class="bg-gray-800/50 p-4 rounded-lg">
                             <h3 class="text-sm text-gray-400 mb-1">Total Price</h3>
@@ -283,6 +283,7 @@
     use Illuminate\Support\Facades\Auth;
     $userLocation = Auth::user()->location->coordinates;
     $eventLocation = $event->location->coordinates;
+    $price_per_km = $transport["price_per_km"];
  @endphp
 <script>
 
@@ -326,7 +327,10 @@
             console.log('route : ', route);
             console.log('distance : ', routeDistance, " KM");
 
-            document.getElementById("distance").innerHTML = `${routeDistance} KM`
+            document.getElementById("distance").innerHTML = `${routeDistance} KM`;
+            let price_per_km = '<?php echo $price_per_km?>';
+            let totalPrice =  price_per_km * routeDistance;
+            document.getElementById('totalPrice').innerHTML = `${totalPrice} DH`;
 
             const routeCoordinates = route.map(coord => [coord[1], coord[0]]);
             const routePolyline = L.polyline(routeCoordinates, {
