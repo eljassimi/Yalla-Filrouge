@@ -135,5 +135,22 @@
         </form>
     </div>
 </div>
+
+<script>
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                const latitude = position.coords.latitude;
+                const longitude = position.coords.longitude;
+                document.getElementById('latitude').value = latitude;
+                document.getElementById('longitude').value = longitude;
+                console.log(latitude);
+                console.log(longitude);
+            }, function(error) {
+                alert('Unable to retrieve your location.');
+            });
+        }
+    }
+</script>
 </body>
 </html>
