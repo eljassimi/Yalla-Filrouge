@@ -185,7 +185,7 @@
                     <div class="flex flex-col md:flex-row items-center justify-between mb-6 bg-gray-800/50 p-4 rounded-lg">
                         <div class="text-center md:text-left mb-4 md:mb-0">
                             <h3 class="text-sm text-gray-400">From</h3>
-                            <p id="startLocation" class="text-lg font-medium">Casablanca</p>
+                            <p id="startLocation" class="text-lg font-medium">{{Auth::user()->current_city}}</p>
                         </div>
                         <div class="flex-1 flex justify-center items-center px-4">
                             <div class="w-3 h-3 rounded-full bg-primary"></div>
