@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends Authenticatable
 {
-    protected $fillable = ['name','current_city', 'email', 'password', 'is_admin'];
+    protected $fillable = ['name','current_city', 'email', 'password', 'is_admin','location_id'];
 
 
     protected function casts():array{
@@ -20,5 +21,10 @@ class User extends Authenticatable
     public function tickets(): HasMany
     {
         return $this->hasMany(Ticket::class);
+    }
+
+    public function location(): BelongsTo
+    {
+        return $this->belongsTo(Location::class);
     }
 }

@@ -21,4 +21,7 @@ class Location extends Model
     {
         return $this->hasMany(Hotel::class);
     }
+    public function users(): HasMany{
+        return $this->hasMany(User::class);
+    }
 }

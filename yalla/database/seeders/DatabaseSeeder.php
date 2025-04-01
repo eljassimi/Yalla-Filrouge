@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
             HotelSeeder::class,
             EventSeeder::class,
             TicketTypeSeeder::class,
-            TransportService::class
+            TransportSeeder::class
         ]);
     }
 }
