@@ -32,7 +32,7 @@ Route::get('/hotel-details/{id}',[HotelController::class,'hotelDetails']);
 Route::post('/bookingHotel',[HotelController::class,'booking']);
 
 Route::get('/transport',[TransportController::class,'index']);
+Route::get('/transport-details/{id}',[TransportController::class,'show']);
 
-Route::view('/transport-details','transport-details');
 
 

@@ -128,19 +128,19 @@
             <div class="flex flex-col md:flex-row items-start gap-6">
                 <div class="w-full md:w-1/4 flex justify-center">
                     <div class="w-48 h-48 bg-gray-800 rounded-lg flex items-center justify-center overflow-hidden">
-                        <img id="companyLogo" src="https://placehold.co/200x200/A22C29/FFFFFF?text=CTM" alt="Company Logo" class="w-full h-full object-contain p-4">
+                        <img id="companyLogo" src="/{{$transport["logo"]}}" alt="Company Logo" class="w-full h-full object-contain p-4">
                     </div>
                 </div>
                 <div class="w-full md:w-3/4">
-                    <h1 id="companyName" class="text-3xl font-bold mb-2">CTM</h1>
+                    <h1 id="companyName" class="text-3xl font-bold mb-2">{{$transport["name"]}}</h1>
                     <div class="flex items-center mb-4">
                         <span id="transportType" class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm font-medium">Bus</span>
                     </div>
-                    <p class="text-gray-300 mb-4">CTM is Morocco's leading bus transport company, offering comfortable and reliable intercity travel services across the country.</p>
+                    <p class="text-gray-300 mb-4">{{$transport["description"]}}</p>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div class="bg-gray-800/50 p-4 rounded-lg">
                             <h3 class="text-sm text-gray-400 mb-1">Price per KM</h3>
-                            <p id="pricePerKm" class="text-2xl font-bold">1.5 DH</p>
+                            <p id="pricePerKm" class="text-2xl font-bold">{{$transport["price_per_km"]}} DH</p>
                         </div>
                         <div class="bg-gray-800/50 p-4 rounded-lg">
                             <h3 class="text-sm text-gray-400 mb-1">Rating</h3>
