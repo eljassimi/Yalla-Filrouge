@@ -52,6 +52,24 @@
             transform: rotate(-45deg); /* Aligns the checkmark properly */
         }
 
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+
+        .toast.show {
+            opacity: 1;
+            visibility: visible;
+        }
     </style>
 </head>
 <body>
@@ -86,8 +104,6 @@
                 <label class="block text-[#B9BAA3] mb-2">Given Name*</label>
                 <input type="text" name="name" placeholder="name" class="w-full px-4 py-3 bg-gray-100 border border-[#B9BAA3] focus:outline-none focus:border-[#B9BAA3]">
             </div>
-
-
 
             <div>
                 <label class="block text-[#B9BAA3] mb-2">Current City*</label>
@@ -136,6 +152,9 @@
     </div>
 </div>
 
+<!-- Toast Notification -->
+<div id="toast" class="toast">Your location has been saved successfully!</div>
+
 <script>
     function getLocation() {
         if (navigator.geolocation) {
@@ -157,6 +176,15 @@
 
                         console.log("City:", city);
                         console.log("Address:", address);
+
+                        // Show the toast notification
+                        const toast = document.getElementById('toast');
+                        toast.classList.add('show');
+
+                        // Hide the toast after 3 seconds
+                        setTimeout(() => {
+                            toast.classList.remove('show');
+                        }, 3000);
                     })
                     .catch(error => {
                         alert("Error retrieving the address.");
