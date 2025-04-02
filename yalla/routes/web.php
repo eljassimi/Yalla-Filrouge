@@ -33,6 +33,7 @@ Route::post('/bookingHotel',[HotelController::class,'booking']);
 
 Route::get('/transports',[TransportController::class,'index']);
 Route::get('/transport-details/{id}',[TransportController::class,'show']);
+Route::post('/book-transport',[TransportController::class,'store']);
 
 
 

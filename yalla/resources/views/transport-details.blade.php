@@ -233,9 +233,10 @@
                         Departure Times
                     </h2>
                     <form action="/book-transport" method="POST">
+                        @csrf
                         <div class="mb-4">
                             <label for="departureDate" class="block text-sm text-gray-400 mb-1">Select Date</label>
-                            <input type="date" id="departureDate" class="w-full bg-gray-800 border border-gray-700 rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary">
+                            <input type="date" name="booking_date" id="departureDate" class="w-full bg-gray-800 border border-gray-700 rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary">
                         </div>
                         <input id="form_distance" type="hidden" name="distance_km" value="">
                         <input id="form_total_price" type="hidden" name="total_price" value="">
