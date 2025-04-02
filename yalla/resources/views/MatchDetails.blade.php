@@ -52,26 +52,7 @@
 </head>
 <body class="bg-background min-h-screen flex flex-col font-['Poppins']">
 
-<header class="bg-[#1f1f1f] border-b border-[#313131]">
-    <div class="container mx-auto px-4">
-        <div class="flex items-center justify-between h-16">
-            <div class="flex items-center w-[150px]">
-                <a href="/"><img class="w-full h-auto" src="/assets/logo/Yalla2.png" alt="logo"></a>
-            </div>
-            <nav class="hidden md:flex space-x-8 ">
-                <a href="/tickets" class="text-white hover:text-gray-300">Tickets</a>
-                <a href="/" class="text-white hover:text-gray-300">Events</a>
-                <a href="/" class="text-white hover:text-gray-300">Transport</a>
-                <a href="/" class="text-white hover:text-gray-300">Booking</a>
-            </nav>
-            <div>
-                <a href="/logout" class="bg-[#a22c29] text-white px-6 py-1 hover:bg-[#8a2624] transition-colors">
-                    Logout
-                </a>
-            </div>
-        </div>
-    </div>
-</header>
+<x-navbar />
 
 <main class="flex-grow">
     <div class="bg-accent p-6 shadow-md relative overflow-hidden">
