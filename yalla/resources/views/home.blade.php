@@ -64,31 +64,7 @@
 </head>
 <body class="font-publica bg-darkgray text-white font-['Poppins']">
     <!-- Header -->
-    <header class="fixed w-full top-0 z-50 backdrop-blur-sm border-b border-gray-800">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center">
-                <a href="/" class="text-2xl font-bold flex items-center">
-                    <img class="w-1/4" src="assets/logo/Yalla2.png" alt="logo">
-                </a>
-            </div>
-            <div class="flex items-center space-x-2">
-                @guest
-                <a href="/register" class="bg-lightgray/80 hover:bg-lightgray/30 text-white px-4 py-2 rounded-md text-sm transition">
-                    Start Yalla Journey
-                </a>
-                <a href="/login" class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-md flex items-center text-sm transition">
-                   Login
-                </a>
-                @endguest
-                @auth
-                 <a href="/logout" class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-md flex items-center text-sm transition">
-                    logout
-                 </a>
-                @endauth
-            </div>
-        </div>
-    </header>
-
+    <x-navbar />
     <!-- Hero Section -->
     <section class="relative pt-24 pb-12 md:pt-32 md:pb-16 overflow-hidden">
         <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('assets/backgrounds/Herobg1.png');"></div>
