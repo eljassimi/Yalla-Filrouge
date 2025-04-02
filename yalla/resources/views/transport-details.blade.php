@@ -224,12 +224,17 @@
                         </div>
                     </div>
                     <div id="map" style="height: 500px;"></div>
-                    <button id="bookNowBtn" class="w-[80%] mt-4 mx-auto justify-center bg-primary hover:bg-primary/90 text-white py-3 rounded-md font-medium transition flex items-center justify-center">
+                    <form action="/book-transport" method="POST">
+                        <input id="form_distance" type="hidden" name="distance_km" value="">
+                        <input id="form_total_price" type="hidden" name="total_price" value="">
+                        <input id="transport_service_id" type="hidden" name="transport_service_id" value="{{$transport["id"]}}">
+                    <button type="submit" id="bookNowBtn" class="w-[80%] mt-4 mx-auto justify-center bg-primary hover:bg-primary/90 text-white py-3 rounded-md font-medium transition flex items-center justify-center">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                         </svg>
                         Book Now
                     </button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -282,6 +287,10 @@
     let eventLat = eventLocation.latitude;
     let eventLon = eventLocation.longitude;
 
+    let routeDistance;
+    let totalPrice;
+
+
     const map = L.map('map').setView([userLat, userLon], 10); // Adjust zoom level as needed
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -313,13 +322,14 @@
             console.log("hours : ", duration)
             console.log("minutes : ", minutes)
             let routeTime = hours > 0 ? `${hours}h ${minutes}min`: `${minutes}min`;
-            let routeDistance = (distance / 1000).toFixed(2);
+            routeDistance = (distance / 1000).toFixed(2);
             console.log('route : ', route);
             console.log('distance : ', routeDistance, " KM");
 
+
             document.getElementById("distance").innerHTML = `${routeDistance} KM`;
             let price_per_km = '<?php echo $price_per_km?>';
-            let totalPrice =  price_per_km * routeDistance;
+            totalPrice =  price_per_km * routeDistance;
             document.getElementById('totalPrice').innerHTML = `${totalPrice} DH`;
             document.getElementById('travelTime').innerHTML = `${routeTime}`;
 
@@ -336,6 +346,8 @@
             alert("Error fetching route data.");
             console.error(error);
         }
+        document.getElementById("form_distance").value = routeDistance;
+        document.getElementById("form_total_price").value = totalPrice;
     }
     getRoute(userLat, userLon, eventLat, eventLon);
 </script>
