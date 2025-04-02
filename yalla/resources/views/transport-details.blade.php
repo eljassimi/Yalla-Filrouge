@@ -176,7 +176,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             <!-- Travel Info -->
             <div class="col-span-1 md:col-span-2">
-                <div class="bg-darkgray rounded-lg shadow-xl p-6 h-full fade-in" style="animation-delay: 0.2s">
+                <div class="bg-darkgray mx-auto rounded-lg shadow-xl p-6 h-full fade-in" style="animation-delay: 0.2s">
                     <h2 class="text-xl font-bold mb-6 flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -202,7 +202,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                             </svg>
                             <div class="flex-1 h-0.5 bg-primary mx-2"></div>
-                            <div class="w-3 h-3 rounded-full bg-primary"></div>
+                            <div class="w-3 h-3 rounded-full bg-primFary"></div>
                         </div>
                         <div class="text-center md:text-right">
                             <h3 class="text-sm text-gray-400">To</h3>
@@ -224,23 +224,7 @@
                         </div>
                     </div>
                     <div id="map" style="height: 500px;"></div>
-                </div>
-            </div>
-
-            <!-- Departure Times -->
-            <div class="col-span-1">
-                <div class="bg-darkgray rounded-lg shadow-xl p-6 h-full fade-in" style="animation-delay: 0.3s">
-                    <h2 class="text-xl font-bold mb-6 flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        Departure Times
-                    </h2>
-                    <div class="mb-4">
-                        <label for="departureDate" class="block text-sm text-gray-400 mb-1">Select Date</label>
-                        <input type="date" id="departureDate" class="w-full bg-gray-800 border border-gray-700 rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary">
-                    </div>
-                    <button id="bookNowBtn" class="w-full bg-primary hover:bg-primary/90 text-white py-3 rounded-md font-medium transition flex items-center justify-center">
+                    <button id="bookNowBtn" class="w-[80%] mt-4 mx-auto justify-center bg-primary hover:bg-primary/90 text-white py-3 rounded-md font-medium transition flex items-center justify-center">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                         </svg>
