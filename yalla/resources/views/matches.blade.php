@@ -118,5 +118,6 @@
         {{ $matches->links('vendor.pagination.tailwind') }}
     </div>
 </main>
+<x-footer />
 </body>
 </html>

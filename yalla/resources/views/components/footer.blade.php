@@ -134,8 +134,8 @@
                     </div>
                 </form>
                 <div class="flex items-center space-x-3">
-                    <img src="assets/elements/app-store-badge.png" alt="App Store" class="h-10 transform transition-transform hover:scale-105">
-                    <img src="assets/elements/google-play-badge.png" alt="Google Play" class="h-10 transform transition-transform hover:scale-105">
+                    <img src="assets/elements/app-store.png" alt="App Store" class="h-10 transform transition-transform hover:scale-105">
+                    <img src="assets/elements/google-play.png" alt="Google Play" class="h-10 transform transition-transform hover:scale-105">
                 </div>
             </div>
         </div>
