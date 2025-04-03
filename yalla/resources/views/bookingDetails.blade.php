@@ -133,7 +133,7 @@
 
     </div>
 </main>
-
+<x-footer />
 <script>
 
     const roomSelect = document.getElementById('roomSelect');
