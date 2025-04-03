@@ -6,7 +6,7 @@
             <!-- Company Info -->
             <div>
                 <div class="mb-6">
-                    <img src="assets/logo/YAlla2.png" alt="Yalla Logo" class="h-12">
+                    <img src="/assets/logo/YAlla2.png" alt="Yalla Logo" class="h-12">
                 </div>
                 <p class="text-lightgray mb-6">Your gateway to the 2030 FIFA World Cup journey in Morocco. Experience the magic of football in the heart of North Africa.</p>
                 <div class="flex space-x-4">
@@ -134,8 +134,8 @@
                     </div>
                 </form>
                 <div class="flex items-center space-x-3">
-                    <img src="assets/elements/app-store.png" alt="App Store" class="h-10 transform transition-transform hover:scale-105">
-                    <img src="assets/elements/google-play.png" alt="Google Play" class="h-10 transform transition-transform hover:scale-105">
+                    <img src="/assets/elements/app-store.png" alt="App Store" class="h-10 transform transition-transform hover:scale-105">
+                    <img src="/assets/elements/google-play.png" alt="Google Play" class="h-10 transform transition-transform hover:scale-105">
                 </div>
             </div>
         </div>

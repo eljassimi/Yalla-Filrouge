@@ -1,24 +1,78 @@
 <x-head />
-<body class="min-h-screen bg-[#fbfbfb] flex flex-col">
+<body class="min-h-screen bg-darkgray flex flex-col">
 <x-navbar />
 <main class="flex-1 container mx-auto px-4 py-6">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-        <div class="md:col-span-2 h-[400px] md:h-[500px] relative rounded-lg overflow-hidden">
-            <img src="/assets/{{$hotel["main_image"]}}" alt="Moroccan Riad with Pool" class="w-full h-full object-cover"/>
+
+    <div class="relative mb-12 px-2">
+=
+        <div class="mb-6 relative z-10">
+            <h3 class="text-xl font-semibold text-white">Gallery</h3>
+            <div class="w-20 h-1 bg-[#A22C29] rounded-full mt-2"></div>
         </div>
-        <div class="grid grid-cols-1 gap-4">
-            @foreach($hotel->gallery_images as $image)
-            <div class="h-[160px] md:h-[240px] relative rounded-lg overflow-hidden">
-                <img src="/assets/{{ $image }}" alt="Bedroom" class="w-full h-full object-cover"/>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-4 relative">
+
+            <div class="md:col-span-8 relative group rounded-xl overflow-hidden shadow-lg transform transition-all duration-300 hover:shadow-xl h-[350px] md:h-[500px]">
+                <img src="/assets/{{$hotel['main_image']}}" alt="{{$hotel['name']}}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                <div class="absolute bottom-0 left-0 p-4 md:p-6 w-full transform translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <h2 class="text-white text-xl md:text-2xl font-bold">{{$hotel['name']}}</h2>
+                    <p class="text-white/80 text-sm mt-1">Experience luxury in the heart of Morocco</p>
+                </div>
             </div>
-        @endforeach
+
+            <div class="md:col-span-4 grid grid-cols-2 md:grid-cols-1 gap-3 md:gap-4">
+
+                @if(isset($hotel->gallery_images[0]))
+                    <div class="relative group rounded-xl overflow-hidden shadow-md md:shadow-lg transform transition-all duration-300 hover:shadow-xl md:-mt-6 h-[170px] md:h-[240px]">
+                        <img src="/assets/{{ $hotel->gallery_images[0] }}" alt="Room view" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-0 left-0 p-3 transform translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                            <p class="text-white text-sm font-medium">Elegant Interior</p>
+                        </div>
+                    </div>
+                @endif
+
+                    @if(isset($hotel->gallery_images[1]))
+                    <div class="relative group rounded-xl overflow-hidden shadow-md md:shadow-lg transform transition-all duration-300 hover:shadow-xl h-[170px] md:h-[240px]">
+                        <img src="/assets/{{ $hotel->gallery_images[1] }}" alt="Room view" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-0 left-0 p-3 transform translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                            <p class="text-white text-sm font-medium">Luxurious Comfort</p>
+                        </div>
+                    </div>
+                @endif
+            </div>
+
+            <div class="hidden md:grid md:grid-cols-3 md:col-span-12 gap-4 mt-4">
+                @for($i = 2; $i < 5 && isset($hotel->gallery_images[$i]); $i++)
+                    <div class="relative group rounded-xl overflow-hidden shadow-lg transform transition-all duration-300 hover:shadow-xl h-[180px]">
+                        <img src="/assets/{{ $hotel->gallery_images[$i] }}" alt="Hotel view" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                @endfor
+            </div>
+
+            <div class="absolute -top-4 -left-4 w-24 h-24 bg-[#A22C29]/5 rounded-full blur-xl"></div>
+            <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-[#A22C29]/5 rounded-full blur-xl"></div>
+        </div>
+
+        <div class="md:hidden flex overflow-x-auto gap-3 mt-3 pb-2 snap-x snap-mandatory">
+            @for($i = 2; $i < count($hotel->gallery_images) && $i < 6; $i++)
+                @if(isset($hotel->gallery_images[$i]))
+                    <div class="snap-start shrink-0 w-[250px] h-[150px] relative rounded-xl overflow-hidden shadow-md">
+                        <img src="/assets/{{ $hotel->gallery_images[$i] }}" alt="Hotel view" class="w-full h-full object-cover"/>
+                    </div>
+                @endif
+            @endfor
         </div>
     </div>
     <div class="flex  flex-col lg:flex-row gap-8">
         <div class="flex-1">
             <div class="mb-8">
-                <h2 class="text-2xl font-bold mb-6 text-[#222222]">Property Overview</h2>
-                <div class="p-6 rounded-2xl shadow-lg  mx-auto">
+                <h2 class="text-2xl font-bold mb-6 text-lightgray">Property Overview</h2>
+                <div class="p-6 rounded-2xl shadow-lg bg-lightgray  mx-auto">
                     <h2 class="text-2xl font-bold mb-4">Property Overview</h2>
                     <div class="flex justify-between mb-4">
                         @if(in_array('WiFi', $amenities))
@@ -74,7 +128,7 @@
 
         <!-- Booking Panel -->
         <div class="w-full lg:w-[380px] shrink-0">
-            <div class="bg-white p-6 rounded-lg shadow-md border border-[#d9d9d9]">
+            <div class="bg-lightgray p-6 rounded-lg shadow-md border border-[#d9d9d9]">
                 <div class="flex justify-between items-baseline mb-6">
                     <div class="text-2xl font-bold"><div id="price">{{ $rooms[0]->price_per_night ?? 0 }} DH</div><span class="text-[#afafaf] text-lg font-normal">/night</span></div>
                 </div>

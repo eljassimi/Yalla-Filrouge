@@ -118,7 +118,6 @@
 
 </main>
 
-
 <x-footer />
 <script>
 
