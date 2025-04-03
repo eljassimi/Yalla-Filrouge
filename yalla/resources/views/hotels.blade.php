@@ -1,5 +1,5 @@
 <x-head />
-<body class="min-h-screen flex flex-col text-white font-['Poppins']">
+<body class="min-h-screen bg-darkgray flex flex-col text-white font-['Poppins']">
 
 <!-- Header -->
 <x-navbar />
@@ -81,14 +81,14 @@
                 </div>
                 <div class="p-4">
                     <div class="flex justify-between items-start mb-1 text-darkgray">
-                        <h3 class="text-lg font-bold">{{$hotel["name"]}}</h3>
+                        <h3 class="text-lg text-white font-bold">{{$hotel["name"]}}</h3>
                     </div>
-                    <p class="text-sm text-darkgray mb-2">{{$hotel->location["city"]}}</p>
-                    <p class="text-sm mb-4 text-darkgray">{{$hotel["description"]}}</p>
+                    <p class="text-sm text-white mb-2">{{$hotel->location["city"]}}</p>
+                    <p class="text-sm mb-4 text-white">{{$hotel["description"]}}</p>
                     <div class="flex justify-between items-center">
                         <div>
-                            <span class="font-bold text-darkgray text-lg">{{$hotel->room[0]["price_per_night"]}} DH</span>
-                            <span class="text-darkgray">/night</span>
+                            <span class="font-bold text-white text-lg">{{$hotel->room[0]["price_per_night"]}} DH</span>
+                            <span class="text-white">/night</span>
                         </div>
                         <a href="/hotel-details/{{$hotel['id']}}" class="bg-primary hover:bg-primary/90 text-white px-4 py-1.5 text-sm font-medium rounded-md transition">
                             Details
