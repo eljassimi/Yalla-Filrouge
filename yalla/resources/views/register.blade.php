@@ -3,76 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up with Yalla</title>
+    <title>Yalla Booking - Transport</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#A22C29',
+                        darkgray: '#1F1F1F',
+                        lightgray: '#B9BAA3',
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        @font-face {
-            font-family: 'Publica Sans Round';
-            src: url('path-to-your-font/PublicaSansRound.woff2') format('woff2');
-        }
         body {
-            font-family: 'Publica Sans Round', sans-serif;
-            background: linear-gradient(to right, #D6D5C9, #B9BAA3);
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        .custom-button {
-            clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 10px 100%, 0 50%);
-        }
-
-        .custom-color {
-            background-color: #B9BAA3;
-        }
-
-        .custom-color-hover:hover {
-            background-color: #a8a994;
-        }
-
-        .custom-checkbox {
-            appearance: none;
-            width: 30px;
-            height: 24px;
-            border: 2px solid #B9BAA3;
-            background-color: transparent;
-            cursor: pointer;
-            transform: rotate(45deg); /* Rotates the checkbox */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .custom-checkbox:checked::after {
-            content: '✓';
-            position: absolute;
-            color: #B9BAA3;
-            font-size: 16px;
-            transform: rotate(-45deg); /* Aligns the checkmark properly */
-        }
-
-        .toast {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.5s, visibility 0.5s;
-        }
-
-        .toast.show {
-            opacity: 1;
-            visibility: visible;
+            font-family: 'Poppins', sans-serif;
         }
     </style>
 </head>
-<body>
+<body class="bg-lightgray">
 <div class="flex items-center justify-center relative min-h-screen pt-12 pb-12">
     <img src="assets/elements/arabesque.png" class="absolute left-0 bottom-10 w-46 opacity-25">
     <img src="assets/elements/arabesque.png" class="absolute right-0 top-10 w-46 opacity-25">
@@ -116,7 +73,7 @@
 
             <div class="space-y-4 mt-6">
                 <!-- Location Permission -->
-                <button type="button" onclick="getLocation()" class="w-full bg-[#B9BAA3] text-white py-3 px-6 font-medium transition-colors mt-6">Get My Location</button>
+                <button type="button" onclick="getLocation()" class="w-full bg-[#B9BAA3] text-gray-900 py-3 px-6 font-medium transition-colors mt-6">Get My Location</button>
                 <input type="hidden" name="latitude" id="latitude">
                 <input type="hidden" name="longitude" id="longitude">
                 <input type="hidden" name="city" id="city">
@@ -141,7 +98,7 @@
                 </div>
             </div>
 
-            <button type="submit" class="custom-button w-full custom-color text-gray-900 py-3 px-6 font-medium custom-color-hover transition-colors mt-6">
+            <button type="submit" class="custom-button w-full bg-lightgray text-gray-900 py-3 px-6 font-medium custom-color-hover transition-colors mt-6">
                 Create
             </button>
 

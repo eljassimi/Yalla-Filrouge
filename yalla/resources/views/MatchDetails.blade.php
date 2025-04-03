@@ -3,59 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yalla Match Details</title>
+    <title>Yalla Booking - Transport</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
                     colors: {
-                        background: "#1f1f1f",
-                        foreground: "#ffffff",
-                        card: "#0a0a0a",
-                        primary: "#a22c29",
-                        "primary-hover": "#8a2624",
-                        accent: "#b9baa3",
-                        border: "#313131",
-                        muted: "#3b3b3b",
+                        primary: '#A22C29',
+                        darkgray: '#1F1F1F',
+                        lightgray: '#B9BAA3',
                     }
                 }
             }
         }
     </script>
-    <style>()
+    <style>
         body {
-            background-color: #1f1f1f;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-        }
-
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #1f1f1f;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #3b3b3b;
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #a22c29;
+            font-family: 'Poppins', sans-serif;
         }
     </style>
 </head>
-<body class="bg-background min-h-screen flex flex-col font-['Poppins']">
+<body class="bg-darkgray min-h-screen flex flex-col font-['Poppins']">
 
 <x-navbar />
-
-<main class="flex-grow">
-    <div class="bg-accent p-6 shadow-md relative overflow-hidden">
+<div class="bg-lightgray pt-24 p-6 shadow-md relative overflow-hidden">
         <div class="container mx-auto relative z-10">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
                 <div>
@@ -94,9 +71,10 @@
         <div class="absolute bottom-0 left-0 w-24 h-24 bg-primary opacity-5 rounded-tr-full"></div>
     </div>
 
+<main class="flex-grow">
     <div class="container mx-auto px-4 py-8">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div class="lg:col-span-2 bg-accent p-4 rounded shadow-lg">
+            <div class="lg:col-span-2 bg-lightgray p-4 rounded shadow-lg">
                 <div class="relative">
                     <div class="w-full aspect-[4/3] rounded  relative overflow-hidden ">
                         <img alt="feild" class="w-[90%] m-auto " src="/assets/Terrain/terran.png">
@@ -109,7 +87,7 @@
                 </div>
             </div>
 
-            <div class="bg-accent p-6 rounded shadow-lg relative overflow-hidden ">
+            <div class="bg-lightgray p-6 rounded shadow-lg relative overflow-hidden ">
                 <h2 class="text-2xl font-bold mb-6 text-background">Ticket Summary</h2>
                 <form action="/ticketpurshase" method="POST">
                     @csrf

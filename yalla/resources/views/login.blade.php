@@ -3,36 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In with Yalla</title>
+    <title>Yalla Booking - Transport</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#A22C29',
+                        darkgray: '#1F1F1F',
+                        lightgray: '#B9BAA3',
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        @font-face {
-            font-family: 'Publica Sans Round';
-            src: url('path-to-your-font/PublicaSansRound.woff2') format('woff2');
-        }
         body {
-            font-family: 'Publica Sans Round', sans-serif;
-            background: linear-gradient(to right, #D6D5C9, #B9BAA3);
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        .custom-button {
-            clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 10px 100%, 0 50%);
-        }
-
-
-                                                      .custom-color {
-            background-color: #B9BAA3;
-        }
-
-        .custom-color-hover:hover {
-            background-color: #a8a994;
+            font-family: 'Poppins', sans-serif;
         }
     </style>
 </head>
-<body>
+<body class="bg-lightgray">
 <div class="min-h-screen flex items-center justify-center relative">
     <img src="assets/elements/arabesque.png" class="absolute left-0 bottom-10 w-46 opacity-25">
     <img src="assets/elements/arabesque.png" class="absolute right-0 top-10 w-46 opacity-25">
@@ -58,16 +55,13 @@
                 </div>
             </div>
 
-            <button type="submit" class="custom-button w-full custom-color text-gray-900 py-3 px-6 font-medium custom-color-hover transition-colors">
+            <button type="submit" class="w-full bg-lightgray text-gray-900 py-3 px-6 font-medium custom-color-hover transition-colors">
                 Log In
             </button>
         </form>
 
             <div class="text-center text-sm mt-4">
                 <p class="text-white">Don't have an account? <a href="/register"  class="text-[#B9BAA3] hover:text-[#a8a994]">Click here to Sign Up</a></p>
-                <p class="text-white">If you have registered previously using another method please</p>
-                <p class="text-white"> create a new Yalla account using the same email address</p>
-                <p class="text-white">to retrieve your data <a href="/register" class="text-[#B9BAA3] hover:text-[#a8a994]">Click here to Sign Up</a></p>
             </div>
     </div>
 </div>
