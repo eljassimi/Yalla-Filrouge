@@ -68,7 +68,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             @foreach($transports as $transport )
                 <div class="shadow-xl rounded-lg overflow-hidden transform transition-transform hover:-translate-y-2">
-                    <div class="h-56 bg-gray-800 relative">
+                    <div class="h-56 bg-lightgray relative">
                         <img src="/{{$transport["logo"]}}" alt=" Logo" class="w-full h-full object-contain">
                     </div>
                     <div class="p-4">

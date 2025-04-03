@@ -1,6 +1,6 @@
 <x-head />
 
-<body class="min-h-screen flex flex-col text-white font-['Poppins']">
+<body class="min-h-screen bg-darkgray flex flex-col text-white font-['Poppins']">
 <x-navbar />
 <div class="pt-24 bg-lightgray py-12 px-6 relative overflow-hidden">
     <div class="max-w-4xl mx-auto relative z-10">
@@ -80,7 +80,7 @@
         <div class="bg-darkgray rounded-lg shadow-xl p-6 mb-8 fade-in">
             <div class="flex flex-col md:flex-row items-start gap-6">
                 <div class="w-full md:w-1/4 flex justify-center">
-                    <div class="w-48 h-48 bg-gray-800 rounded-lg flex items-center justify-center overflow-hidden">
+                    <div class="w-48 h-48 bg-lightgray rounded-lg flex items-center justify-center overflow-hidden">
                         <img id="companyLogo" src="/{{$transport["logo"]}}" alt="Company Logo" class="w-full h-full object-contain p-4">
                     </div>
                 </div>
@@ -91,11 +91,11 @@
                     </div>
                     <p class="text-gray-300 mb-4">{{$transport["description"]}}</p>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="bg-gray-800/50 p-4 rounded-lg">
+                        <div class="p-4 rounded-lg">
                             <h3 class="text-sm text-gray-400 mb-1">Price per KM</h3>
                             <p id="pricePerKm" class="text-2xl font-bold">{{$transport["price_per_km"]}} DH</p>
                         </div>
-                        <div class="bg-gray-800/50 p-4 rounded-lg">
+                        <div class=" p-4 rounded-lg">
                             <h3 class="text-sm text-gray-400 mb-1">Rating</h3>
                             <div class="flex items-center">
                                 <div class="flex">
@@ -135,7 +135,7 @@
                         </svg>
                         Travel Details
                     </h2>
-                    <div class="flex flex-col md:flex-row items-center justify-between mb-6 bg-gray-800/50 p-4 rounded-lg">
+                    <div class="flex flex-col md:flex-row items-center justify-between mb-6 p-4 rounded-lg">
                         <div class="text-center md:text-left mb-4 md:mb-0">
                             <h3 class="text-sm text-gray-400">From</h3>
                             <p id="startLocation" class="text-lg font-medium">{{Auth::user()->location->city}}</p>
@@ -155,15 +155,15 @@
                         </div>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                        <div class="bg-gray-800/50 p-4 rounded-lg">
+                        <div class=" p-4 rounded-lg">
                             <h3 class="text-sm text-gray-400 mb-1">Distance</h3>
                             <p id="distance" class="text-xl font-bold">240 KM</p>
                         </div>
-                        <div class="bg-gray-800/50 p-4 rounded-lg">
+                        <div class=" p-4 rounded-lg">
                             <h3 class="text-sm text-gray-400 mb-1">Total Price</h3>
                             <p id="totalPrice" class="text-xl font-bold">360 DH</p>
                         </div>
-                        <div class="bg-gray-800/50 p-4 rounded-lg">
+                        <div class=" p-4 rounded-lg">
                             <h3 class="text-sm text-gray-400 mb-1">Est. Travel Time</h3>
                             <p id="travelTime" class="text-xl font-bold">3h 15min</p>
                         </div>
@@ -187,7 +187,7 @@
                         @csrf
                         <div class="mb-4">
                             <label for="departureDate" class="block text-sm text-gray-400 mb-1">Select Date</label>
-                            <input type="date" name="booking_date" id="departureDate" class="w-full bg-gray-800 border border-gray-700 rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary">
+                            <input type="date" name="booking_date" id="departureDate" class="w-full border bg-black border-gray-700 rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary">
                         </div>
                         <input id="form_distance" type="hidden" name="distance_km" value="">
                         <input id="form_total_price" type="hidden" name="total_price" value="">
@@ -214,15 +214,15 @@
                     Policies & Information
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div class="bg-gray-800/50 p-4 rounded-lg">
+                    <div class=" p-4 rounded-lg">
                         <h3 class="font-medium mb-2">Baggage Policy</h3>
                         <p class="text-gray-300 text-sm">Each passenger is allowed one piece of luggage (max 20kg) and one carry-on bag. Additional luggage may incur extra charges.</p>
                     </div>
-                    <div class="bg-gray-800/50 p-4 rounded-lg">
+                    <div class=" p-4 rounded-lg">
                         <h3 class="font-medium mb-2">Cancellation Policy</h3>
                         <p class="text-gray-300 text-sm">Free cancellation up to 24 hours before departure. 50% refund for cancellations between 24 and 12 hours. No refund for later cancellations.</p>
                     </div>
-                    <div class="bg-gray-800/50 p-4 rounded-lg">
+                    <div class=" p-4 rounded-lg">
                         <h3 class="font-medium mb-2">Boarding Information</h3>
                         <p class="text-gray-300 text-sm">Please arrive at least 30 minutes before departure. Boarding closes 10 minutes before the scheduled departure time.</p>
                     </div>
