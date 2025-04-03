@@ -98,7 +98,10 @@
             </div>
             @endforeach
         </div>
-
+        <!-- pagination -->
+        <div class="flex justify-center mt-8">
+            {{ $hotels->links('vendor.pagination.tailwind') }}
+        </div>
     </div>
 </main>
 
