@@ -14,7 +14,7 @@ use App\Models\TransportService;
 class TransportController extends Controller
 {
     public function index(){
-        $transports = TransportService::all();
+        $transports = TransportService::paginate(6);
         return view('transports', compact('transports'));
     }
     public function show($id) {

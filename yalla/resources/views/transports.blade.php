@@ -73,13 +73,13 @@
                     </div>
                     <div class="p-4">
                         <div class="flex justify-between items-start mb-1 text-darkgray">
-                            <h3 class="text-lg font-bold">{{$transport["name"]}}</h3>
+                            <h3 class="text-lg text-white font-bold">{{$transport["name"]}}</h3>
                         </div>
-                        <p class="text-sm text-darkgray mb-2">{{$transport["description"]}}</p>
+                        <p class="text-sm text-white mb-2">{{$transport["description"]}}</p>
                         <div class="flex justify-between items-center">
                             <div>
-                                <span class="font-bold text-darkgray text-lg">{{$transport["price_per_km"]}}</span>
-                                <span class="text-darkgray">/trip</span>
+                                <span class="font-bold text-white text-lg">{{$transport["price_per_km"]}}</span>
+                                <span class="text-white">/trip</span>
                             </div>
                             <a href="/transport-details/{{$transport["id"]}}" class="bg-primary hover:bg-primary/90 text-white px-4 py-1.5 text-sm font-medium rounded-md transition">
                                 Details
@@ -88,6 +88,10 @@
                     </div>
                 </div>
             @endforeach
+        </div>
+        <!-- pagination -->
+        <div class="flex justify-center mt-8">
+            {{ $transports->links('vendor.pagination.tailwind') }}
         </div>
     </div>
 </main>
