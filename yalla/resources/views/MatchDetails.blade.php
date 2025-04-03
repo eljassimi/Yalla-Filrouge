@@ -119,6 +119,7 @@
 </main>
 
 
+<x-footer />
 <script>
 
     function updatePrice() {
