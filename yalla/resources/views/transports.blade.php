@@ -47,6 +47,7 @@
                         <div class="flex flex-col items-center">
                             <span class="text-white font-bold text-base mt-1">TRANSPORT</span>
                             <span class="text-primary text-xs font-medium">In Progress</span>
+                            <a href="/skip-transport" class="px-6 hover:bg-transparent hover:border border-primary py-2 rounded mt-2 bg-primary text-white">Skip</a>
                         </div>
                     </div>
 

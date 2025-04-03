@@ -53,6 +53,12 @@ class TransportController extends Controller
         $userSelection->update([
             'transport_booking_id' => $transport_booking->id,
         ]);
+        session(['skip_transport' => false]);
+        return redirect('/transports');
+    }
+
+    public function skipTransport(){
+        session(['skip_transport' => true]);
         return redirect('/transports');
     }
 

@@ -61,7 +61,7 @@ class HotelController extends Controller
             'check_in_date' => $request->check_in,
             'check_out_date' => $request->check_out,
         ]);
-
+        session(['hotel_skipped' => false]);
         return redirect('/transports');
     }
 

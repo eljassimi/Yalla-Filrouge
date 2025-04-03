@@ -36,6 +36,7 @@ Route::get('/skip-hotel',[HotelController::class,'skipHotel']);
 Route::get('/transports',[TransportController::class,'index']);
 Route::get('/transport-details/{id}',[TransportController::class,'show']);
 Route::post('/book-transport',[TransportController::class,'store']);
+Route::get('/skip-transport',[TransportController::class,'skipTransport']);
 
 
 
