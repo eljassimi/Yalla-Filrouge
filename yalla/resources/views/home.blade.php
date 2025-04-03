@@ -1,4 +1,5 @@
 <x-head />
+
 <body class=" bg-darkgray text-white font-['Poppins']">
     <!-- Header -->
     <x-navbar />
