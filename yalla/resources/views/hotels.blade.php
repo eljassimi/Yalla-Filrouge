@@ -101,5 +101,7 @@
 
     </div>
 </main>
+
+<x-footer />
 </body>
 </html>
