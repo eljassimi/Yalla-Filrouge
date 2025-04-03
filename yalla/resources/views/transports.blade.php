@@ -69,7 +69,7 @@
             @foreach($transports as $transport )
                 <div class="shadow-xl rounded-lg overflow-hidden transform transition-transform hover:-translate-y-2">
                     <div class="h-56 bg-gray-800 relative">
-                        <img src="{{$transport["logo"]}}" alt=" Logo" class="w-full h-full object-contain">
+                        <img src="/{{$transport["logo"]}}" alt=" Logo" class="w-full h-full object-contain">
                     </div>
                     <div class="p-4">
                         <div class="flex justify-between items-start mb-1 text-darkgray">
@@ -78,8 +78,7 @@
                         <p class="text-sm text-white mb-2">{{$transport["description"]}}</p>
                         <div class="flex justify-between items-center">
                             <div>
-                                <span class="font-bold text-white text-lg">{{$transport["price_per_km"]}}</span>
-                                <span class="text-white">/trip</span>
+                                <span class="font-bold text-red-600 bg-red-500 bg-opacity-20 px-4 rounded-xl">Bus</span>
                             </div>
                             <a href="/transport-details/{{$transport["id"]}}" class="bg-primary hover:bg-primary/90 text-white px-4 py-1.5 text-sm font-medium rounded-md transition">
                                 Details
