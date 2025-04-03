@@ -1,5 +1,5 @@
 <x-head />
-<body class="min-h-screen flex flex-col text-white font-['Poppins']">
+<body class="min-h-screen bg-darkgray flex flex-col text-white font-['Poppins']">
 <!-- Header -->
 <x-navbar />
 <div class="pt-24 bg-lightgray py-12 px-6 relative overflow-hidden">
