@@ -68,8 +68,8 @@
 <main class="container mx-auto px-4 py-8">
 
     <div class="space-y-4">
-        <div class="bg-[#0a0a0a] w-[70%] mx-auto rounded p-4">
             @foreach($matches as $match)
+        <div class="bg-[#0a0a0a] w-[70%] mx-auto rounded p-4">
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-4">
                     <img class="w-[80px] h-auto" src="{{$match["flag_team_1"]}}" alt="logo">
@@ -93,30 +93,13 @@
                     Get Your Ticket
                 </a>
             </div>
+        </div>
             @endforeach
-        </div>
 
     </div>
-   <div class="flex justify-center mt-8">
-        <div class="inline-flex bg-[#b9baa3]/80 rounded">
-            <button class="px-4 py-2 text-white hover:bg-[#3b3b3b]">
-                Previous
-            </button>
-            <button class="px-4 py-2 text-white bg-[#b9baa3]">
-                1
-            </button>
-            <button class="px-4 py-2 text-white hover:bg-[#3b3b3b]">
-                2
-            </button>
-            <button class="px-4 py-2 text-white hover:bg-[#3b3b3b]">
-                3
-            </button>
-            <button class="px-4 py-2 text-white hover:bg-[#3b3b3b]">
-                Next
-            </button>
-        </div>
+    <div class="flex justify-center mt-8">
+        {{ $matches->links('vendor.pagination.tailwind') }}
     </div>
-
 </main>
 </body>
 </html>
