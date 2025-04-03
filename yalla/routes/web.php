@@ -31,6 +31,7 @@ Route::post('/ticketpurshase',[EventController::class,'PurshaseEvent']);
 Route::get('/hotels',[HotelController::class,'index']);
 Route::get('/hotel-details/{id}',[HotelController::class,'hotelDetails']);
 Route::post('/bookingHotel',[HotelController::class,'booking']);
+Route::get('/skip-hotel',[HotelController::class,'skipHotel']);
 
 Route::get('/transports',[TransportController::class,'index']);
 Route::get('/transport-details/{id}',[TransportController::class,'show']);

@@ -65,4 +65,9 @@ class HotelController extends Controller
         return redirect('/transports');
     }
 
+    public function skipHotel(){
+        session(['hotel_skipped' => true]);
+        return redirect('/transports');
+    }
+
 }

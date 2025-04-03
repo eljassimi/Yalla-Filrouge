@@ -28,7 +28,11 @@
                         </div>
                         <div class="flex flex-col items-center">
                             <span class="text-white font-bold text-base mt-1">ACCOMMODATION</span>
+                            @if(session('hotel_skipped') == true)
+                            <span class="text-primary text-xs font-medium">Skipped</span>
+                            @else
                             <span class="text-primary text-xs font-medium">Done</span>
+                            @endif
                         </div>
                     </div>
 
