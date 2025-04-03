@@ -1,34 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yalla Booking - Transport</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'poppins': ['Poppins', 'sans-serif'],
-                    },
-                    colors: {
-                        primary: '#A22C29',
-                        darkgray: '#1F1F1F',
-                        lightgray: '#B9BAA3',
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-    </style>
-</head>
+<x-head />
+
 <body class="bg-lightgray">
 <div class="min-h-screen flex flex-col items-center justify-center relative pt-12 pb-12">
     <img src="assets/elements/arabesque.png" class="absolute left-0 bottom-10 w-46 opacity-25">
