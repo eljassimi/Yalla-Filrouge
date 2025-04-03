@@ -232,6 +232,8 @@
     </div>
 </main>
 
+<x-footer />
+
 @php
     use Illuminate\Support\Facades\Auth;
     $userLocation = Auth::user()->location->coordinates;
