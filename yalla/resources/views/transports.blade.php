@@ -31,23 +31,8 @@
 </head>
 <body class="min-h-screen flex flex-col text-white font-['Poppins']">
 <!-- Header -->
-<header class="fixed w-full top-0 z-50 backdrop-blur-sm border-b border-gray-800">
-    <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-        <div class="flex items-center w-[150px]">
-            <a href="/"><img class="w-full h-auto" src="/assets/logo/Yalla2.png" alt="logo"></a>
-        </div>
-        <nav class="hidden md:flex items-center gap-8">
-            <a href="/tickets" class="text-white hover:text-primary font-medium">Tickets</a>
-            <a href="#" class="text-white hover:text-primary font-medium">Events</a>
-            <a href="#" class="text-white hover:text-primary font-medium">Transport</a>
-            <a href="#" class="text-white hover:text-primary font-medium">Booking</a>
-        </nav>
-        <button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-md text-sm transition">
-            Logout
-        </button>
-    </div>
-</header>
-    <div class="pt-24 bg-lightgray py-12 px-6 relative overflow-hidden">
+<x-navbar />
+<div class="pt-24 bg-lightgray py-12 px-6 relative overflow-hidden">
         <div class="max-w-4xl mx-auto relative z-10">
             <div class="flex flex-col md:flex-row items-center justify-between mb-8">
                 <div class="flex items-center justify-between w-full">

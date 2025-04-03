@@ -3,22 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yalla Match Details</title>
+    <title>Yalla Booking - Transport</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
                     colors: {
-                        background: "#1f1f1f",
-                        foreground: "#ffffff",
-                        card: "#0a0a0a",
-                        primary: "#a22c29",
-                        "primary-hover": "#8a2624",
-                        accent: "#b9baa3",
-                        border: "#313131",
-                        muted: "#3b3b3b",
+                        primary: '#A22C29',
+                        darkgray: '#1F1F1F',
+                        lightgray: '#B9BAA3',
                     }
                 }
             }
@@ -26,37 +25,15 @@
     </script>
     <style>
         body {
-            background-color: #1f1f1f;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-        }
-
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #1f1f1f;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #3b3b3b;
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #a22c29;
+            font-family: 'Poppins', sans-serif;
         }
     </style>
 </head>
-<body class="font-['Poppins']">
+<body class="font-['Poppins'] bg-darkgray">
 <!-- Header/Navbar -->
 <x-navbar />
-
-<main class="container mx-auto px-4 py-8">
-    <!--Timeline -->
-    <div class="pt-24 bg-lightgray py-12 px-6 relative overflow-hidden mt-10 mb-10 bg-accent">
+<!--Timeline -->
+<div class="pt-24 bg-lightgray py-12 px-6 relative overflow-hidden">
         <div class="max-w-4xl mx-auto relative z-10">
             <div class="flex flex-col md:flex-row items-center justify-between mb-8">
                 <div class="flex items-center justify-between w-full">
@@ -118,6 +95,7 @@
         </div>
     </div>
 
+<main class="container mx-auto px-4 py-8">
 
     <div class="space-y-4">
         <div class="bg-[#0a0a0a] w-[70%] mx-auto rounded p-4">
@@ -126,7 +104,7 @@
                 <div class="flex items-center space-x-4">
                     <img class="w-[80px] h-auto" src="{{$match["flag_team_1"]}}" alt="logo">
                     <div>
-                        <h3 class="text-xl font-semibold">{{$match["team_1_name"]}}</h3>
+                        <h3 class="text-xl text-white font-semibold">{{$match["team_1_name"]}}</h3>
                     </div>
                 </div>
                 <div class="flex flex-col align-center ">
@@ -136,7 +114,7 @@
 
                 <div class="flex items-center space-x-4">
                     <div>
-                        <h3 class="text-xl font-semibold text-right">{{$match["team_2_name"]}}</h3>
+                        <h3 class="text-xl text-white font-semibold text-right">{{$match["team_2_name"]}}</h3>
                     </div>
                     <img class="h-auto w-[80px]" src="{{$match["flag_team_2"]}}" alt="logo">
                 </div>

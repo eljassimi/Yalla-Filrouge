@@ -24,7 +24,7 @@
             }
         }
     </script>
-    <style>
+    <style>()
         body {
             background-color: #1f1f1f;
             color: #ffffff;
