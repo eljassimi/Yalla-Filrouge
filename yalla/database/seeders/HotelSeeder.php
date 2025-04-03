@@ -9,77 +9,57 @@ class HotelSeeder extends Seeder
 {
     public function run()
     {
-
         $types = ['Standard', 'Royal', 'Deluxe', 'Suite'];
 
         foreach ($types as $type) {
-            DB::table('room_types')->insert([
+            DB::table('room_types')->insertOrIgnore([
                 'type' => $type,
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);
         }
 
-        $hotel_1 = DB::table('hotels')->insertGetId([
-            'location_id' => 1,
-            'name' => 'Stay Grand Hotel',
-            'description' => 'A luxurious hotel with exceptional services and views.',
-            'main_image' => 'stay/stay1.png',
-            'gallery_images' => json_encode(['stay/stay2.png', 'stay/stay3.png']),
-            'amenities' => json_encode(['WiFi', 'Smart TV', 'Free parking', 'Swimming Pool','Full Kitchen']),
-            'rooms' => 10,
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
+        $hotels = [
+            ['location_id' => 1, 'name' => 'Stay Grand Hotel', 'image' => 'stay/stay1.png'],
+            ['location_id' => 1, 'name' => 'Stay Royal Palace', 'image' => 'stay/stay2.png'],
+            ['location_id' => 2, 'name' => 'Ocean View Retreat', 'image' => 'stay/stay1.png'],
+            ['location_id' => 2, 'name' => 'Seaside Resort', 'image' => 'stay/stay1.png'],
+            ['location_id' => 3, 'name' => 'Mountain Escape', 'image' => 'stay/stay1.png'],
+            ['location_id' => 3, 'name' => 'Alpine Lodge', 'image' => 'stay/stay1.png'],
+            ['location_id' => 4, 'name' => 'Urban Chic Hotel', 'image' => 'stay/stay1.png'],
+            ['location_id' => 4, 'name' => 'Metropolitan Suites', 'image' => 'stay/stay1.png'],
+        ];
 
-        $hotel_2 = DB::table('hotels')->insertGetId([
-            'location_id' => 1,
-            'name' => 'Stay Royal Palace',
-            'description' => 'An exclusive royal experience with world-class amenities.',
-            'main_image' => 'stay/stay2.png',
-            'gallery_images' => json_encode(['stay/stay3.png', 'stay/stay4.png']),
-            'amenities' => json_encode(['WiFi', 'Smart TV', 'Gym', 'Swimming Pool','Full Kitchen']),
-            'rooms' => 5,
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
+        $amenitiesList = [
+            ['WiFi', 'Smart TV', 'Gym', 'Swimming Pool', 'Full Kitchen'],
+            ['WiFi', 'Gym', 'Spa', 'Rooftop Bar'],
+            ['WiFi', 'Sea View', 'Private Beach', 'Infinity Pool'],
+            ['WiFi', 'Mountain View', 'Fireplace', 'Hiking Trails'],
+        ];
 
+        foreach ($hotels as $index => $hotel) {
+            $hotel_id = DB::table('hotels')->insertGetId([
+                'location_id' => $hotel['location_id'],
+                'name' => $hotel['name'],
+                'description' => 'A luxury hotel offering the best experience.',
+                'main_image' => $hotel['image'],
+                'gallery_images' => json_encode([$hotel['image'], str_replace('1', '2', $hotel['image'])]),
+                'amenities' => json_encode($amenitiesList[$index % count($amenitiesList)]),
+                'rooms' => rand(5, 15),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
 
-        DB::table('rooms')->insert([
-            'hotel_id' => $hotel_1,
-            'room_type_id' => 1,
-            'price_per_night' => 100,
-            'number_of_rooms' => 5,
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
-
-
-        DB::table('rooms')->insert([
-            'hotel_id' => $hotel_1,
-            'room_type_id' => 2,
-            'price_per_night' => 200,
-            'number_of_rooms' => 5,
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
-
-        DB::table('rooms')->insert([
-            'hotel_id' => $hotel_2,
-            'room_type_id' => 1,
-            'price_per_night' => 150,
-            'number_of_rooms' => 5,
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
-
-        DB::table('rooms')->insert([
-            'hotel_id' => $hotel_2,
-            'room_type_id' => 2,
-            'price_per_night' => 250,
-            'number_of_rooms' => 5,
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
+            for ($i = 1; $i <= 2; $i++) {
+                DB::table('rooms')->insert([
+                    'hotel_id' => $hotel_id,
+                    'room_type_id' => $i,
+                    'price_per_night' => rand(100, 300),
+                    'number_of_rooms' => rand(3, 7),
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ]);
+            }
+        }
     }
 }
