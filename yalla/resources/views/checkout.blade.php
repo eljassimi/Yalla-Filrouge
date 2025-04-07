@@ -71,7 +71,7 @@
                 <div class="w-full md:w-3/5 p-6 md:p-8">
                     <h2 class="text-xl font-bold mb-6">Payment Details</h2>
 
-                    <form id="payment-form">
+                    <form id="payment-form" action="/payement" method="POST">
                         <!-- Customer Information -->
                         <div class="mb-6 space-y-4">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
