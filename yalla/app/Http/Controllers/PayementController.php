@@ -60,4 +60,32 @@ class PayementController extends Controller
         return redirect($session->url);
     }
 
+    public function success()
+    {
+        \Stripe\Stripe::setApiKey(config('services.stripe.secret'));
+
+        $sessionId = session('stripe_session_id');
+
+        if (!$sessionId) {
+            abort(403, 'Unauthorized access');
+        }
+
+        $stripeSession = \Stripe\Checkout\Session::retrieve($sessionId);
+
+        if ($stripeSession->payment_status === 'paid') {
+            $userSelection = userSelections::where('user_id', auth()->id())->first();
+
+            if ($userSelection && !$userSelection->confirmed) {
+                $userSelection->confirmed = true;
+                $userSelection->save();
+            }
+
+            session()->forget('stripe_session_id');
+            return view('payment.success');
+        } else {
+            abort(403, 'Payment not completed.');
+        }
+    }
+
+
 }
