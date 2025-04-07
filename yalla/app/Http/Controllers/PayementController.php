@@ -56,6 +56,8 @@ class PayementController extends Controller
             'cancel_url' => url('/cancel'),
         ]);
 
+        session(['stripe_session_id' => $session->id]);
         return redirect($session->url);
     }
+
 }
