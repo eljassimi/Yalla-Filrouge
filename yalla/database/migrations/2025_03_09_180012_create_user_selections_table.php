@@ -17,6 +17,7 @@ return new class extends Migration {
             $table->date('check_in_date')->nullable();
             $table->date('check_out_date')->nullable();
             $table->foreignId('transport_booking_id')->nullable()->constrained()->onDelete('set null');
+            $table->float('transport_price')->nullable();
             $table->boolean('confirmed')->default(false);
             $table->timestamps();
         });

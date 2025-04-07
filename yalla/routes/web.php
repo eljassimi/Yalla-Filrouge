@@ -38,5 +38,7 @@ Route::get('/transport-details/{id}',[TransportController::class,'show']);
 Route::post('/book-transport',[TransportController::class,'store']);
 Route::get('/skip-transport',[TransportController::class,'skipTransport']);
 
+Route::view('payement','payement');
+
 
 

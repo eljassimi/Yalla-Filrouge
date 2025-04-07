@@ -51,6 +51,7 @@ class TransportController extends Controller
             return redirect()->back()->withErrors(['error' => 'User selection not found.']);
         }
         $userSelection->update([
+            'transport_price' => $attributes['total_price'],
             'transport_booking_id' => $transport_booking->id,
         ]);
         session(['skip_transport' => false]);

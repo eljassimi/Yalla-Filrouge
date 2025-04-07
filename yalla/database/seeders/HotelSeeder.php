@@ -26,8 +26,8 @@ class HotelSeeder extends Seeder
             ['location_id' => 2, 'name' => 'Seaside Resort', 'image' => 'stay/stay1.png'],
             ['location_id' => 3, 'name' => 'Mountain Escape', 'image' => 'stay/stay1.png'],
             ['location_id' => 3, 'name' => 'Alpine Lodge', 'image' => 'stay/stay1.png'],
-            ['location_id' => 4, 'name' => 'Urban Chic Hotel', 'image' => 'stay/stay1.png'],
-            ['location_id' => 4, 'name' => 'Metropolitan Suites', 'image' => 'stay/stay1.png'],
+            ['location_id' => 2, 'name' => 'Urban Chic Hotel', 'image' => 'stay/stay1.png'],
+            ['location_id' => 2, 'name' => 'Metropolitan Suites', 'image' => 'stay/stay1.png'],
         ];
 
         $amenitiesList = [

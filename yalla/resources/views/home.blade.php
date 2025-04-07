@@ -250,18 +250,8 @@
         </h2>
 
         <div class="flex flex-col md:flex-row items-center bg-lightgray rounded-2xl overflow-hidden shadow-2xl relative">
-            <!-- Decorative overlay pattern -->
-            <div class="absolute inset-0 opacity-5">
-                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                    <pattern id="moroccanPattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-                        <path d="M0,20 L20,0 L40,20 L20,40 Z" fill="none" stroke="#000" stroke-width="1" />
-                    </pattern>
-                    <rect width="100%" height="100%" fill="url(#moroccanPattern)" />
-                </svg>
-            </div>
-
             <div class="w-full md:w-1/2 mb-8 md:mb-0 flex justify-center relative">
-                <!-- Phone mockup with glow effect -->
+
                 <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-primary/30 rounded-full blur-3xl"></div>
                 <img src="assets/elements/mobileApp.png" alt="Yalla Mobile App" class="w-3/5 md:w-2/3 max-w-xs relative z-10 drop-shadow-xl transform transition-all duration-500 hover:scale-105">
             </div>
