@@ -40,6 +40,6 @@ Route::post('/book-transport',[TransportController::class,'store']);
 Route::get('/skip-transport',[TransportController::class,'skipTransport']);
 
 Route::get('checkout',[PayementController::class,'index']);
-Route::post('/payment', [PayementController::class, 'processPayment']);
+Route::post('/payment', [PayementController::class, 'checkout']);
 
 

@@ -17,9 +17,9 @@
         </div>
 
         <div class="bg-darkgray/80 backdrop-blur-sm border border-gray-800 rounded-xl shadow-2xl overflow-hidden">
-            <div class="flex flex-col md:flex-row">
+
                 <!-- Order Summary -->
-                <div class="w-full md:w-2/5 bg-gray-900/50 p-6 md:p-8">
+                <div class="w-full  bg-gray-900/50 p-6 md:p-8">
                     <h2 class="text-xl font-bold mb-6 pb-3 border-b border-gray-700">Order Summary</h2>
 
                     <div class="space-y-4 mb-6">
@@ -57,6 +57,17 @@
                         </div>
                     </div>
 
+                    <form action="/payment" method="post">
+                        @csrf
+                        <input type="hidden" name="total_price" value="{{$total_price}}">
+                    <button type="submit" id="submit-button" class="w-full bg-primary hover:bg-primary/90 text-white py-3 px-6 rounded-lg font-bold transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg flex items-center justify-center">
+                        <span>Pay {{$total_price}} DH</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
+                    </button>
+                    </form>
+
                     <div class="mt-6 bg-primary/10 p-4 rounded-lg">
                         <div class="flex items-start">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -65,104 +76,14 @@
                             <p class="text-sm text-lightgray">Your tickets will be available in the Yalla mobile app after successful payment.</p>
                         </div>
                     </div>
+
+                    <div class="flex items-center justify-center space-x-4 mt-6">
+                        <img src="https://cdn.cdnlogo.com/logos/v/69/visa.svg" alt="Visa" class="h-8">
+                        <img src="https://cdn.cdnlogo.com/logos/m/33/mastercard.svg" alt="Mastercard" class="h-8">
+                        <img src="https://cdn.cdnlogo.com/logos/a/57/american-express.svg" alt="American Express" class="h-8">
+                        <img src="https://cdn.cdnlogo.com/logos/p/26/paypal.svg" alt="PayPal" class="h-8">
+                    </div>
                 </div>
-
-                <!-- Payment Form -->
-                <div class="w-full md:w-3/5 p-6 md:p-8">
-                    <h2 class="text-xl font-bold mb-6">Payment Details</h2>
-
-                    <form id="payment-form" action="/payement" method="POST">
-                        <!-- Customer Information -->
-                        <div class="mb-6 space-y-4">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div>
-                                    <label for="first-name" class="block text-sm font-medium text-lightgray mb-1">First Name</label>
-                                    <input type="text" id="first-name" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all" required>
-                                </div>
-                                <div>
-                                    <label for="last-name" class="block text-sm font-medium text-lightgray mb-1">Last Name</label>
-                                    <input type="text" id="last-name" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all" required>
-                                </div>
-                            </div>
-                            <div>
-                                <label for="email" class="block text-sm font-medium text-lightgray mb-1">Email Address</label>
-                                <input type="email" id="email" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all" required>
-                            </div>
-                            <div>
-                                <label for="phone" class="block text-sm font-medium text-lightgray mb-1">Phone Number</label>
-                                <input type="tel" id="phone" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all" required>
-                            </div>
-                        </div>
-
-                        <!-- Stripe Elements -->
-                        <div class="mb-6 space-y-4">
-                            <div>
-                                <label for="card-element" class="block text-sm font-medium text-lightgray mb-1">Card Information</label>
-                                <div id="card-element" class="p-4 bg-gray-800 border border-gray-700 rounded-lg h-12 flex items-center">
-                                    <!-- Stripe.js will insert the card element here -->
-                                </div>
-                                <div id="card-errors" class="text-red-500 text-sm mt-2" role="alert"></div>
-                            </div>
-                        </div>
-
-                        <!-- Billing Address -->
-                        <div class="mb-8 space-y-4">
-                            <h3 class="text-md font-medium">Billing Address</h3>
-                            <div>
-                                <label for="address" class="block text-sm font-medium text-lightgray mb-1">Street Address</label>
-                                <input type="text" id="address" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all" required>
-                            </div>
-                            <div class="grid grid-cols-2 gap-4">
-                                <div>
-                                    <label for="city" class="block text-sm font-medium text-lightgray mb-1">City</label>
-                                    <input type="text" id="city" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all" required>
-                                </div>
-                                <div>
-                                    <label for="postal-code" class="block text-sm font-medium text-lightgray mb-1">Postal Code</label>
-                                    <input type="text" id="postal-code" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all" required>
-                                </div>
-                            </div>
-                            <div>
-                                <label for="country" class="block text-sm font-medium text-lightgray mb-1">Country</label>
-                                <select id="country" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all" required>
-                                    <option value="">Select Country</option>
-                                    <option value="US">United States</option>
-                                    <option value="CA">Canada</option>
-                                    <option value="GB">United Kingdom</option>
-                                    <option value="FR">France</option>
-                                    <option value="DE">Germany</option>
-                                    <option value="MA">Morocco</option>
-                                    <!-- Add more countries as needed -->
-                                </select>
-                            </div>
-                        </div>
-
-                        <!-- Terms and Payment Button -->
-                        <div class="space-y-6">
-                            <div class="flex items-start">
-                                <input id="terms" type="checkbox" class="w-4 h-4 mt-1 mr-2 accent-primary" required>
-                                <label for="terms" class="text-sm text-lightgray">
-                                    I agree to the <a href="#" class="text-primary hover:underline">Terms of Service</a> and <a href="#" class="text-primary hover:underline">Privacy Policy</a>
-                                </label>
-                            </div>
-
-                            <button type="submit" id="submit-button" class="w-full bg-primary hover:bg-primary/90 text-white py-3 px-6 rounded-lg font-bold transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg flex items-center justify-center">
-                                <span>Pay {{$total_price}} DH</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                                </svg>
-                            </button>
-
-                            <div class="flex items-center justify-center space-x-4">
-                                <img src="https://cdn.cdnlogo.com/logos/v/69/visa.svg" alt="Visa" class="h-8">
-                                <img src="https://cdn.cdnlogo.com/logos/m/33/mastercard.svg" alt="Mastercard" class="h-8">
-                                <img src="https://cdn.cdnlogo.com/logos/a/57/american-express.svg" alt="American Express" class="h-8">
-                                <img src="https://cdn.cdnlogo.com/logos/p/26/paypal.svg" alt="PayPal" class="h-8">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
         </div>
         <!-- Security Notice -->
         <div class="mt-8 text-center">
@@ -176,5 +97,103 @@
         </div>
     </div>
 </section>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+    // Initialize Stripe with your publishable key
+    const stripe = Stripe('{{ env("STRIPE_KEY") }}');
+
+    // Create an elements instance
+    const elements = stripe.elements();
+
+    const card = elements.create("card", {
+        style: {
+            base: {
+                color: "#ffffff",
+                fontSize: "16px",
+                fontFamily: "'Poppins', sans-serif",
+                "::placeholder": {
+                    color: "#cccccc"
+                }
+            },
+            invalid: {
+                color: "#ff6b6b"
+            }
+        }
+    });
+
+    // Create the card element
+    const cardElement = elements.create('card', {
+        style: style,
+        hidePostalCode: true // Since you're collecting it separately
+    });
+
+    // Wait for the DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+        // Mount the card element
+        cardElement.mount('#card-element');
+    });
+
+    // Handle real-time validation errors
+    cardElement.addEventListener('change', function(event) {
+        const displayError = document.getElementById('card-errors');
+        if (event.error) {
+            displayError.textContent = event.error.message;
+        } else {
+            displayError.textContent = '';
+        }
+    });
+
+
+    // Handle form submission
+    const form = document.getElementById('payment-form');
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        // Disable the submit button to prevent repeated clicks
+        document.getElementById('submit-button').disabled = true;
+
+        // Collect customer information
+        const billingDetails = {
+            name: document.getElementById('first-name').value + ' ' + document.getElementById('last-name').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            address: {
+                line1: document.getElementById('address').value,
+                city: document.getElementById('city').value,
+                postal_code: document.getElementById('postal-code').value,
+                country: document.getElementById('country').value,
+            }
+        };
+
+        // Create a token
+        const {token, error} = await stripe.createToken(cardElement, billingDetails);
+
+        if (error) {
+            // Show error message
+            const errorElement = document.getElementById('card-errors');
+            errorElement.textContent = error.message;
+            document.getElementById('submit-button').disabled = false;
+        } else {
+            // Send token to server
+            stripeTokenHandler(token);
+        }
+    });
+
+    // Function to handle the token and submit the form
+    function stripeTokenHandler(token) {
+        const form = document.getElementById('payment-form');
+
+        // Create hidden input for the token
+        const hiddenInput = document.createElement('input');
+        hiddenInput.setAttribute('type', 'hidden');
+        hiddenInput.setAttribute('name', 'stripeToken');
+        hiddenInput.setAttribute('value', token.id);
+        form.appendChild(hiddenInput);
+
+        // Submit the form
+        form.submit();
+    }
+</script>
 </body>
 </html>
