@@ -62,7 +62,7 @@
 
         <div class="relative">
             <div id="servicesCarousel" class="overflow-x-auto justify-center gap-8 lg:gap-16 carousel-container pb-4 flex snap-x snap-mandatory">
-                <!-- Service Card 1 - Hexagonal shape with clip-path -->
+
                 <div class="card-service min-w-[320px] h-[520px] relative shadow-lg transform transition-all duration-300 hover:-translate-y-3 hover:shadow-primary/30 group">
                     <div class="absolute inset-0 bg-gradient-to-br from-primary/40 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
                     <div class="card-shape absolute inset-0 overflow-hidden">
@@ -81,11 +81,10 @@
                     </div>
                 </div>
 
-                <!-- Service Card 2 - Rhombus shape with clip-path -->
                 <div class="card-service min-w-[320px] h-[520px] relative shadow-lg transform transition-all duration-300 hover:-translate-y-3 hover:shadow-primary/30 group">
                     <div class="absolute inset-0 bg-gradient-to-br from-primary/40 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
                     <div class="card-shape absolute inset-0 overflow-hidden">
-                        <img src="assets/elements/YallaStay.jpg" alt="Yalla Stay" class="w-full h-full object-cover">
+                        <img src="assets/elements/YallaStay7.jpg" alt="Yalla Stay" class="w-full h-full object-cover">
                     </div>
                     <div class="absolute bottom-0 p-6 bg-gradient-to-t from-darkgray via-darkgray/90 to-transparent z-20 w-full">
                         <div class="service-icon bg-primary/90 w-14 h-14 rounded-full flex items-center justify-center mb-4 -mt-10">
@@ -100,7 +99,6 @@
                     </div>
                 </div>
 
-                <!-- Service Card 3 - Curved shape with clip-path -->
                 <div class="card-service min-w-[320px] h-[520px] relative shadow-lg transform transition-all duration-300 hover:-translate-y-3 hover:shadow-primary/30 group">
                     <div class="absolute inset-0 bg-gradient-to-br from-primary/40 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
                     <div class="card-shape absolute inset-0 overflow-hidden">

@@ -257,8 +257,8 @@
     let totalPrice;
 
 
-    const map = L.map('map').setView([userLat, userLon], 10); // Adjust zoom level as needed
-
+    const map = L.map('map').setView([userLat, userLon], 10);
+    console.log("map : ", map);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
@@ -270,6 +270,7 @@
     const eventMarker = L.marker([eventLat, eventLon]).addTo(map)
         .bindPopup("<b>Event Location</b>")
         .openPopup();
+
 
     async function getRoute(userLat, userLon, eventLat, eventLon) {
         const apiKey = "5b3ce3597851110001cf6248b8005c6e48ee4d18a01bea4f9b109e7c";
@@ -315,6 +316,8 @@
         document.getElementById("form_distance").value = routeDistance;
         document.getElementById("form_total_price").value = totalPrice;
     }
+
+    console.log("WAAAAAAAAAA");
     getRoute(userLat, userLon, eventLat, eventLon);
 </script>
 </body>
