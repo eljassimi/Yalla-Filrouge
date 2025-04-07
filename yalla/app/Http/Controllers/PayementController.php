@@ -36,7 +36,26 @@ class PayementController extends Controller
         $request->validate([
             "total_price" => "required|numeric",
         ]);
+        Stripe::setApiKey(config('services.stripe.secret'));
+        $unitAmount = intval($request->total_price * 100);
 
+        $session = \Stripe\Checkout\Session::create([
+            'payment_method_types' => ['card'],
+            'line_items' => [[
+                'price_data' => [
+                    'currency' => 'mad',
+                    'product_data' => [
+                        'name' => 'Hotel Booking',
+                    ],
+                    'unit_amount' => $unitAmount,
+                ],
+                'quantity' => 1,
+            ]],
+            'mode' => 'payment',
+            'success_url' => url('/success'),
+            'cancel_url' => url('/cancel'),
+        ]);
+
+        return redirect($session->url);
     }
-
 }
