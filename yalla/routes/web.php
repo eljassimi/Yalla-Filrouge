@@ -3,6 +3,7 @@
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\HotelController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PayementController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\TransportController;
@@ -38,7 +39,6 @@ Route::get('/transport-details/{id}',[TransportController::class,'show']);
 Route::post('/book-transport',[TransportController::class,'store']);
 Route::get('/skip-transport',[TransportController::class,'skipTransport']);
 
-Route::view('payement','checkout');
-
+Route::get('checkout',[PayementController::class,'index']);
 
 
