@@ -87,5 +87,12 @@ class PayementController extends Controller
         }
     }
 
+    public function cancel()
+    {
+        session()->forget('stripe_session_id');
+        return view('payment.cancel');
+    }
+
+
 
 }
