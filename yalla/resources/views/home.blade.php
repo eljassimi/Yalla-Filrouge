@@ -33,7 +33,6 @@
 <section class="py-16 bg-darkgray relative overflow-hidden">
     <!-- Decorative elements -->
     <div class="absolute top-0 left-0 w-48 h-48 bg-primary/10 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
-    <div class="absolute bottom-0 right-0 w-64 h-64 bg-primary/10 rounded-full translate-x-1/2 translate-y-1/2 blur-3xl"></div>
 
     <div class="container mx-auto px-4">
         <div class="mb-12 relative">
@@ -118,7 +117,6 @@
                 </div>
             </div>
 
-            <!-- Interactive Dots Navigation -->
             <div class="flex justify-center mt-6">
                 <span class="dot bg-primary w-3 h-3 rounded-full mx-1 cursor-pointer transition-all hover:scale-125"></span>
                 <span class="dot bg-gray-400 w-3 h-3 rounded-full mx-1 cursor-pointer transition-all hover:scale-125 hover:bg-primary/50"></span>
@@ -130,15 +128,6 @@
 
 <!-- Events Section -->
 <section class="py-16 bg-darkgray relative overflow-hidden">
-    <!-- Decorative pattern -->
-    <div class="absolute top-0 right-0 opacity-5 -translate-y-1/4">
-        <svg width="400" height="400" viewBox="0 0 100 100">
-            <pattern id="pattern" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
-                <circle cx="5" cy="5" r="1" fill="white" />
-            </pattern>
-            <rect x="0" y="0" width="100" height="100" fill="url(#pattern)" />
-        </svg>
-    </div>
 
     <div class="container mx-auto px-4">
         <div class="mb-12 relative">
