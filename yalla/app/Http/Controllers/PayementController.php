@@ -25,7 +25,7 @@ class PayementController extends Controller
         $transport_price = $user_selections[0]->transport_price;
 
 
-        return view('checkout',compact('event','quantity','transport_price','total_price','hotel_price','days_stay'));
+        return view('checkout',compact('event','quantity','transport_price','total_price','hotel_price','days_stay','ticket_price'));
     }
 
 }

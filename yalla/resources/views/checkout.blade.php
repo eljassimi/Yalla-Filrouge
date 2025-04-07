@@ -24,27 +24,36 @@
 
                     <div class="space-y-4 mb-6">
                         <div class="flex justify-between">
-                            <span class="text-lightgray">Ticket Type</span>
-                            <span class="font-medium">World Cup VIP Package</span>
+                            <span class="text-lightgray">Event : </span>
+                            <span class="font-medium">{{$event["name"]}}</span>
                         </div>
                         <div class="flex justify-between">
                             <span class="text-lightgray">Quantity</span>
-                            <span class="font-medium">2</span>
+                            <span class="font-medium">{{$quantity}}</span>
                         </div>
                         <div class="flex justify-between">
                             <span class="text-lightgray">Price per ticket</span>
-                            <span class="font-medium">$250.00</span>
+                            <span class="font-medium">{{$ticket_price}} DH</span>
                         </div>
+                        @if($hotel_price != null)
                         <div class="flex justify-between">
-                            <span class="text-lightgray">Booking fee</span>
-                            <span class="font-medium">$25.00</span>
+                            <span class="text-lightgray">Total Hotel Price</span>
+                            <span class="font-medium">{{$hotel_price}} DH</span>
                         </div>
+                        @endif
+
+                        @if($transport_price != null)
+                        <div class="flex justify-between">
+                            <span class="text-lightgray">Transport Price</span>
+                            <span class="font-medium">{{$transport_price}} DH</span>
+                        </div>
+                        @endif
                     </div>
 
                     <div class="py-3 border-t border-gray-700">
                         <div class="flex justify-between text-lg font-bold">
                             <span>Total</span>
-                            <span class="text-primary">$525.00</span>
+                            <span class="text-primary">{{$total_price}} DH </span>
                         </div>
                     </div>
 
@@ -138,7 +147,7 @@
                             </div>
 
                             <button type="submit" id="submit-button" class="w-full bg-primary hover:bg-primary/90 text-white py-3 px-6 rounded-lg font-bold transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg flex items-center justify-center">
-                                <span>Pay $525.00</span>
+                                <span>Pay {{$total_price}} DH</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                                 </svg>
