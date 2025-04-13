@@ -316,8 +316,6 @@
         document.getElementById("form_distance").value = routeDistance;
         document.getElementById("form_total_price").value = totalPrice;
     }
-
-    console.log("WAAAAAAAAAA");
     getRoute(userLat, userLon, eventLat, eventLon);
 </script>
 </body>

@@ -42,4 +42,6 @@ Route::get('/skip-transport',[TransportController::class,'skipTransport']);
 Route::get('checkout',[PayementController::class,'index']);
 Route::post('/payment', [PayementController::class, 'checkout']);
 
+Route::view("/success","payment.success");
+
 

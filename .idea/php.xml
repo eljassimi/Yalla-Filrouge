@@ -239,6 +239,7 @@
       <path value="$PROJECT_DIR$/yalla/yalla/vendor/symfony/var-dumper" />
       <path value="$PROJECT_DIR$/yalla/yalla/vendor/symfony/yaml" />
       <path value="$PROJECT_DIR$/yalla/yalla/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/yalla/vendor/stripe/stripe-php" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />
