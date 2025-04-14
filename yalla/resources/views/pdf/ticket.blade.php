@@ -74,7 +74,17 @@
                 </div>
             </div>
         </div>
+        <div class="bg-primary/10 p-4 text-center text-xs text-lightgray">
+            <p>This ticket is subject to the terms and conditions of the event.</p>
+        </div>
 
+        <div class="absolute bottom-0 left-0 w-full h-1 bg-primary/50"></div>
+    </div>
+
+    <div class="mt-6 text-center">
+        <button class="bg-primary hover:bg-primary/90 text-white font-bold py-2 px-6 rounded-full transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2">
+            Print Ticket
+        </button>
     </div>
 
 </div>
