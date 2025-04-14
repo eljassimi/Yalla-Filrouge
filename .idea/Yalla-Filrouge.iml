@@ -237,6 +237,16 @@
       <excludeFolder url="file://$MODULE_DIR$/yalla/yalla/vendor/voku/portable-ascii" />
       <excludeFolder url="file://$MODULE_DIR$/yalla/yalla/vendor/webmozart/assert" />
       <excludeFolder url="file://$MODULE_DIR$/yalla/vendor/stripe/stripe-php" />
+      <excludeFolder url="file://$MODULE_DIR$/yalla/vendor/bacon/bacon-qr-code" />
+      <excludeFolder url="file://$MODULE_DIR$/yalla/vendor/barryvdh/laravel-dompdf" />
+      <excludeFolder url="file://$MODULE_DIR$/yalla/vendor/dasprid/enum" />
+      <excludeFolder url="file://$MODULE_DIR$/yalla/vendor/dompdf/dompdf" />
+      <excludeFolder url="file://$MODULE_DIR$/yalla/vendor/dompdf/php-font-lib" />
+      <excludeFolder url="file://$MODULE_DIR$/yalla/vendor/dompdf/php-svg-lib" />
+      <excludeFolder url="file://$MODULE_DIR$/yalla/vendor/endroid/qr-code" />
+      <excludeFolder url="file://$MODULE_DIR$/yalla/vendor/masterminds/html5" />
+      <excludeFolder url="file://$MODULE_DIR$/yalla/vendor/sabberworm/php-css-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/yalla/vendor/simplesoftwareio/simple-qrcode" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

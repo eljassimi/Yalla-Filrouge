@@ -240,6 +240,16 @@
       <path value="$PROJECT_DIR$/yalla/yalla/vendor/symfony/yaml" />
       <path value="$PROJECT_DIR$/yalla/yalla/vendor/theseer/tokenizer" />
       <path value="$PROJECT_DIR$/yalla/vendor/stripe/stripe-php" />
+      <path value="$PROJECT_DIR$/yalla/vendor/dompdf/dompdf" />
+      <path value="$PROJECT_DIR$/yalla/vendor/dompdf/php-svg-lib" />
+      <path value="$PROJECT_DIR$/yalla/vendor/dompdf/php-font-lib" />
+      <path value="$PROJECT_DIR$/yalla/vendor/barryvdh/laravel-dompdf" />
+      <path value="$PROJECT_DIR$/yalla/vendor/sabberworm/php-css-parser" />
+      <path value="$PROJECT_DIR$/yalla/vendor/masterminds/html5" />
+      <path value="$PROJECT_DIR$/yalla/vendor/bacon/bacon-qr-code" />
+      <path value="$PROJECT_DIR$/yalla/vendor/simplesoftwareio/simple-qrcode" />
+      <path value="$PROJECT_DIR$/yalla/vendor/dasprid/enum" />
+      <path value="$PROJECT_DIR$/yalla/vendor/endroid/qr-code" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />
