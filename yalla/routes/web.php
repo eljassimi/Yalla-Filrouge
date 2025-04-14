@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PayementController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\TicketController;
 use App\Http\Controllers\TransportController;
 use App\Http\Middleware\AuthMiddleware;
 use Illuminate\Support\Facades\Route;
@@ -43,7 +44,7 @@ Route::get('checkout',[PayementController::class,'index']);
 Route::post('/payment', [PayementController::class, 'checkout']);
 Route::get('/success',[PayementController::class,'success']);
 
-
+Route::get('/ticket/download/{payment}', [TicketController::class, 'downloadTicket'])->name('ticket.download');
 
 
 
