@@ -1,7 +1,8 @@
 <x-head />
-<body class="bg-darkgray min-h-screen flex items-center justify-center p-4 font-['Poppins']">
-<div class="max-w-md w-full my-4">
-    <div class="bg-darkgray text-white rounded-2xl overflow-hidden shadow-2xl relative transform transition-transform hover:scale-105">
+<body class="bg-darkgray min-h-screen items-center justify-center p-4 font-['Poppins']">
+<x-navbar />
+<div class="max-w-md w-full my-12 mx-auto">
+    <div id="ticket" class="bg-darkgray text-white rounded-2xl overflow-hidden shadow-2xl relative transform transition-transform hover:scale-105">
         <div class="absolute top-0 left-0 w-full h-2 bg-primary"></div>
 
         <!-- Ticket Header -->
@@ -88,5 +89,6 @@
     </div>
 
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </body>
 </html>
