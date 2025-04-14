@@ -9,17 +9,17 @@
             <div class="flex justify-between items-center">
                 <!-- Logo -->
                 <div class="flex items-center">
-                  <img src="assets/logo/Yalla2.png" class="w-24">
+                  <img src="/assets/logo/Yalla2.png" class="w-24">
                 </div>
 
                 <div class="text-lightgray text-sm">
-                    #YE2030-M7842
+                    #{{$payment->id}}
                 </div>
             </div>
         </div>
 
         <div class="px-6 pb-6">
-            <h2 class="text-2xl font-bold mb-1">Mawazine Festival</h2>
+            <h2 class="text-2xl font-bold mb-1">{{$event->name}}</h2>
             <p class="text-lightgray text-sm mb-4">Experience the rhythm of the world</p>
 
             <div class="relative py-4">
@@ -30,19 +30,19 @@
             <div class="grid grid-cols-2 gap-4 mb-6">
                 <div>
                     <p class="text-lightgray text-xs">DATE</p>
-                    <p class="font-semibold">JUL 05, 2030</p>
+                    <p class="font-semibold">{{$event_date}}</p>
                 </div>
                 <div>
                     <p class="text-lightgray text-xs">TIME</p>
-                    <p class="font-semibold">19:30 PM</p>
+                    <p class="font-semibold">{{$event_time}}</p>
                 </div>
                 <div>
                     <p class="text-lightgray text-xs">VENUE</p>
-                    <p class="font-semibold">OLM Souissi, Rabat</p>
+                    <p class="font-semibold">{{$event->location->city}},{{$event->location->address}}</p>
                 </div>
                 <div>
-                    <p class="text-lightgray text-xs">SEAT</p>
-                    <p class="font-semibold">VIP Zone A-12</p>
+                    <p class="text-lightgray text-xs">Event Type</p>
+                    <p class="font-semibold">{{$event->event_type}}</p>
                 </div>
             </div>
 
@@ -55,7 +55,7 @@
                     </div>
                     <div>
                         <p class="text-lightgray text-xs">ATTENDEE</p>
-                        <p class="font-bold text-lg">Mohammed Alami</p>
+                        <p class="font-bold text-lg">{{$user->name}}</p>
                     </div>
                 </div>
             </div>
@@ -69,7 +69,7 @@
                 </div>
 
                 <div class="w-1/2 flex flex-col items-center justify-center">
-                    <div id="qrcode" class="bg-white p-2 rounded-lg mb-2"></div>
+                    <img src="{{$qrCodeUrl}}" class="w-32">
                     <p class="text-xs text-center text-lightgray">Scan for entry</p>
                 </div>
             </div>
