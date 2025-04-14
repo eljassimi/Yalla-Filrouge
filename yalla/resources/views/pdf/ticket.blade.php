@@ -11,25 +11,22 @@
                 <div class="flex items-center">
                   <img src="assets/logo/Yalla2.png" class="w-24">
                 </div>
-                <!-- Ticket Number -->
+
                 <div class="text-lightgray text-sm">
                     #YE2030-M7842
                 </div>
             </div>
         </div>
 
-        <!-- Ticket Body -->
         <div class="px-6 pb-6">
             <h2 class="text-2xl font-bold mb-1">Mawazine Festival</h2>
             <p class="text-lightgray text-sm mb-4">Experience the rhythm of the world</p>
 
-            <!-- Decorative line -->
             <div class="relative py-4">
                 <div class="absolute left-0 w-full h-px bg-gray-700"></div>
                 <div class="absolute left-0 w-16 h-px bg-primary"></div>
             </div>
 
-            <!-- Ticket Details -->
             <div class="grid grid-cols-2 gap-4 mb-6">
                 <div>
                     <p class="text-lightgray text-xs">DATE</p>
@@ -49,7 +46,6 @@
                 </div>
             </div>
 
-            <!-- Attendee Info -->
             <div class="bg-gray-800/50 p-4 rounded-lg mb-6">
                 <div class="flex items-center">
                     <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-4">
@@ -64,7 +60,6 @@
                 </div>
             </div>
 
-            <!-- QR Code and Additional Info -->
             <div class="flex">
                 <div class="w-1/2 pr-4">
                     <div class="mt-4">
@@ -73,7 +68,6 @@
                     </div>
                 </div>
 
-                <!-- QR Code -->
                 <div class="w-1/2 flex flex-col items-center justify-center">
                     <div id="qrcode" class="bg-white p-2 rounded-lg mb-2"></div>
                     <p class="text-xs text-center text-lightgray">Scan for entry</p>
