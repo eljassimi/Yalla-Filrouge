@@ -45,7 +45,7 @@ class PayementController extends Controller
                 'price_data' => [
                     'currency' => 'mad',
                     'product_data' => [
-                        'name' => 'Hotel Booking',
+                        'name' => 'Yalla Payement',
                     ],
                     'unit_amount' => $unitAmount,
                 ],
@@ -73,6 +73,13 @@ class PayementController extends Controller
         $stripeSession = \Stripe\Checkout\Session::retrieve($sessionId);
 
         if ($stripeSession->payment_status === 'paid') {
+
+            \App\Models\Payment::create([
+                'amount' => $stripeSession->amount_total / 100,
+                'payment_date' => now(),
+                'status' => 'success'
+            ]);
+
             $userSelection = userSelections::where('user_id', auth()->id())->first();
 
             if ($userSelection && !$userSelection->confirmed) {
@@ -86,6 +93,7 @@ class PayementController extends Controller
             abort(403, 'Payment not completed.');
         }
     }
+
 
     public function cancel()
     {
