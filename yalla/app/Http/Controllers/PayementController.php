@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\Payment;
 use App\Models\TicketType;
 use App\Models\userSelections;
 use Illuminate\Http\Request;
@@ -72,9 +73,10 @@ class PayementController extends Controller
 
         $stripeSession = \Stripe\Checkout\Session::retrieve($sessionId);
 
+
         if ($stripeSession->payment_status === 'paid') {
 
-            \App\Models\Payment::create([
+            $payment = Payment::create([
                 'amount' => $stripeSession->amount_total / 100,
                 'payment_date' => now(),
                 'status' => 'success'
@@ -87,8 +89,9 @@ class PayementController extends Controller
                 $userSelection->save();
             }
 
+
             session()->forget('stripe_session_id');
-            return view('payment.success');
+            return view('payment.success', compact('payment'));
         } else {
             abort(403, 'Payment not completed.');
         }
