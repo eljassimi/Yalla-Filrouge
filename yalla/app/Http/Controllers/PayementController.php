@@ -91,7 +91,11 @@ class PayementController extends Controller
 
 
             session()->forget('stripe_session_id');
-            return view('payment.success', compact('payment'));
+
+            $eventId = session('event_id');
+            $event = Event::with('location')->find($eventId);
+
+            return view('payment.success', compact('payment', 'event'));
         } else {
             abort(403, 'Payment not completed.');
         }

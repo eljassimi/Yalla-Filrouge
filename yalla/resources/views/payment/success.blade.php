@@ -40,19 +40,19 @@
                         <div class="space-y-3">
                             <div class="flex justify-between">
                                 <span class="text-lightgray">Order ID:</span>
-                                <span class="font-medium">#ORD-123456</span>
+                                <span class="font-medium">{{$payment->id}}</span>
                             </div>
                             <div class="flex justify-between">
                                 <span class="text-lightgray">Event:</span>
-                                <span class="font-medium">Event Name</span>
+                                <span class="font-medium">{{$event->name}}</span>
                             </div>
                             <div class="flex justify-between">
                                 <span class="text-lightgray">Date:</span>
-                                <span class="font-medium" id="current-date">April 8, 2025</span>
+                                <span class="font-medium" id="current-date">{{$payment->payment_date}}</span>
                             </div>
                             <div class="flex justify-between">
                                 <span class="text-lightgray">Amount Paid:</span>
-                                <span class="font-medium text-primary">1200 DH</span>
+                                <span class="font-medium text-primary">{{$payment->amount}}</span>
                             </div>
                         </div>
                     </div>
