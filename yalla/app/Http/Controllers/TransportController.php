@@ -55,7 +55,7 @@ class TransportController extends Controller
             'transport_booking_id' => $transport_booking->id,
         ]);
         session(['skip_transport' => false]);
-        return redirect('/payment');
+        return redirect('/checkout');
     }
 
     public function skipTransport(){
