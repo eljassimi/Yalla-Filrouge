@@ -43,7 +43,7 @@ Route::get('checkout',[PayementController::class,'index']);
 Route::post('/payment', [PayementController::class, 'checkout']);
 Route::get('/success',[PayementController::class,'success']);
 
-Route::view("/cancel","payment.cancel");
+
 
 
 
