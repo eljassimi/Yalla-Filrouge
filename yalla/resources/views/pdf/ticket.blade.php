@@ -90,5 +90,21 @@
 
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<script>
+    document.querySelector('button').addEventListener('click', function() {
+        const ticket = document.getElementById('ticket');
+
+        const opt = {
+            margin:       0,
+            filename:     'Yalla_Ticket.pdf',
+            image:        { type: 'jpeg', quality: 0.98 },
+            html2canvas:  { scale: 2 },
+            jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+
+        html2pdf().set(opt).from(ticket).save();
+    });
+</script>
 </body>
 </html>
