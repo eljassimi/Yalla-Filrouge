@@ -84,28 +84,26 @@
                                         <input type="text" id="name" name="name" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary">
                                     </div>
                                     <div class="mb-4">
-                                        <label for="matchTeams" class="block text-sm font-medium text-lightgray mb-1">Teams</label>
+                                        <label class="block text-sm font-medium text-lightgray mb-1">Teams</label>
                                         <div class="grid grid-cols-2 gap-4">
-                                            <select id="team1" name="team1" placeholder="Team 1" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary">
-                                                <option>Morocco</option>
-                                                <option>Brazil</option>
+                                            <select id="team_1_name" name="team_1_name" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
+                                                <option value="">Select Team 1</option>
                                             </select>
-                                            <select id="team2" name="team2" placeholder="Team 2" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary">
-                                                <option>Morocco</option>
-                                                <option>Brazil</option>
+                                            <select id="team_2_name" name="team_2_name" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
+                                                <option value="">Select Team 2</option>
                                             </select>
                                         </div>
-                                        <div class="mb-4 flex space-x-4">
-                                            <div class="w-1/2">
-                                                <label for="flag_team_1" class="block text-sm font-medium text-gray-700">Team 1 Flag</label>
-                                                <input type="hidden" name="flag_team_1" id="flag_team_1">
-                                                <img id="flag_team_1_preview" class="mt-1 h-12" src="" alt="Team 1 Flag" style="display: none;">
-                                            </div>
-                                            <div class="w-1/2">
-                                                <label for="flag_team_2" class="block text-sm font-medium text-gray-700">Team 2 Flag</label>
-                                                <input type="hidden" name="flag_team_2" id="flag_team_2">
-                                                <img id="flag_team_2_preview" class="mt-1 h-12" src="" alt="Team 2 Flag" style="display: none;">
-                                            </div>
+                                    </div>
+                                    <div class="mb-4 flex space-x-4">
+                                        <div class="w-1/2">
+                                            <label for="flag_team_1" class="block text-sm font-medium text-gray-700">Team 1 Flag</label>
+                                            <input type="hidden" name="flag_team_1" id="flag_team_1">
+                                            <img id="flag_team_1_preview" class="mt-1 h-12" src="" alt="Team 1 Flag" style="display: none;">
+                                        </div>
+                                        <div class="w-1/2">
+                                            <label for="flag_team_2" class="block text-sm font-medium text-gray-700">Team 2 Flag</label>
+                                            <input type="hidden" name="flag_team_2" id="flag_team_2">
+                                            <img id="flag_team_2_preview" class="mt-1 h-12" src="" alt="Team 2 Flag" style="display: none;">
                                         </div>
                                     </div>
                                     <div class="mb-4">
@@ -143,5 +141,20 @@
     function HideForm(){
         matchFrom.classList.add("hidden");
     }
+
+    fetch('https://restcountries.com/v3.1/all')
+        .then(response => response.json())
+        .then(data => {
+            const team1Select = document.getElementById('team_1_name');
+            const team2Select = document.getElementById('team_2_name');
+            data.sort((a, b) => a.name.common.localeCompare(b.name.common)).forEach(country => {
+                const option = document.createElement('option');
+                option.value = country.name.common;
+                option.textContent = country.name.common;
+                team1Select.appendChild(option.cloneNode(true));
+                team2Select.appendChild(option);
+            });
+        })
+        .catch(error => console.error('Error fetching countries:', error));
 </script>
 </body>
