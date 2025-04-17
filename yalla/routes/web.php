@@ -47,4 +47,5 @@ Route::get('/success',[PayementController::class,'success']);
 Route::get('/ticket/download/{payment}', [TicketController::class, 'downloadTicket'])->name('ticket.download');
 
 Route::view("/t","pdf.ticket");
+Route::view("/dashboard","Dashboard");
 
