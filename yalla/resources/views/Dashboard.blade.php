@@ -96,7 +96,23 @@
             <div id="dashboard-page" class="page-content">
                 <div class="mb-6">
                     <h1 class="text-2xl font-bold">Dashboard</h1>
-                    <p class="text-lightgray">Welcome to Yalla  Admin Dashboard</p>
+                    <p class="text-lightgray">Welcome to Yalla Admin Dashboard</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                    <div class="bg-darkgray rounded-lg p-4 shadow">
+                        <div class="flex items-center">
+                            <div class="p-3 rounded-full bg-primary bg-opacity-20 text-primary mr-4">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-lightgray text-sm">Total Users</p>
+                                <h3 class="text-2xl font-bold">1,254</h3>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
