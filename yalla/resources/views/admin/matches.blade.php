@@ -80,23 +80,45 @@
                             <div class="p-4">
                                 <form>
                                     <div class="mb-4">
-                                        <label for="matchDate" class="block text-sm font-medium text-lightgray mb-1">Date</label>
-                                        <input type="date" id="matchDate" name="matchDate" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary">
-                                    </div>
-                                    <div class="mb-4">
-                                        <label for="matchTime" class="block text-sm font-medium text-lightgray mb-1">Time</label>
-                                        <input type="time" id="matchTime" name="matchTime" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary">
-                                    </div>
-                                    <div class="mb-4">
-                                        <label for="matchLocation" class="block text-sm font-medium text-lightgray mb-1">Location</label>
-                                        <input type="text" id="matchLocation" name="matchLocation" placeholder="Stadium, City" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary">
+                                        <label for="name" class="block text-sm font-medium text-lightgray mb-1">Event Name</label>
+                                        <input type="text" id="name" name="name" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary">
                                     </div>
                                     <div class="mb-4">
                                         <label for="matchTeams" class="block text-sm font-medium text-lightgray mb-1">Teams</label>
                                         <div class="grid grid-cols-2 gap-4">
-                                            <input type="text" id="team1" name="team1" placeholder="Team 1" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary">
-                                            <input type="text" id="team2" name="team2" placeholder="Team 2" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary">
+                                            <select id="team1" name="team1" placeholder="Team 1" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary">
+                                                <option>Morocco</option>
+                                                <option>Brazil</option>
+                                            </select>
+                                            <select id="team2" name="team2" placeholder="Team 2" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary">
+                                                <option>Morocco</option>
+                                                <option>Brazil</option>
+                                            </select>
                                         </div>
+                                        <div class="mb-4 flex space-x-4">
+                                            <div class="w-1/2">
+                                                <label for="flag_team_1" class="block text-sm font-medium text-gray-700">Team 1 Flag</label>
+                                                <input type="hidden" name="flag_team_1" id="flag_team_1">
+                                                <img id="flag_team_1_preview" class="mt-1 h-12" src="" alt="Team 1 Flag" style="display: none;">
+                                            </div>
+                                            <div class="w-1/2">
+                                                <label for="flag_team_2" class="block text-sm font-medium text-gray-700">Team 2 Flag</label>
+                                                <input type="hidden" name="flag_team_2" id="flag_team_2">
+                                                <img id="flag_team_2_preview" class="mt-1 h-12" src="" alt="Team 2 Flag" style="display: none;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="matchDate" class="block text-sm font-medium text-lightgray mb-1">Date</label>
+                                        <input type="datetime-local" id="matchDate" name="matchDate" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary">
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="matchLocation" class="block text-sm font-medium text-lightgray mb-1">Description</label>
+                                        <textarea id="matchLocation" name="description" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="matchLocation" class="block text-sm font-medium text-lightgray mb-1">Location</label>
+                                        <input type="text" id="matchLocation" name="matchLocation" placeholder="Stadium, City" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary">
                                     </div>
                                     <div class="flex justify-end mt-6">
                                         <button onclick="HideForm()" type="button" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg mr-2">Cancel</button>
