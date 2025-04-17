@@ -113,6 +113,19 @@
                             </div>
                         </div>
                     </div>
+                    <div class="bg-darkgray rounded-lg p-4 shadow">
+                        <div class="flex items-center">
+                            <div class="p-3 rounded-full bg-primary bg-opacity-20 text-primary mr-4">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-lightgray text-sm">Upcoming Matches</p>
+                                <h3 class="text-2xl font-bold">42</h3>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
