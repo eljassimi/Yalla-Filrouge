@@ -55,6 +55,19 @@
                             </tbody>
                         </table>
                     </div>
+                    <!-- pagination-->
+                    <div class="px-6 py-4 border-t border-gray-700 flex items-center justify-between">
+                        <div class="text-sm text-lightgray">
+                            Showing <span class="font-medium">1</span> to <span class="font-medium">4</span> of <span class="font-medium">24</span> results
+                        </div>
+                        <div class="flex items-center">
+                            <button class="px-3 py-1 rounded-md bg-gray-800 text-lightgray hover:bg-gray-700 mr-2">Previous</button>
+                            <button class="px-3 py-1 rounded-md bg-primary text-white hover:bg-primary/90 mr-2">1</button>
+                            <button class="px-3 py-1 rounded-md bg-gray-800 text-lightgray hover:bg-gray-700 mr-2">2</button>
+                            <button class="px-3 py-1 rounded-md bg-gray-800 text-lightgray hover:bg-gray-700 mr-2">3</button>
+                            <button class="px-3 py-1 rounded-md bg-gray-800 text-lightgray hover:bg-gray-700">Next</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
