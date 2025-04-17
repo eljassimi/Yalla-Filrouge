@@ -32,7 +32,26 @@
                                 <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-lightgray uppercase tracking-wider">Actions</th>
                             </tr>
                             </thead>
-
+                            <tbody class="divide-y divide-gray-700">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm font-medium">Qatar vs UAE</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm">Dec 12, 2023 - 7:00 PM</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm">Lusail Stadium, Doha</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 py-1 text-xs rounded-full bg-green-900 text-green-200">Upcoming</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                    <button onclick="editMatch(1)" class="text-primary hover:text-primary/80 mr-3">Edit</button>
+                                    <button onclick="deleteMatch(1)" class="text-red-500 hover:text-red-400">Delete</button>
+                                </td>
+                            </tr>
+                            </tbody>
                         </table>
                     </div>
                 </div>
