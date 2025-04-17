@@ -26,6 +26,33 @@
                                 <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-lightgray uppercase tracking-wider">Actions</th>
                             </tr>
                             </thead>
+                            <tbody class="divide-y divide-gray-700">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="h-10 w-10 rounded-full bg-primary flex items-center justify-center text-white font-medium">
+                                            JD
+                                        </div>
+                                        <div class="ml-4">
+                                            <div class="text-sm font-medium">John Doe</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm">john.doe@example.com</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm">Admin</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 py-1 text-xs rounded-full bg-green-900 text-green-200">Active</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                    <button  class="text-primary hover:text-primary/80 mr-3">Edit</button>
+                                    <button  class="text-red-500 hover:text-red-400">Delete</button>
+                                </td>
+                            </tr>
+                            </tbody>
                         </table>
                     </div>
                 </div>
