@@ -63,7 +63,13 @@
 
     <div class="flex-1 flex flex-col overflow-hidden">
         <header class="bg-darkgray border-b border-gray-700 shadow-sm">
-
+            <div class="flex items-center justify-between p-4">
+                <button id="mobile-menu-button" class="md:hidden text-lightgray hover:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
         </header>
     </div>
 </div>
