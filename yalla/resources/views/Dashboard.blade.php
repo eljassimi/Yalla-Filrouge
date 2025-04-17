@@ -161,6 +161,7 @@
                     <div class="p-4 border-b border-gray-700">
                         <h2 class="text-lg font-semibold">Recent Activity</h2>
                     </div>
+
                     <div class="p-4">
                         <ul class="divide-y divide-gray-700">
                             <li class="py-3">
@@ -174,7 +175,40 @@
                                     </div>
                                 </div>
                             </li>
+                            <li class="py-3">
+                                <div class="flex items-center">
+                                    <div class="h-8 w-8 rounded-full bg-primary flex items-center justify-center text-white font-medium mr-3">
+                                        JD
+                                    </div>
+                                    <div>
+                                        <p class="text-sm">John Doe registered as a new user</p>
+                                        <p class="text-xs text-lightgray">2 hours ago</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="py-3">
+                                <div class="flex items-center">
+                                    <div class="h-8 w-8 rounded-full bg-primary flex items-center justify-center text-white font-medium mr-3">
+                                        JD
+                                    </div>
+                                    <div>
+                                        <p class="text-sm">John Doe registered as a new user</p>
+                                        <p class="text-xs text-lightgray">2 hours ago</p>
+                                    </div>
+                                </div>
+                            </li>
                         </ul>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div class="bg-darkgray rounded-lg shadow">
+                        <div class="p-4 border-b border-gray-700">
+                            <h2 class="text-lg font-semibold">User Registration Stats</h2>
+                        </div>
+                        <div class="p-4 h-64 flex items-center justify-center">
+                            <p class="text-lightgray">User registration chart would go here</p>
+                        </div>
                     </div>
                 </div>
             </div>
