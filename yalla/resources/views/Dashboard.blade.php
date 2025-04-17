@@ -155,6 +155,12 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="bg-darkgray rounded-lg shadow mb-6">
+                    <div class="p-4 border-b border-gray-700">
+                        <h2 class="text-lg font-semibold">Recent Activity</h2>
+                    </div>
 
                 </div>
             </div>
