@@ -80,6 +80,16 @@
                     </div>
                 </div>
 
+                <div class="flex items-center">
+                    <div class="mr-3 text-right hidden md:block">
+                        <p class="text-sm font-medium">Admin User</p>
+                        <p class="text-xs text-lightgray">Administrator</p>
+                    </div>
+                    <div class="h-10 w-10 rounded-full bg-primary flex items-center justify-center text-white font-medium">
+                        AU
+                    </div>
+                </div>
+
             </div>
 
 
