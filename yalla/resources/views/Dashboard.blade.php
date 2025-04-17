@@ -61,6 +61,11 @@
         </div>
     </aside>
 
+    <div class="flex-1 flex flex-col overflow-hidden">
+        <header class="bg-darkgray border-b border-gray-700 shadow-sm">
+
+        </header>
+    </div>
 </div>
 
 
