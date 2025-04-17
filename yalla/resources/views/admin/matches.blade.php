@@ -156,5 +156,20 @@
             });
         })
         .catch(error => console.error('Error fetching countries:', error));
+
+    document.getElementById('team_1_name').addEventListener('change', function() {
+        const team = this.value;
+        if (team) {
+            fetch(`https://restcountries.com/v3.1/name/${team}?fullText=true`)
+                .then(response => response.json())
+                .then(data => {
+                    const flagUrl = data[0].flags.png;
+                    document.getElementById('flag_team_1').value = flagUrl;
+                    document.getElementById('flag_team_1_preview').src = flagUrl;
+                    document.getElementById('flag_team_1_preview').style.display = 'block';
+                })
+                .catch(error => console.error('Error fetching flag for Team 1:', error));
+        }
+    });
 </script>
 </body>
