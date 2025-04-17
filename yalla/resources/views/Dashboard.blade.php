@@ -89,11 +89,12 @@
                         AU
                     </div>
                 </div>
-
             </div>
-
-
         </header>
+
+        <main class="flex-1 overflow-y-auto bg-black p-4">
+
+        </main>
     </div>
 </div>
 
