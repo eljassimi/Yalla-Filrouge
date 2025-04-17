@@ -77,7 +77,33 @@
                                     </svg>
                                 </button>
                             </div>
-
+                            <div class="p-4">
+                                <form >
+                                    <div class="mb-4">
+                                        <label for="matchDate" class="block text-sm font-medium text-lightgray mb-1">Date</label>
+                                        <input type="date" id="matchDate" name="matchDate" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary">
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="matchTime" class="block text-sm font-medium text-lightgray mb-1">Time</label>
+                                        <input type="time" id="matchTime" name="matchTime" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary">
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="matchLocation" class="block text-sm font-medium text-lightgray mb-1">Location</label>
+                                        <input type="text" id="matchLocation" name="matchLocation" placeholder="Stadium, City" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary">
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="matchTeams" class="block text-sm font-medium text-lightgray mb-1">Teams</label>
+                                        <div class="grid grid-cols-2 gap-4">
+                                            <input type="text" id="team1" name="team1" placeholder="Team 1" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary">
+                                            <input type="text" id="team2" name="team2" placeholder="Team 2" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary">
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-end mt-6">
+                                        <button type="button" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg mr-2">Cancel</button>
+                                        <button type="button" class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg">Save</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
