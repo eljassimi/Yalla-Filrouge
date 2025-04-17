@@ -47,8 +47,8 @@
                                     <span class="px-2 py-1 text-xs rounded-full bg-green-900 text-green-200">Upcoming</span>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                    <button onclick="editMatch(1)" class="text-primary hover:text-primary/80 mr-3">Edit</button>
-                                    <button onclick="deleteMatch(1)" class="text-red-500 hover:text-red-400">Delete</button>
+                                    <button  class="text-primary hover:text-primary/80 mr-3">Edit</button>
+                                    <button  class="text-red-500 hover:text-red-400">Delete</button>
                                 </td>
                             </tr>
                             </tbody>
@@ -64,6 +64,20 @@
                             <button class="px-3 py-1 rounded-md bg-gray-800 text-lightgray hover:bg-gray-700 mr-2">2</button>
                             <button class="px-3 py-1 rounded-md bg-gray-800 text-lightgray hover:bg-gray-700 mr-2">3</button>
                             <button class="px-3 py-1 rounded-md bg-gray-800 text-lightgray hover:bg-gray-700">Next</button>
+                        </div>
+                    </div>
+
+                    <div id="match-form-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 ">
+                        <div class="bg-darkgray rounded-lg shadow-lg w-full max-w-md mx-4">
+                            <div class="p-4 border-b border-gray-700 flex items-center justify-between">
+                                <h3 class="text-lg font-semibold" id="match-form-title">Create New Match</h3>
+                                <button class="text-lightgray hover:text-white">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                    </svg>
+                                </button>
+                            </div>
+
                         </div>
                     </div>
                 </div>
