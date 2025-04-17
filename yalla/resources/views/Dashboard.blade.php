@@ -210,6 +210,13 @@
                             <p class="text-lightgray">User registration chart would go here</p>
                         </div>
                     </div>
+
+                    <div class="bg-darkgray rounded-lg shadow">
+                        <div class="p-4 border-b border-gray-700">
+                            <h2 class="text-lg font-semibold">Upcoming Matches</h2>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </main>
