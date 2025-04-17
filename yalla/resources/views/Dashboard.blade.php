@@ -215,7 +215,31 @@
                         <div class="p-4 border-b border-gray-700">
                             <h2 class="text-lg font-semibold">Upcoming Matches</h2>
                         </div>
-
+                        <div class="p-4">
+                            <ul class="divide-y divide-gray-700">
+                                <li class="py-3 flex justify-between items-center">
+                                    <div>
+                                        <p class="font-medium">Qatar vs UAE</p>
+                                        <p class="text-xs text-lightgray">Tomorrow, 7:00 PM</p>
+                                    </div>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-green-900 text-green-200">Upcoming</span>
+                                </li>
+                                <li class="py-3 flex justify-between items-center">
+                                    <div>
+                                        <p class="font-medium">Saudi Arabia vs Bahrain</p>
+                                        <p class="text-xs text-lightgray">Dec 15, 6:30 PM</p>
+                                    </div>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-green-900 text-green-200">Upcoming</span>
+                                </li>
+                                <li class="py-3 flex justify-between items-center">
+                                    <div>
+                                        <p class="font-medium">Kuwait vs Oman</p>
+                                        <p class="text-xs text-lightgray">Dec 18, 8:00 PM</p>
+                                    </div>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-green-900 text-green-200">Upcoming</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
