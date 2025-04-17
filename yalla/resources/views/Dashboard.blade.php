@@ -93,7 +93,12 @@
         </header>
 
         <main class="flex-1 overflow-y-auto bg-black p-4">
-
+            <div id="dashboard-page" class="page-content">
+                <div class="mb-6">
+                    <h1 class="text-2xl font-bold">Dashboard</h1>
+                    <p class="text-lightgray">Welcome to Yalla  Admin Dashboard</p>
+                </div>
+            </div>
         </main>
     </div>
 </div>
