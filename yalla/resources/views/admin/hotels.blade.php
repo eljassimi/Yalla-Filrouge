@@ -67,7 +67,20 @@
                             <button class="px-3 py-1 rounded-md bg-gray-800 text-lightgray hover:bg-gray-700">Next</button>
                         </div>
                     </div>
+                </div>
 
+                <div id="hotel-form-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                    <div class="bg-darkgray h-[90%] overflow-auto scroll rounded-lg shadow-lg w-full max-w-md mx-4">
+                        <div class="p-4 border-b border-gray-700 flex items-center justify-between">
+                            <h3 class="text-lg font-semibold" id="hotel-form-title">Add New Hotel</h3>
+                            <button class="text-lightgray hover:text-white">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </div>
+
+                    </div>
                 </div>
 
             </div>
