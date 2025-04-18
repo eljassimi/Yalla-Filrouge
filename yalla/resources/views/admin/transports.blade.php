@@ -42,10 +42,10 @@
                                     <div class="text-sm">Bus</div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm">50 passengers</div>
+                                    <div class="text-sm">10 DH</div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm">10</div>
+                                    <div class="text-sm">50 passengers</div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                     <button class="text-primary hover:text-primary/80 mr-3">Edit</button>
@@ -54,6 +54,17 @@
                             </tr>
                             </tbody>
                         </table>
+                    </div>
+                    <div class="px-6 py-4 border-t border-gray-700 flex items-center justify-between">
+                        <div class="text-sm text-lightgray">
+                            Showing <span class="font-medium">1</span> to <span class="font-medium">3</span> of <span class="font-medium">6</span> results
+                        </div>
+                        <div class="flex items-center">
+                            <button class="px-3 py-1 rounded-md bg-gray-800 text-lightgray hover:bg-gray-700 mr-2">Previous</button>
+                            <button class="px-3 py-1 rounded-md bg-primary text-white hover:bg-primary/90 mr-2">1</button>
+                            <button class="px-3 py-1 rounded-md bg-gray-800 text-lightgray hover:bg-gray-700 mr-2">2</button>
+                            <button class="px-3 py-1 rounded-md bg-gray-800 text-lightgray hover:bg-gray-700">Next</button>
+                        </div>
                     </div>
                 </div>
 
