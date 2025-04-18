@@ -181,12 +181,20 @@
 
 <script>
     let HotelForm = document.getElementById("hotel-form-modal");
+    let AddRoom = document.getElementById('add-room');
+    let RoomContainer = document.getElementById("room-container")
     function HideForm(){
         HotelForm.classList.add("hidden");
     }
     function ShowForm(){
         HotelForm.classList.remove("hidden");
     }
+
+    AddRoom.addEventListener('click',function(){
+        const roomTemplate = RoomContainer.querySelector('.room-entry').cloneNode(true);
+        console.log(roomTemplate)
+        RoomContainer.appendChild(roomTemplate);
+    })
 </script>
 </body>
 </html>
