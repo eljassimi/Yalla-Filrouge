@@ -13,7 +13,7 @@
                         <h1 class="text-2xl font-bold">Hotel Management</h1>
                         <p class="text-lightgray">Manage hotel listings</p>
                     </div>
-                    <button class="mt-4 md:mt-0 bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg flex items-center">
+                    <button onclick="ShowForm()" class="mt-4 md:mt-0 bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg flex items-center">
                         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                         </svg>
@@ -69,11 +69,11 @@
                     </div>
                 </div>
 
-                <div id="hotel-form-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                <div id="hotel-form-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
                     <div class="bg-darkgray h-[90%] overflow-auto scroll rounded-lg shadow-lg w-full max-w-md mx-4">
                         <div class="p-4 border-b border-gray-700 flex items-center justify-between">
                             <h3 class="text-lg font-semibold" id="hotel-form-title">Add New Hotel</h3>
-                            <button class="text-lightgray hover:text-white">
+                            <button onclick="HideForm()" class="text-lightgray hover:text-white">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                                 </svg>
@@ -166,7 +166,7 @@
                                 </div>
 
                                 <div class="flex justify-end mt-6">
-                                    <button type="button" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg mr-2">Cancel</button>
+                                    <button onclick="HideForm()" type="button" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg mr-2">Cancel</button>
                                     <button type="submit" class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg">Save</button>
                                 </div>
                             </form>
@@ -179,6 +179,14 @@
     </div>
 </div>
 
-
+<script>
+    let HotelForm = document.getElementById("hotel-form-modal");
+    function HideForm(){
+        HotelForm.classList.add("hidden");
+    }
+    function ShowForm(){
+        HotelForm.classList.remove("hidden");
+    }
+</script>
 </body>
 </html>
