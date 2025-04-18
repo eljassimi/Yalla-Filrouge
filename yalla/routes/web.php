@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\HotelController;
 use App\Http\Controllers\LoginController;
@@ -48,7 +49,8 @@ Route::get('/ticket/download/{payment}', [TicketController::class, 'downloadTick
 Route::view("/t","pdf.ticket");
 //Admin
 
-Route::view("/dashboard","admin.Dashboard");
+
+Route::get("/dashboard",[AdminController::class,'dashboard']);
 Route::view("/hotels","admin.hotels");
 Route::view("/matches","admin.matches");
 Route::view("/users","admin.users");

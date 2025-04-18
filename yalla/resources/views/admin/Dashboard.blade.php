@@ -22,7 +22,7 @@
                             </div>
                             <div>
                                 <p class="text-lightgray text-sm">Total Users</p>
-                                <h3 class="text-2xl font-bold">1,254</h3>
+                                <h3 class="text-2xl font-bold">{{$usersCount}}</h3>
                             </div>
                         </div>
                     </div>
@@ -36,7 +36,7 @@
                             </div>
                             <div>
                                 <p class="text-lightgray text-sm">Upcoming Matches</p>
-                                <h3 class="text-2xl font-bold">42</h3>
+                                <h3 class="text-2xl font-bold">{{$matchesCount}}</h3>
                             </div>
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                             </div>
                             <div>
                                 <p class="text-lightgray text-sm">Hotels</p>
-                                <h3 class="text-2xl font-bold">28</h3>
+                                <h3 class="text-2xl font-bold">{{$hotelsCount}}</h3>
                             </div>
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                             </div>
                             <div>
                                 <p class="text-lightgray text-sm">Transports</p>
-                                <h3 class="text-2xl font-bold">56</h3>
+                                <h3 class="text-2xl font-bold">{{$transportsCount}}</h3>
                             </div>
                         </div>
                     </div>
