@@ -118,7 +118,9 @@
     function HideFrom(){
         TransportForm.classList.add('hidden');
     }
-
+    function ShowForm(){
+        TransportForm.classList.remove('hidden');
+    }
 </script>
 </body>
 </html>
