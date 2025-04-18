@@ -79,7 +79,60 @@
                                 </svg>
                             </button>
                         </div>
+                        <div class="p-4">
+                            <form id="hotel-form">
+                                <div class="mb-4">
+                                    <label for="hotelName" class="block text-sm font-medium text-lightgray mb-1">Hotel Name</label>
+                                    <input type="text" id="hotelName" name="name" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
+                                </div>
 
+                                <div class="mb-4">
+                                    <label for="hotelDescription" class="block text-sm font-medium text-lightgray mb-1">Hotel Description</label>
+                                    <textarea id="hotelDescription" name="description" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary" required></textarea>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="main_image" class="block text-sm font-medium text-lightgray mb-1">Main Image</label>
+                                    <input type="file" id="main_image" name="main_image" accept="image/*" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white" required>
+                                    <img id="main_image_preview" class="mt-2" src="" alt="Main Image Preview" style="display: none;">
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="gallery_images" class="block text-sm font-medium text-lightgray mb-1">Gallery Images</label>
+                                    <input type="file" id="gallery_images" name="gallery_images[]" accept="image/*" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white" multiple>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="location_id" class="block text-sm font-medium text-lightgray mb-1">Location</label>
+                                    <select id="location_id" name="location_id" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
+                                        <option value="1">Paris, France</option>
+                                        <option value="2">Marrakech, Morocco</option>
+                                        <option value="3">Tokyo, Japan</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="rooms" class="block text-sm font-medium text-lightgray mb-1">Number of Rooms</label>
+                                    <input type="number" id="rooms" name="rooms" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label class="block text-sm font-medium text-lightgray mb-1">Amenities</label>
+                                    <div class="grid grid-cols-2 gap-2 text-white">
+                                        <label><input type="checkbox" name="amenities[]" value="WiFi" class="mr-2">WiFi</label>
+                                        <label><input type="checkbox" name="amenities[]" value="Smart TV" class="mr-2">Smart TV</label>
+                                        <label><input type="checkbox" name="amenities[]" value="Free parking" class="mr-2">Free Parking</label>
+                                        <label><input type="checkbox" name="amenities[]" value="Gym" class="mr-2">Gym</label>
+                                        <label><input type="checkbox" name="amenities[]" value="Swimming Pool" class="mr-2">Swimming Pool</label>
+                                    </div>
+                                </div>
+
+                                <div class="flex justify-end mt-6">
+                                    <button type="button" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg mr-2">Cancel</button>
+                                    <button type="submit" class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg">Save</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
 
