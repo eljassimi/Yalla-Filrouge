@@ -127,6 +127,44 @@
                                     </div>
                                 </div>
 
+                                <div class="mt-8 mb-6 border-t border-gray-700 pt-6">
+                                    <h3 class="text-lg font-medium text-white mb-4">Room Information</h3>
+
+                                    <div id="room-container">
+                                        <div class="room-entry bg-gray-800 border border-gray-700 rounded-lg p-4 mb-4">
+                                            <div class="mb-3">
+                                                <label class="block text-sm font-medium text-lightgray mb-1">Room Type</label>
+                                                <select name="room_type_id[]" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
+                                                    <option value="">Select Room Type</option>
+                                                    <option value="1">Standard</option>
+                                                    <option value="2">Royal</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label class="block text-sm font-medium text-lightgray mb-1">Price Per Night</label>
+                                                <div class="relative">
+                                                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                                        <span class="text-gray-400">$</span>
+                                                    </div>
+                                                    <input type="number" name="price_per_night[]" step="0.01" min="0" class="w-full bg-gray-800 border border-gray-700 rounded-lg pl-8 pr-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-2">
+                                                <label class="block text-sm font-medium text-lightgray mb-1">Number of This Room Type</label>
+                                                <input type="number" name="number_of_rooms[]" min="1" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
+                                            </div>
+
+                                            <button type="button" class="remove-room text-red-400 text-sm hover:text-red-300 mt-2" style="display: none;">Remove Room Type</button>
+                                        </div>
+                                    </div>
+
+                                    <button type="button" id="add-room" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg text-sm">
+                                        + Add Another Room Type
+                                    </button>
+                                </div>
+
                                 <div class="flex justify-end mt-6">
                                     <button type="button" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg mr-2">Cancel</button>
                                     <button type="submit" class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg">Save</button>
