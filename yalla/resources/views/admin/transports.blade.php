@@ -13,7 +13,7 @@
                         <h1 class="text-2xl font-bold">Transport Management</h1>
                         <p class="text-lightgray">Manage transport services</p>
                     </div>
-                    <button  class="mt-4 md:mt-0 bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg flex items-center">
+                    <button onclick="ShowForm()"  class="mt-4 md:mt-0 bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg flex items-center">
                         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                         </svg>
@@ -72,7 +72,7 @@
                     <div class="bg-darkgray rounded-lg shadow-lg w-full max-w-md mx-4">
                         <div class="p-4 border-b border-gray-700 flex items-center justify-between">
                             <h3 class="text-lg font-semibold" id="transport-form-title">Add New Transport</h3>
-                            <button class="text-lightgray hover:text-white">
+                            <button onclick="HideForm()" class="text-lightgray hover:text-white">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                                 </svg>
@@ -101,8 +101,8 @@
                                     <input type="number" id="transportCapacity" name="available_seats" placeholder="Number of passengers" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary">
                                 </div>
                                 <div class="flex justify-end mt-6">
-                                    <button type="button" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg mr-2">Cancel</button>
-                                    <button type="button" class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg">Save</button>
+                                    <button type="button" onclick="HideForm()" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg mr-2">Cancel</button>
+                                    <button type="submit" class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg">Save</button>
                                 </div>
                             </form>
                         </div>
@@ -113,6 +113,12 @@
     </div>
 </div>
 
+<script>
+    let TransportForm = document.getElementById("transport-form-modal");
+    function HideFrom(){
+        TransportForm.classList.add('hidden');
+    }
 
+</script>
 </body>
 </html>
