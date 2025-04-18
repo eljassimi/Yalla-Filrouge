@@ -45,7 +45,12 @@ Route::post('/payment', [PayementController::class, 'checkout']);
 Route::get('/success',[PayementController::class,'success']);
 
 Route::get('/ticket/download/{payment}', [TicketController::class, 'downloadTicket'])->name('ticket.download');
-
 Route::view("/t","pdf.ticket");
-Route::view("/dashboard","admin.transports");
+//Admin
+
+Route::view("/dashboard","admin.Dashboard");
+Route::view("/hotels","admin.hotels");
+Route::view("/matches","admin.matches");
+Route::view("/users","admin.users");
+Route::view("/transports","admin.transports");
 

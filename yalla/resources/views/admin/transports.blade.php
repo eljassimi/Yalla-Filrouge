@@ -68,7 +68,7 @@
                     </div>
                 </div>
 
-                <div id="transport-form-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                <div id="transport-form-modal" class=" hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
                     <div class="bg-darkgray rounded-lg shadow-lg w-full max-w-md mx-4">
                         <div class="p-4 border-b border-gray-700 flex items-center justify-between">
                             <h3 class="text-lg font-semibold" id="transport-form-title">Add New Transport</h3>
@@ -115,9 +115,11 @@
 
 <script>
     let TransportForm = document.getElementById("transport-form-modal");
-    function HideFrom(){
-        TransportForm.classList.add('hidden');
+
+    function HideForm(){
+        TransportForm.classList.add("hidden");
     }
+
     function ShowForm(){
         TransportForm.classList.remove('hidden');
     }
