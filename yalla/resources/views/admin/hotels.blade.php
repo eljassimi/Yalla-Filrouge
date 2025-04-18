@@ -192,8 +192,8 @@
     }
 
     AddRoom.addEventListener('click',function(){
-        const roomTemplate = RoomContainer.querySelector('.room-entry').cloneNode(true);
-        RoomContainer.appendChild(roomTemplate);
+        const roomEntries = RoomContainer.querySelector('.room-entry').cloneNode(true);
+        RoomContainer.appendChild(roomEntries);
         DisplayRemoveButton();
     });
 
@@ -206,6 +206,9 @@
             } else {
                 removeButton.classList.remove("hidden");
             }
+            removeButton.addEventListener('click',function(){
+                room.remove();
+            })
         });
     }
 
