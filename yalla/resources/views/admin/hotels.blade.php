@@ -156,7 +156,7 @@
                                                 <input type="number" name="number_of_rooms[]" min="1" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
                                             </div>
 
-                                            <button type="button" class="remove-room text-red-400 text-sm hover:text-red-300 mt-2" style="display: none;">Remove Room Type</button>
+                                            <button type="button" id="remove-room" class=" text-red-400 text-sm hover:text-red-300 mt-2 hidden">Remove Room Type</button>
                                         </div>
                                     </div>
 
@@ -183,6 +183,8 @@
     let HotelForm = document.getElementById("hotel-form-modal");
     let AddRoom = document.getElementById('add-room');
     let RoomContainer = document.getElementById("room-container")
+    let RemoveRoom = document.getElementById('remove-room');
+
     function HideForm(){
         HotelForm.classList.add("hidden");
     }
@@ -194,7 +196,23 @@
         const roomTemplate = RoomContainer.querySelector('.room-entry').cloneNode(true);
         console.log(roomTemplate)
         RoomContainer.appendChild(roomTemplate);
+        DisplayRemoveButton();
+    });
+
+    function DisplayRemoveButton(){
+        const ChildsNmbr = RoomContainer.childElementCount;
+        if(ChildsNmbr > 1){
+            RemoveRoom.classList.remove('hidden');
+        }else{
+            RemoveRoom.classList.add('hidden');
+        }
+    }
+    DisplayRemoveButton();
+    RemoveRoom.addEventListener('click',function(){
+
     })
+
+
 </script>
 </body>
 </html>
