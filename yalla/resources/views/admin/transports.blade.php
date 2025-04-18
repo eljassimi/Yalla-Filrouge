@@ -78,6 +78,34 @@
                                 </svg>
                             </button>
                         </div>
+                        <div class="p-4">
+                            <form id="transport-form">
+                                <div class="mb-4">
+                                    <label for="transportName" class="block text-sm font-medium text-lightgray mb-1">Transport Name</label>
+                                    <input type="text" id="transportName" name="name" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="transportDescription" class="block text-sm font-medium text-lightgray mb-1">Transport Name</label>
+                                    <textarea id="transportName" name="description" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="transportLogo" class="block text-sm font-medium text-lightgray mb-1">Transport Name</label>
+                                    <input type="file" id="transportLogo" name="logo" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="transportPrice" class="block text-sm font-medium text-lightgray mb-1">Price Per Km</label>
+                                    <input type="number" id="transportPrice" name="price_per_km" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="transportCapacity" class="block text-sm font-medium text-lightgray mb-1">Capacity</label>
+                                    <input type="number" id="transportCapacity" name="available_seats" placeholder="Number of passengers" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary">
+                                </div>
+                                <div class="flex justify-end mt-6">
+                                    <button type="button" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg mr-2">Cancel</button>
+                                    <button type="button" class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg">Save</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
