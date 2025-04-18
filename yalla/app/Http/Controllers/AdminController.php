@@ -13,9 +13,9 @@ class AdminController extends Controller
 {
     public function dashboard(){
          $usersCount = User::count();
-         $matchesCount = Event::count();
          $hotelsCount = Hotel::count();
          $transportsCount = TransportService::count();
-         return view('admin.Dashboard', compact('usersCount', 'matchesCount', 'hotelsCount', 'transportsCount'));
+         $Matches = Event::all();
+         return view('admin.Dashboard', compact('usersCount', 'Matches', 'hotelsCount', 'transportsCount',));
     }
 }

@@ -36,7 +36,7 @@
                             </div>
                             <div>
                                 <p class="text-lightgray text-sm">Upcoming Matches</p>
-                                <h3 class="text-2xl font-bold">{{$matchesCount}}</h3>
+                                <h3 class="text-2xl font-bold">{{count($Matches)}}</h3>
                             </div>
                         </div>
                     </div>
@@ -130,27 +130,15 @@
                         </div>
                         <div class="p-4">
                             <ul class="divide-y divide-gray-700">
-                                <li class="py-3 flex justify-between items-center">
-                                    <div>
-                                        <p class="font-medium">Qatar vs UAE</p>
-                                        <p class="text-xs text-lightgray">Tomorrow, 7:00 PM</p>
-                                    </div>
-                                    <span class="px-2 py-1 text-xs rounded-full bg-green-900 text-green-200">Upcoming</span>
-                                </li>
-                                <li class="py-3 flex justify-between items-center">
-                                    <div>
-                                        <p class="font-medium">Saudi Arabia vs Bahrain</p>
-                                        <p class="text-xs text-lightgray">Dec 15, 6:30 PM</p>
-                                    </div>
-                                    <span class="px-2 py-1 text-xs rounded-full bg-green-900 text-green-200">Upcoming</span>
-                                </li>
-                                <li class="py-3 flex justify-between items-center">
-                                    <div>
-                                        <p class="font-medium">Kuwait vs Oman</p>
-                                        <p class="text-xs text-lightgray">Dec 18, 8:00 PM</p>
-                                    </div>
-                                    <span class="px-2 py-1 text-xs rounded-full bg-green-900 text-green-200">Upcoming</span>
-                                </li>
+                                @foreach($Matches->take(3) as $match)
+                                    <li class="py-3 flex justify-between items-center">
+                                        <div>
+                                            <p class="font-medium">{{$match->name}}</p>
+                                            <p class="text-xs text-lightgray">{{$match->date}}</p>
+                                        </div>
+                                        <span class="px-2 py-1 text-xs rounded-full bg-green-900 text-green-200">Upcoming</span>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
