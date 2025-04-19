@@ -67,7 +67,7 @@
                         </div>
                     </div>
 
-                    <div id="match-form-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+                    <div id="match-form-modal" class="fixed inset-0 bg-black overflow-x-auto bg-opacity-50 flex items-center justify-center z-50 hidden">
                         <div class="bg-darkgray rounded-lg shadow-lg w-full max-w-md mx-4">
                             <div class="p-4 border-b border-gray-700 flex items-center justify-between">
                                 <h3 class="text-lg font-semibold" id="match-form-title">Create New Match</h3>
@@ -111,12 +111,11 @@
                                         <input type="datetime-local" id="matchDate" name="matchDate" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary">
                                     </div>
                                     <div class="mb-4">
-                                        <label for="matchLocation" class="block text-sm font-medium text-lightgray mb-1">Description</label>
-                                        <textarea id="matchLocation" name="description" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
-                                    </div>
-                                    <div class="mb-4">
                                         <label for="matchLocation" class="block text-sm font-medium text-lightgray mb-1">Location</label>
-                                        <input type="text" id="matchLocation" name="matchLocation" placeholder="Stadium, City" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary">
+                                        <input type="hidden" id="city_input" name="city" placeholder="City" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white mb-2">
+                                        <input type="hidden" id="street_input" name="street" placeholder="Street" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white mb-2">
+                                        <input type="hidden" id="coordinates" name="coordinates">
+                                        <div id="map" class="mt-2 rounded-lg" style="height: 300px;"></div>
                                     </div>
                                     <div class="flex justify-end mt-6">
                                         <button onclick="HideForm()" type="button" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg mr-2">Cancel</button>
@@ -187,4 +186,5 @@
         }
     });
 </script>
+
 </body>
