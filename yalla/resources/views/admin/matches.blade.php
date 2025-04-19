@@ -208,6 +208,12 @@
             }
         });
 
+        const searchControl = new GeoSearch.GeoSearchControl({
+            provider: provider,
+            style: 'bar',
+            showMarker: true,
+            searchLabel: 'Search for locations in Morocco'
+        });
     });
 </script>
 </body>
