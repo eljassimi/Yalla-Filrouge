@@ -214,6 +214,8 @@
             showMarker: true,
             searchLabel: 'Search for locations in Morocco'
         });
+
+        map.addControl(searchControl);
     });
 </script>
 </body>
