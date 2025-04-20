@@ -38,12 +38,32 @@ class EventController extends Controller
 
     public function store(Request $request){
         $LocationData = $request->validate([
-            'city'=>'required',
-            'address'=>'required',
-            'coordinates'=>'required'
+            'city' => 'required',
+            'address' => 'required',
+            'coordinates' => 'required'
         ]);
+
         $location = Location::create($LocationData);
 
+        $matchData = $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'team_1_name' => 'required',
+            'team_2_name' => 'required',
+            'flag_team_1' => 'required',
+            'flag_team_2' => 'required',
+            'date' => 'required',
+            'available_spots' => 'required',
+            ]);
+
+        dd('Validation Passed', $matchData);
+
+
+        $matchData['location_id'] = $location->id;
+        $matchData['event_type'] = 'Match';
+
+        $event = Event::create($matchData);
+        dd($event);
         return redirect('/dashboard');
     }
 }
