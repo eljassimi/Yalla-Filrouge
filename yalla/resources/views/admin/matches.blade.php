@@ -227,8 +227,12 @@
     });
 
     function ShowEditForm(id, name, description, team1, team2, flag1, flag2, date, spots, city, address, coordinates) {
+
         matchFrom.classList.remove("hidden");
         document.getElementById('match-form-title').innerText = "Edit Match";
+
+        document.getElementById('form_action').value = "update";
+        document.getElementById('match_id').value = id;
 
         document.getElementById('name').value = name;
         document.getElementById('description').value = description;
