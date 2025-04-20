@@ -48,7 +48,7 @@
                                     <span class="px-2 py-1 text-xs rounded-full bg-green-900 text-green-200">{{$match->event_type}}</span>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                    <button  class="text-primary hover:text-primary/80 mr-3">Edit</button>
+                                    <button onclick="ShowEditForm()"  class="text-primary hover:text-primary/80 mr-3">Edit</button>
                                     <a href="/deleteMatch/{{$match->id}}"  class="text-red-500 hover:text-red-400">Delete</a>
                                 </td>
                             </tr>
@@ -156,6 +156,61 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Edit Match Modal -->
+                    <div id="match-edit-form" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 w-full max-w-2xl relative">
+
+                            <h2 id="match-form-title" class="text-2xl font-bold mb-4">Edit Match</h2>
+
+                            <form method="POST" action="" enctype="multipart/form-data">
+                                @csrf
+
+                                <div class="mb-4">
+                                    <label for="edit_match_name" class="block font-medium text-gray-700 dark:text-gray-200">Event Name</label>
+                                    <input type="text" id="edit_match_name" name="match_name" required class="w-full mt-1 p-2 border rounded" />
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="edit_match_description" class="block font-medium text-gray-700 dark:text-gray-200">Description</label>
+                                    <textarea id="edit_match_description" name="match_description" rows="4" class="w-full mt-1 p-2 border rounded"></textarea>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="edit_team_1_name" class="block font-medium text-gray-700 dark:text-gray-200">Team 1</label>
+                                    <select id="edit_team_1_name" name="team_1_name" required class="w-full mt-1 p-2 border rounded"></select>
+                                    <input type="hidden" id="edit_flag_team_1" name="flag_team_1" />
+                                    <img id="edit_flag_team_1_preview" class="mt-1 h-12" src="" alt="Team 1 Flag" style="display:none;">
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="edit_team_2_name" class="block font-medium text-gray-700 dark:text-gray-200">Team 2</label>
+                                    <select id="edit_team_2_name" name="team_2_name" required class="w-full mt-1 p-2 border rounded"></select>
+                                    <input type="hidden" id="edit_flag_team_2" name="flag_team_2" />
+                                    <img id="edit_flag_team_2_preview" class="mt-1 h-12" src="" alt="Team 2 Flag" style="display:none;">
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="edit_match_date" class="block font-medium text-gray-700 dark:text-gray-200">Date</label>
+                                    <input type="datetime-local" id="edit_match_date" name="match_date" required class="w-full mt-1 p-2 border rounded" />
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="edit_available_spots" class="block font-medium text-gray-700 dark:text-gray-200">Available Spots</label>
+                                    <input type="number" id="edit_available_spots" name="available_spots" min="1" required class="w-full mt-1 p-2 border rounded" />
+                                </div>
+
+                                <input type="hidden" id="edit_city_input" name="match_city" />
+                                <input type="hidden" id="edit_street_input" name="match_address" />
+                                <input type="hidden" id="edit_coordinates" name="match_coordinates" />
+
+                                <div class="flex justify-end gap-3 mt-4">
+                                    <button type="button" onclick="document.getElementById('match-edit-form').classList.add('hidden')" class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded">Cancel</button>
+                                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Save Changes</button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -221,6 +276,10 @@
                 .catch(error => console.error('Error fetching flag for Team 2:', error));
         }
     });
+
+    function ShowEditForm(){
+
+    }
 </script>
 
 <script >
