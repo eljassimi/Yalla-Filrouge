@@ -118,12 +118,11 @@
                                 </div>
 
                                 <div class="mb-4">
-                                    <label for="location_id" class="block text-sm font-medium text-lightgray mb-1">Location</label>
-                                    <select id="location_id" name="location_id" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
-                                        <option value="1">Paris, France</option>
-                                        <option value="2">Marrakech, Morocco</option>
-                                        <option value="3">Tokyo, Japan</option>
-                                    </select>
+                                    <label for="matchLocation" class="block text-sm font-medium text-lightgray mb-1">Location</label>
+                                    <input type="hidden" id="city_input" name="city" placeholder="City" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white mb-2">
+                                    <input type="hidden" id="street_input" name="address" placeholder="Street" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white mb-2">
+                                    <input type="hidden" id="coordinates" name="coordinates">
+                                    <div id="map" class="mt-2 rounded-lg" style="height: 300px;"></div>
                                 </div>
 
                                 <div class="mb-4">
@@ -228,6 +227,79 @@
     }
 
 
+</script>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-geosearch/dist/bundle.min.js"></script>
+<script >
+    document.addEventListener('DOMContentLoaded', function () {
+        const map = L.map('map').setView([31.7917, -7.0926], 6);
+
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            subdomains: 'abcd',
+            maxZoom: 13
+        }).addTo(map);
+
+        const provider = new GeoSearch.OpenStreetMapProvider({
+            params: {
+                'countrycodes': 'ma'
+            }
+        });
+
+        const searchControl = new GeoSearch.GeoSearchControl({
+            provider: provider,
+            style: 'bar',
+            showMarker: true,
+            searchLabel: 'Search for locations in Morocco'
+        });
+
+        map.addControl(searchControl);
+
+        let marker;
+
+        map.on('click', async function(e) {
+            const { lat, lng } = e.latlng;
+
+            document.getElementById('coordinates').value = JSON.stringify({
+                latitude: lat.toString(),
+                longitude: lng.toString()
+            });
+
+            try {
+                const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lng}`);
+                const data = await response.json();
+
+                const city = data.address.city || data.address.town || data.address.village || '';
+                const street = data.address.road || '';
+
+                document.getElementById('city_input').value = city;
+                document.getElementById('street_input').value = street;
+
+                if (marker) {
+                    marker.setLatLng(e.latlng);
+                } else {
+                    marker = L.marker(e.latlng).addTo(map);
+                }
+            } catch (error) {
+                console.error('Error getting location data:', error);
+            }
+        });
+
+        map.on('geosearch/showlocation', function(e) {
+            const { location } = e;
+            document.getElementById('coordinates').value = `${location.y},${location.x}`;
+
+            const locationParts = location.label.split(', ');
+            console.log('location : ',locationParts)
+            document.getElementById('city_input').value = locationParts[1] || '';
+            document.getElementById('street_input').value = locationParts[0] || '';
+
+            if (marker) marker.setLatLng([location.y, location.x]);
+            else marker = L.marker([location.y, location.x]).addTo(map);
+        });
+
+    });
 </script>
 </body>
 </html>
