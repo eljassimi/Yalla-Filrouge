@@ -216,6 +216,34 @@
         });
 
         map.addControl(searchControl);
+
+        let marker;
+
+        map.on('click', async function(e) {
+            const { lat, lng } = e.latlng;
+
+            document.getElementById('coordinates').value = `${lat},${lng}`;
+
+            try {
+                const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lng}`);
+                const data = await response.json();
+
+                const city = data.address.city || data.address.town || data.address.village || '';
+                const street = data.address.road || '';
+
+                document.getElementById('city_input').value = city;
+                document.getElementById('street_input').value = street;
+
+                if (marker) {
+                    marker.setLatLng(e.latlng);
+                } else {
+                    marker = L.marker(e.latlng).addTo(map);
+                }
+            } catch (error) {
+                console.error('Error getting location data:', error);
+            }
+        });
+
     });
 </script>
 </body>
