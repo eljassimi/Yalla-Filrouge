@@ -78,7 +78,8 @@
                                 </button>
                             </div>
                             <div class="p-4">
-                                <form>
+                                <form action="/createMatch" method="POST">
+                                    @csrf
                                     <div class="mb-4">
                                         <label for="name" class="block text-sm font-medium text-lightgray mb-1">Event Name</label>
                                         <input type="text" id="name" name="name" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary">
@@ -113,13 +114,13 @@
                                     <div class="mb-4">
                                         <label for="matchLocation" class="block text-sm font-medium text-lightgray mb-1">Location</label>
                                         <input type="hidden" id="city_input" name="city" placeholder="City" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white mb-2">
-                                        <input type="hidden" id="street_input" name="street" placeholder="Street" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white mb-2">
+                                        <input type="hidden" id="street_input" name="address" placeholder="Street" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white mb-2">
                                         <input type="hidden" id="coordinates" name="coordinates">
                                         <div id="map" class="mt-2 rounded-lg" style="height: 300px;"></div>
                                     </div>
                                     <div class="flex justify-end mt-6">
                                         <button onclick="HideForm()" type="button" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg mr-2">Cancel</button>
-                                        <button type="button" class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg">Save</button>
+                                        <button type="submit" class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg">Save</button>
                                     </div>
                                 </form>
                             </div>
@@ -222,7 +223,10 @@
         map.on('click', async function(e) {
             const { lat, lng } = e.latlng;
 
-            document.getElementById('coordinates').value = `${lat},${lng}`;
+            document.getElementById('coordinates').value = JSON.stringify({
+                latitude: lat.toString(),
+                longitude: lng.toString()
+            });
 
             try {
                 const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lng}`);

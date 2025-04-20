@@ -56,3 +56,5 @@ Route::view("/matches","admin.matches");
 Route::view("/users","admin.users");
 Route::view("/transports","admin.transports");
 
+Route::post('/createMatch',[EventController::class,'store']);
+

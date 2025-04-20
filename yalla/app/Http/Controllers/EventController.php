@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\Location;
 use App\Models\TicketType;
 use App\Models\userSelections;
 use Illuminate\Http\Request;
@@ -33,5 +34,16 @@ class EventController extends Controller
 
         session(['event_id' => $attributes['event_id']]);
         return redirect('/hotels');
+    }
+
+    public function store(Request $request){
+        $LocationData = $request->validate([
+            'city'=>'required',
+            'address'=>'required',
+            'coordinates'=>'required'
+        ]);
+        $location = Location::create($LocationData);
+
+        return redirect('/dashboard');
     }
 }
