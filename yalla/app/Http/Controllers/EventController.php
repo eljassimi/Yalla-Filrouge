@@ -56,14 +56,10 @@ class EventController extends Controller
             'available_spots' => 'required',
             ]);
 
-        dd('Validation Passed', $matchData);
-
-
         $matchData['location_id'] = $location->id;
         $matchData['event_type'] = 'Match';
 
         $event = Event::create($matchData);
-        dd($event);
         return redirect('/dashboard');
     }
 }

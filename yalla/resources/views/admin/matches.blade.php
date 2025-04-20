@@ -85,6 +85,10 @@
                                         <input type="text" id="name" name="name" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary">
                                     </div>
                                     <div class="mb-4">
+                                        <label for="description" class="block text-sm font-medium text-lightgray mb-1">Description</label>
+                                        <textarea id="description" name="description" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                                    </div>
+                                    <div class="mb-4">
                                         <label class="block text-sm font-medium text-lightgray mb-1">Teams</label>
                                         <div class="grid grid-cols-2 gap-4">
                                             <select id="team_1_name" name="team_1_name" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
