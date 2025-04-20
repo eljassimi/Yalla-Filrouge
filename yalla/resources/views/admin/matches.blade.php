@@ -89,8 +89,8 @@
                         </div>
                     </div>
 
-                    <div id="match-form-modal" class="fixed inset-0 bg-black overflow-x-auto overflow-y-auto bg-opacity-50 flex items-center justify-center z-50 hidden">
-                        <div class="bg-darkgray rounded-lg shadow-lg w-full max-w-md mx-4">
+                    <div id="match-form-modal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 overflow-y-auto p-4 hidden">
+                        <div class="bg-darkgray rounded-lg shadow-lg w-full max-w-md max-h-[calc(100vh-2rem)] overflow-y-auto">
                             <div class="p-4 border-b border-gray-700 flex items-center justify-between">
                                 <h3 class="text-lg font-semibold" id="match-form-title">Create New Match</h3>
                                 <button onclick="HideForm()" class="text-lightgray hover:text-white">
