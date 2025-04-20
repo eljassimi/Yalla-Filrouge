@@ -174,8 +174,28 @@
 
 <script>
     let matchFrom = document.getElementById("match-form-modal");
+
     function DisplayForm(){
         matchFrom.classList.remove("hidden");
+        document.getElementById('match-form-title').innerText = "Create New Match";
+        document.getElementById('form_action').value = "create";
+        document.getElementById('match_id').value = "";
+
+        document.getElementById('name').value = "";
+        document.getElementById('description').value = "";
+        document.getElementById('team_1_name').value = "";
+        document.getElementById('team_2_name').value = "";
+        document.getElementById('flag_team_1').value = "";
+        document.getElementById('flag_team_2').value = "";
+        document.getElementById('flag_team_1_preview').style.display = 'none';
+        document.getElementById('flag_team_2_preview').style.display = 'none';
+        document.getElementById('matchDate').value = "";
+        document.getElementById('available_spots').value = "";
+        document.getElementById('city_input').value = "";
+        document.getElementById('street_input').value = "";
+        document.getElementById('coordinates').value = "";
+
+        // Reset any map markers if needed
     }
     function HideForm(){
         matchFrom.classList.add("hidden");
