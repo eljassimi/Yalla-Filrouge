@@ -18,4 +18,9 @@ class AdminController extends Controller
          $Matches = Event::all();
          return view('admin.Dashboard', compact('usersCount', 'Matches', 'hotelsCount', 'transportsCount',));
     }
+
+    public function matches(){
+        $Matches = Event::paginate(6);
+        return view('admin.Matches', compact('Matches'));
+    }
 }

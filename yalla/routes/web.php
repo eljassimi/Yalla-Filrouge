@@ -51,6 +51,7 @@ Route::view("/t","pdf.ticket");
 
 
 Route::get("/dashboard",[AdminController::class,'dashboard']);
+Route::get("/matches",[AdminController::class,'matches']);
 Route::view("/hotels","admin.hotels");
 Route::view("/matches","admin.matches");
 Route::view("/users","admin.users");
