@@ -49,7 +49,7 @@
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                     <button  class="text-primary hover:text-primary/80 mr-3">Edit</button>
-                                    <button  class="text-red-500 hover:text-red-400">Delete</button>
+                                    <a href="/deleteMatch/{{$match->id}}"  class="text-red-500 hover:text-red-400">Delete</a>
                                 </td>
                             </tr>
                             @endforeach

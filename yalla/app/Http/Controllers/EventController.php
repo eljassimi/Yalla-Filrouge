@@ -62,4 +62,10 @@ class EventController extends Controller
         $event = Event::create($matchData);
         return redirect('/dashboard');
     }
+
+    public function destroy($id){
+        $event = Event::find($id);
+        $event->delete();
+        return redirect('/matches');
+    }
 }

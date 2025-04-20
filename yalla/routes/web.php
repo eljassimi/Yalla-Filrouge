@@ -57,4 +57,5 @@ Route::view("/users","admin.users");
 Route::view("/transports","admin.transports");
 
 Route::post('/createMatch',[EventController::class,'store']);
+Route::get('/deleteMatch/{id}',[EventController::class,'destroy']);
 
