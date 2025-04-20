@@ -28,42 +28,64 @@
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-lightgray uppercase tracking-wider">Match</th>
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-lightgray uppercase tracking-wider">Date & Time</th>
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-lightgray uppercase tracking-wider">Location</th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-lightgray uppercase tracking-wider">Status</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-lightgray uppercase tracking-wider">Type</th>
                                 <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-lightgray uppercase tracking-wider">Actions</th>
                             </tr>
                             </thead>
                             <tbody class="divide-y divide-gray-700">
+                            @foreach($Matches as $match)
                             <tr>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm font-medium">Qatar vs UAE</div>
+                                    <div class="text-sm font-medium">{{$match->name}}</div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm">Dec 12, 2023 - 7:00 PM</div>
+                                    <div class="text-sm">{{$match->date}}</div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm">Lusail Stadium, Doha</div>
+                                    <div class="text-sm">{{$match->Location->city}} - {{$match->Location->address}}</div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <span class="px-2 py-1 text-xs rounded-full bg-green-900 text-green-200">Upcoming</span>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-green-900 text-green-200">{{$match->event_type}}</span>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                     <button  class="text-primary hover:text-primary/80 mr-3">Edit</button>
                                     <button  class="text-red-500 hover:text-red-400">Delete</button>
                                 </td>
                             </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
+
                     <div class="px-6 py-4 border-t border-gray-700 flex items-center justify-between">
                         <div class="text-sm text-lightgray">
-                            Showing <span class="font-medium">1</span> to <span class="font-medium">4</span> of <span class="font-medium">12</span> results
+                            Showing
+                            <span class="font-medium">{{ $Matches->firstItem() }}</span>
+                            to
+                            <span class="font-medium">{{ $Matches->lastItem() }}</span>
+                            of
+                            <span class="font-medium">{{ $Matches->total() }}</span> results
                         </div>
+
                         <div class="flex items-center">
-                            <button class="px-3 py-1 rounded-md bg-gray-800 text-lightgray hover:bg-gray-700 mr-2">Previous</button>
-                            <button class="px-3 py-1 rounded-md bg-primary text-white hover:bg-primary/90 mr-2">1</button>
-                            <button class="px-3 py-1 rounded-md bg-gray-800 text-lightgray hover:bg-gray-700 mr-2">2</button>
-                            <button class="px-3 py-1 rounded-md bg-gray-800 text-lightgray hover:bg-gray-700 mr-2">3</button>
-                            <button class="px-3 py-1 rounded-md bg-gray-800 text-lightgray hover:bg-gray-700">Next</button>
+                            @if ($Matches->onFirstPage())
+                                <span class="px-3 py-1 rounded-md bg-gray-800 text-gray-500 mr-2">Previous</span>
+                            @else
+                                <a href="{{ $Matches->previousPageUrl() }}" class="px-3 py-1 rounded-md bg-gray-800 text-lightgray hover:bg-gray-700 mr-2">Previous</a>
+                            @endif
+                            @foreach ($Matches->getUrlRange(1, $Matches->lastPage()) as $page => $url)
+                                @if ($page == $Matches->currentPage())
+                                    <span class="px-3 py-1 rounded-md bg-primary text-white mr-2">{{ $page }}</span>
+                                @else
+                                    <a href="{{ $url }}" class="px-3 py-1 rounded-md bg-gray-800 text-lightgray hover:bg-gray-700 mr-2">{{ $page }}</a>
+                                @endif
+                            @endforeach
+
+                            @if ($Matches->hasMorePages())
+                                <a href="{{ $Matches->nextPageUrl() }}" class="px-3 py-1 rounded-md bg-gray-800 text-lightgray hover:bg-gray-700">Next</a>
+                            @else
+                                <span class="px-3 py-1 rounded-md bg-gray-800 text-gray-500">Next</span>
+                            @endif
                         </div>
                     </div>
 

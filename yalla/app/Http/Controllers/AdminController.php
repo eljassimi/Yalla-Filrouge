@@ -20,7 +20,7 @@ class AdminController extends Controller
     }
 
     public function matches(){
-        $Matches = Event::paginate(6);
+        $Matches = Event::with('Location')->paginate(6);
         return view('admin.Matches', compact('Matches'));
     }
 }
