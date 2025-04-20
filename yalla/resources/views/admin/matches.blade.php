@@ -244,6 +244,19 @@
             }
         });
 
+        map.on('geosearch/showlocation', function(e) {
+            const { location } = e;
+            document.getElementById('coordinates').value = `${location.y},${location.x}`;
+
+            const locationParts = location.label.split(', ');
+            console.log('location : ',locationParts)
+            document.getElementById('city_input').value = locationParts[1] || '';
+            document.getElementById('street_input').value = locationParts[0] || '';
+
+            if (marker) marker.setLatLng([location.y, location.x]);
+            else marker = L.marker([location.y, location.x]).addTo(map);
+        });
+
     });
 </script>
 </body>
