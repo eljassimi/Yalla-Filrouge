@@ -23,4 +23,10 @@ class AdminController extends Controller
         $Matches = Event::with('Location')->paginate(6);
         return view('admin.Matches', compact('Matches'));
     }
+
+    public function hotels(){
+        $hotels = Hotel::with('Location')->paginate(6);
+        return view('admin.hotels', compact('hotels'));
+
+    }
 }

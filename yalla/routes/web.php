@@ -52,10 +52,12 @@ Route::view("/t","pdf.ticket");
 
 Route::get("/dashboard",[AdminController::class,'dashboard']);
 Route::get("/matches",[AdminController::class,'matches']);
-Route::view("/hotels","admin.hotels");
 Route::view("/users","admin.users");
 Route::view("/transports","admin.transports");
 
 Route::post('/match',[EventController::class,'handleMatchForm']);
 Route::get('/deleteMatch/{id}',[EventController::class,'destroy']);
+
+Route::get("/hotels",[AdminController::class,'hotels']);
+
 

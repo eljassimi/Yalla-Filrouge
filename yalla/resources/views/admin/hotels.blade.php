@@ -34,24 +34,26 @@
                             </tr>
                             </thead>
                             <tbody class="divide-y divide-gray-700">
+                            @foreach($hotels as $hotel)
                             <tr>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm font-medium">Marriott Hotel</div>
+                                    <div class="text-sm font-medium">{{$hotel->name}}</div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm">Hotel Description</div>
+                                    <div class="text-sm">{{$hotel->description}}</div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm">8</div>
+                                    <div class="text-sm">{{$hotel->rooms}}</div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm">Marrakech, Morocco</div>
+                                    <div class="text-sm">{{$hotel->Location->city}} - {{$hotel->Location->address}}</div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                     <button class="text-primary hover:text-primary/80 mr-3">Edit</button>
                                     <button class="text-red-500 hover:text-red-400">Delete</button>
                                 </td>
                             </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
