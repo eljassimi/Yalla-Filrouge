@@ -194,8 +194,6 @@
         document.getElementById('city_input').value = "";
         document.getElementById('street_input').value = "";
         document.getElementById('coordinates').value = "";
-
-        // Reset any map markers if needed
     }
     function HideForm(){
         matchFrom.classList.add("hidden");

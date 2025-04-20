@@ -36,14 +36,13 @@ class EventController extends Controller
         return redirect('/hotels');
     }
 
-    public function store(Request $request){
-        $LocationData = $request->validate([
+    public function handleMatchForm(Request $request)
+    {
+        $locationData = $request->validate([
             'city' => 'required',
             'address' => 'required',
             'coordinates' => 'required'
         ]);
-
-        $location = Location::create($LocationData);
 
         $matchData = $request->validate([
             'name' => 'required',
@@ -54,13 +53,26 @@ class EventController extends Controller
             'flag_team_2' => 'required',
             'date' => 'required',
             'available_spots' => 'required',
-            ]);
+        ]);
 
-        $matchData['location_id'] = $location->id;
         $matchData['event_type'] = 'Match';
 
-        $event = Event::create($matchData);
-        return redirect('/dashboard');
+        if($request->form_action == 'create') {
+            $location = Location::create($locationData);
+            $matchData['location_id'] = $location->id;
+            Event::create($matchData);
+        } else {
+            $event = Event::findOrFail($request->match_id);
+            if ($event->location_id) {
+                $location = Location::findOrFail($event->location_id);
+                $location->update($locationData);
+            } else {
+                $location = Location::create($locationData);
+                $matchData['location_id'] = $location->id;
+            }
+            $event->update($matchData);
+        }
+        return redirect('/matches');
     }
 
     public function destroy($id){

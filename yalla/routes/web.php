@@ -56,6 +56,6 @@ Route::view("/hotels","admin.hotels");
 Route::view("/users","admin.users");
 Route::view("/transports","admin.transports");
 
-Route::post('/createMatch',[EventController::class,'store']);
+Route::post('/match',[EventController::class,'handleMatchForm']);
 Route::get('/deleteMatch/{id}',[EventController::class,'destroy']);
 
