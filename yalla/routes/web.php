@@ -59,5 +59,6 @@ Route::post('/match',[EventController::class,'handleMatchForm']);
 Route::get('/deleteMatch/{id}',[EventController::class,'destroy']);
 
 Route::get("/hotels",[AdminController::class,'hotels']);
+Route::get('/deleteHotel/{id}',[HotelController::class,'destroy']);
 
 

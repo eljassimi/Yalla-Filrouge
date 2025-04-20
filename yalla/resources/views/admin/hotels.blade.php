@@ -50,13 +50,14 @@
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                     <button class="text-primary hover:text-primary/80 mr-3">Edit</button>
-                                    <button class="text-red-500 hover:text-red-400">Delete</button>
+                                    <a href="/deleteHotel/{{$hotel->id}}" class="text-red-500 hover:text-red-400">Delete</a>
                                 </td>
                             </tr>
                             @endforeach
                             </tbody>
                         </table>
                     </div>
+
                     <div class="px-6 py-4 border-t border-gray-700 flex items-center justify-between">
                         <div class="text-sm text-lightgray">
                             Showing <span class="font-medium">{{$hotels->firstItem()}}</span> to <span class="font-medium">{{$hotels->lastItem()}}</span> of <span class="font-medium">{{$hotels->total()}}</span> results

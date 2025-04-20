@@ -70,4 +70,10 @@ class HotelController extends Controller
         return redirect('/transports');
     }
 
+    public function destroy($id){
+        $hotel = Hotel::findOrfail($id);
+        $hotel->delete();
+        return redirect('/hotels');
+    }
+
 }
