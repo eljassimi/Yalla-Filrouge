@@ -100,8 +100,12 @@
                                 </button>
                             </div>
                             <div class="p-4">
-                                <form action="/createMatch" method="POST">
+                                <form action="/match" method="POST">
                                     @csrf
+
+                                    <input type="hidden" id="form_action" name="form_action" value="create">
+                                    <input type="hidden" id="match_id" name="match_id" value="">
+
                                     <div class="mb-4">
                                         <label for="name" class="block text-sm font-medium text-lightgray mb-1">Event Name</label>
                                         <input type="text" id="name" name="name" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary">
@@ -223,7 +227,6 @@
     });
 
     function ShowEditForm(id, name, description, team1, team2, flag1, flag2, date, spots, city, address, coordinates) {
-
         matchFrom.classList.remove("hidden");
         document.getElementById('match-form-title').innerText = "Edit Match";
 
