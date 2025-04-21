@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Hotel extends Model
 {
-    protected $fillable = ['name', 'price_per_night', 'available_rooms'];
+    protected $fillable = ['name','description','location_id','main_image','gallery_images','amenities','rooms', 'available_rooms'];
 
     public function bundles(): BelongsToMany
     {

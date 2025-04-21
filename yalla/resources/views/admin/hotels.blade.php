@@ -95,7 +95,8 @@
                             </button>
                         </div>
                         <div class="p-4">
-                            <form id="hotel-form">
+                            <form id="hotel-form" action="/createHotel" method="POST" enctype="multipart/form-data">
+                                @csrf
                                 <div class="mb-4">
                                     <label for="hotelName" class="block text-sm font-medium text-lightgray mb-1">Hotel Name</label>
                                     <input type="text" id="hotelName" name="name" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
@@ -118,7 +119,7 @@
                                 </div>
 
                                 <div class="mb-4">
-                                    <label for="matchLocation" class="block text-sm font-medium text-lightgray mb-1">Location</label>
+                                    <label for="hotelLocation" class="block text-sm font-medium text-lightgray mb-1">Location</label>
                                     <input type="hidden" id="city_input" name="city" placeholder="City" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white mb-2">
                                     <input type="hidden" id="street_input" name="address" placeholder="Street" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white mb-2">
                                     <input type="hidden" id="coordinates" name="coordinates">
@@ -149,12 +150,12 @@
                                             <div class="mb-3">
                                                 <label class="block text-sm font-medium text-lightgray mb-1">Room Type</label>
                                                 <select name="room_type_id[]" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
-                                                    <option value="">Select Room Type</option>
                                                     <option value="1">Standard</option>
                                                     <option value="2">Royal</option>
+                                                    <option value="3">Deluxe</option>
+                                                    <option value="4">Suite</option>
                                                 </select>
                                             </div>
-
                                             <div class="mb-3">
                                                 <label class="block text-sm font-medium text-lightgray mb-1">Price Per Night</label>
                                                 <div class="relative">
@@ -187,7 +188,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </main>
     </div>

@@ -60,5 +60,6 @@ Route::get('/deleteMatch/{id}',[EventController::class,'destroy']);
 
 Route::get("/hotels",[AdminController::class,'hotels']);
 Route::get('/deleteHotel/{id}',[HotelController::class,'destroy']);
+Route::post('/createHotel',[HotelController::class,'store']);
 
 
