@@ -188,110 +188,6 @@
                         </div>
                     </div>
                 </div>
-                <div id="hotel-form-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-                    <div class="bg-darkgray h-[90%] overflow-auto scroll rounded-lg shadow-lg w-full max-w-md mx-4">
-                        <div class="p-4 border-b border-gray-700 flex items-center justify-between">
-                            <h3 class="text-lg font-semibold" id="hotel-form-title">Edit Hotel</h3>
-                            <button onclick="HideForm()" class="text-lightgray hover:text-white">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                                </svg>
-                            </button>
-                        </div>
-                        <div class="p-4">
-                            <form id="hotel-form" action="/editHotel" method="POST" enctype="multipart/form-data">
-                                @csrf
-                                <div class="mb-4">
-                                    <label for="hotelName" class="block text-sm font-medium text-lightgray mb-1">Hotel Name</label>
-                                    <input type="text" id="hotelName" name="name" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
-                                </div>
-
-                                <div class="mb-4">
-                                    <label for="hotelDescription" class="block text-sm font-medium text-lightgray mb-1">Hotel Description</label>
-                                    <textarea id="hotelDescription" name="description" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary" required></textarea>
-                                </div>
-
-                                <div class="mb-4">
-                                    <label for="main_image" class="block text-sm font-medium text-lightgray mb-1">Main Image</label>
-                                    <input type="file" id="main_image" name="main_image" accept="image/*" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white" required>
-                                    <img id="main_image_preview" class="mt-2" src="" alt="Main Image Preview" style="display: none;">
-                                </div>
-
-                                <div class="mb-4">
-                                    <label for="gallery_images" class="block text-sm font-medium text-lightgray mb-1">Gallery Images</label>
-                                    <input type="file" id="gallery_images" name="gallery_images[]" accept="image/*" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white" multiple>
-                                </div>
-
-                                <div class="mb-4">
-                                    <label for="hotelLocation" class="block text-sm font-medium text-lightgray mb-1">Location</label>
-                                    <input type="hidden" id="city_input" name="city" placeholder="City" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white mb-2">
-                                    <input type="hidden" id="street_input" name="address" placeholder="Street" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white mb-2">
-                                    <input type="hidden" id="coordinates" name="coordinates">
-                                    <div id="map" class="mt-2 rounded-lg" style="height: 300px;"></div>
-                                </div>
-
-                                <div class="mb-4">
-                                    <label for="rooms" class="block text-sm font-medium text-lightgray mb-1">Number of Rooms</label>
-                                    <input type="number" id="rooms" name="rooms" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
-                                </div>
-
-                                <div class="mb-4">
-                                    <label class="block text-sm font-medium text-lightgray mb-1">Amenities</label>
-                                    <div class="grid grid-cols-2 gap-2 text-white">
-                                        <label><input type="checkbox" name="amenities[]" value="WiFi" class="mr-2">WiFi</label>
-                                        <label><input type="checkbox" name="amenities[]" value="Smart TV" class="mr-2">Smart TV</label>
-                                        <label><input type="checkbox" name="amenities[]" value="Free parking" class="mr-2">Free Parking</label>
-                                        <label><input type="checkbox" name="amenities[]" value="Gym" class="mr-2">Gym</label>
-                                        <label><input type="checkbox" name="amenities[]" value="Swimming Pool" class="mr-2">Swimming Pool</label>
-                                    </div>
-                                </div>
-
-                                <div class="mt-8 mb-6 border-t border-gray-700 pt-6">
-                                    <h3 class="text-lg font-medium text-white mb-4">Room Information</h3>
-
-                                    <div id="room-container">
-                                        <div class="room-entry bg-gray-800 border border-gray-700 rounded-lg p-4 mb-4">
-                                            <div class="mb-3">
-                                                <label class="block text-sm font-medium text-lightgray mb-1">Room Type</label>
-                                                <select name="room_type_id[]" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
-                                                    <option value="1">Standard</option>
-                                                    <option value="2">Royal</option>
-                                                    <option value="3">Deluxe</option>
-                                                    <option value="4">Suite</option>
-                                                </select>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label class="block text-sm font-medium text-lightgray mb-1">Price Per Night</label>
-                                                <div class="relative">
-                                                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                                                        <span class="text-gray-400">$</span>
-                                                    </div>
-                                                    <input type="number" name="price_per_night[]" step="0.01" min="0" class="w-full bg-gray-800 border border-gray-700 rounded-lg pl-8 pr-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
-                                                </div>
-                                            </div>
-
-                                            <div class="mb-2">
-                                                <label class="block text-sm font-medium text-lightgray mb-1">Number of This Room Type</label>
-                                                <input type="number" name="number_of_rooms[]" min="1" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
-                                            </div>
-
-                                            <button type="button" id="remove-room" class="remove-room text-red-400 text-sm hover:text-red-300 mt-2 hidden">Remove Room Type</button>
-                                        </div>
-                                    </div>
-
-                                    <button type="button" id="add-room" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg text-sm">
-                                        + Add Another Room Type
-                                    </button>
-                                </div>
-
-                                <div class="flex justify-end mt-6">
-                                    <button onclick="HideForm()" type="button" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg mr-2">Cancel</button>
-                                    <button type="submit" class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg">Save</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
             </div>
         </main>
     </div>
@@ -334,7 +230,9 @@
     function ShowEditForm(id, name, description, location, rooms, main_image, gallery_images, amenities) {
         console.log(id, name, description, location, rooms, main_image, gallery_images, amenities);
         document.getElementById('hotel-form-modal').classList.remove('hidden');
+        document.getElementById('hotel-form-title').innerText = 'Edit Hotel';
 
+        document.getElementById('hotel_id').value = id;
         document.getElementById('hotelName').value = name;
         document.getElementById('hotelDescription').value = description;
         document.getElementById('rooms').value = rooms;

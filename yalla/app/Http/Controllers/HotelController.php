@@ -139,6 +139,10 @@ class HotelController extends Controller
 
         return redirect('/hotels');
     }
+    public function update(Request $request){
+      $data = $request->validate([
 
+      ])
+    }
 
 }
