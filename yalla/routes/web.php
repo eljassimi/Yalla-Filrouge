@@ -51,7 +51,7 @@ Route::view("/t","pdf.ticket");
 
 
 Route::get("/dashboard",[AdminController::class,'dashboard']);
-Route::get("/matches",[AdminController::class,'matches']);
+Route::get("/admin/matches",[AdminController::class,'matches']);
 Route::view("/users","admin.users");
 Route::view("/transports","admin.transports");
 
@@ -62,5 +62,8 @@ Route::get("/hotels",[AdminController::class,'hotels']);
 Route::get('/deleteHotel/{id}',[HotelController::class,'destroy']);
 Route::post('/createHotel',[HotelController::class,'store']);
 Route::post('/editHotel',[HotelController::class,'update']);
+
+Route::view("/editHotelForm","admin.editHotelForm");
+Route::get('/editHotelForm/{id}',[HotelController::class,'showEditForm']);
 
 

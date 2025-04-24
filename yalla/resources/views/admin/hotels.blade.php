@@ -49,7 +49,7 @@
                                     <div class="text-sm">{{$hotel->Location->city}} - {{$hotel->Location->address}}</div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                    <button onclick="ShowEditForm('{{$hotel->id}}','{{$hotel->name}}','{{$hotel->description}}','{{$hotel->Location}}','{{$hotel->rooms}}','{{$hotel->main_image}}','{{$hotel->gallery_images}}','{{$hotel->amenities}}')" class="text-primary hover:text-primary/80 mr-3">Edit</button>
+                                    <a href="/editHotelForm/{{$hotel->id}}" class="text-primary hover:text-primary/80 mr-3">Edit</a>
                                     <a href="/deleteHotel/{{$hotel->id}}" class="text-red-500 hover:text-red-400">Delete</a>
                                 </td>
                             </tr>
@@ -97,6 +97,7 @@
                         <div class="p-4">
                             <form id="hotel-form" action="/createHotel" method="POST" enctype="multipart/form-data">
                                 @csrf
+                                <input type="hidden" id="hotel_id" name="hotel_id">
                                 <div class="mb-4">
                                     <label for="hotelName" class="block text-sm font-medium text-lightgray mb-1">Hotel Name</label>
                                     <input type="text" id="hotelName" name="name" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
@@ -202,6 +203,11 @@
         HotelForm.classList.add("hidden");
     }
     function ShowForm(){
+        document.getElementById('hotel-form-title').innerText = 'Add New Hotel';
+        document.getElementById('hotel_id').value = '';
+        document.getElementById('hotelName').value = '';
+        document.getElementById('hotelDescription').value = '';
+        document.getElementById('rooms').value = '';
         HotelForm.classList.remove("hidden");
     }
 
@@ -224,39 +230,6 @@
                 room.remove();
             })
         });
-    }
-
-
-    function ShowEditForm(id, name, description, location, rooms, main_image, gallery_images, amenities) {
-        console.log(id, name, description, location, rooms, main_image, gallery_images, amenities);
-        document.getElementById('hotel-form-modal').classList.remove('hidden');
-        document.getElementById('hotel-form-title').innerText = 'Edit Hotel';
-
-        document.getElementById('hotel_id').value = id;
-        document.getElementById('hotelName').value = name;
-        document.getElementById('hotelDescription').value = description;
-        document.getElementById('rooms').value = rooms;
-
-        if (location) {
-            document.getElementById('city_input').value = location.city || '';
-            document.getElementById('street_input').value = location.street || '';
-            document.getElementById('coordinates').value = location.coordinates || '';
-        }
-
-        if (main_image) {
-            let preview = document.getElementById('main_image_preview');
-            preview.src = main_image;
-        }
-
-        if (gallery_images) {
-            const input = document.getElementById('gallery_images');
-            const files = input.files;
-            const formData = new FormData();
-
-            for (let i = 0; i < files.length; i++) {
-                formData.append('gallery_images[]', files[i]);
-            }
-        }
     }
 
 

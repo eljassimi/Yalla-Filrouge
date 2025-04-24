@@ -140,9 +140,10 @@ class HotelController extends Controller
         return redirect('/hotels');
     }
     public function update(Request $request){
-      $data = $request->validate([
-
-      ])
+      $data = $request->validate([]);
     }
-
+     public function showEditForm($id){
+        $hotel = Hotel::with('location')->with('room')->findOrFail($id);
+        dd($hotel->room);
+     }
 }
