@@ -59,13 +59,26 @@
                     </div>
                     <div class="px-6 py-4 border-t border-gray-700 flex items-center justify-between">
                         <div class="text-sm text-lightgray">
-                            Showing <span class="font-medium">1</span> to <span class="font-medium">3</span> of <span class="font-medium">6</span> results
+                            Showing <span class="font-medium">{{$transports->firstItem()}}</span> to <span class="font-medium">{{$transports->lastItem()}}</span> of <span class="font-medium">{{$transports->total()}}</span> results
                         </div>
                         <div class="flex items-center">
-                            <button class="px-3 py-1 rounded-md bg-gray-800 text-lightgray hover:bg-gray-700 mr-2">Previous</button>
-                            <button class="px-3 py-1 rounded-md bg-primary text-white hover:bg-primary/90 mr-2">1</button>
-                            <button class="px-3 py-1 rounded-md bg-gray-800 text-lightgray hover:bg-gray-700 mr-2">2</button>
-                            <button class="px-3 py-1 rounded-md bg-gray-800 text-lightgray hover:bg-gray-700">Next</button>
+                            @if($transports->onFirstPage())
+                                <span class="px-3 py-1 rounded-md bg-gray-800 text-gray-500 mr-2">Previous</span>
+                            @else
+                                <a href="{{$transports->previousPageUrl()}}" class="px-3 py-1 rounded-md bg-gray-800 text-lightgray hover:bg-gray-700 mr-2">Previous</a>
+                            @endif
+                            @foreach ($transports->getUrlRange(1, $transports->lastPage()) as $page => $url)
+                                @if($page == $transports->currentPage())
+                                    <span class="px-3 py-1 rounded-md bg-primary text-white mr-2">{{ $page }}</span>
+                                @else
+                                    <a href="{{ $url }}" class="px-3 py-1 rounded-md bg-gray-800 text-lightgray hover:bg-gray-700 mr-2">{{ $page }}</a>
+                                @endif
+                            @endforeach
+                            @if($transports->hasMorePages())
+                                <a href="{{ $transports->nextPageUrl() }}" class="px-3 py-1 rounded-md bg-gray-800 text-lightgray hover:bg-gray-700">Next</a>
+                            @else
+                                <span class="px-3 py-1 rounded-md bg-gray-800 text-gray-500">Next</span>
+                            @endif
                         </div>
                     </div>
                 </div>
