@@ -94,7 +94,7 @@
                             </button>
                         </div>
                         <div class="p-4">
-                            <form id="transport-form" action="/createTransport" method="POST" enctype="multipart/form-data">
+                            <form id="transport-form" action="/transport" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <input type="hidden" id="transportId" name="id" value="">
                                 <input type="hidden" id="methodField" name="_method" value="POST">
@@ -138,18 +138,29 @@
         TransportForm.classList.add("hidden");
     }
 
-    function ShowForm(){
+    function ShowForm() {
         TransportForm.classList.remove('hidden');
+        document.getElementById('transport-form-title').textContent = 'Add New Transport';
+
+        document.getElementById("transport-form").reset();
+        document.getElementById("transportId").value = "";
+        document.getElementById("methodField").value = "POST";
+
+        document.querySelector('label[for="transportLogo"]').textContent = "Transport Logo";
     }
 
     function displayEditForm(id,name,description,price,seats){
         console.log(id,name,description,price,seats);
         TransportForm.classList.remove('hidden');
+        document.getElementById("transportId").value = id;
         document.getElementById('transport-form-title').textContent = 'Edit Transport';
         document.getElementById("transportName").value = name;
         document.getElementById("transportDescription").value = description;
         document.getElementById("transportPrice").value = price;
         document.getElementById("transportCapacity").value = seats;
+
+        document.getElementById("methodField").value = "PUT";
+        document.querySelector('label[for="transportLogo"]').textContent = "Transport Logo (Optional)";
     }
 </script>
 </body>

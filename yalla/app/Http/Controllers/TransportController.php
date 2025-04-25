@@ -63,22 +63,34 @@ class TransportController extends Controller
         return redirect('/transports');
     }
 
-    public function createTransport(Request $request) {
+    public function handleTransport(Request $request) {
+        $isUpdate = $request->has('id') && $request->id != '';
 
-        $attributes = $request->validate([
+        $rules = [
             'name' => 'required',
             'description' => 'required',
-            'logo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'price_per_km' => 'required|numeric',
             'available_seats' => 'required|numeric',
-        ]);
-
+        ];
+        if (!$isUpdate) {
+            $rules['logo'] = 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048';
+        } else {
+            $rules['logo'] = 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048';
+        }
+        $attributes = $request->validate($rules);
         if ($request->hasFile('logo')) {
             $logoPath = $request->file('logo')->store('Transport', 'public');
             $attributes['logo'] = $logoPath;
         }
-
-        TransportService::create($attributes);
+        if ($isUpdate) {
+            $transport = TransportService::findOrFail($request->id);
+            if (!$request->hasFile('logo')) {
+                unset($attributes['logo']);
+            }
+            $transport->update($attributes);
+        } else {
+            TransportService::create($attributes);
+        }
         return redirect('/transports');
     }
 
