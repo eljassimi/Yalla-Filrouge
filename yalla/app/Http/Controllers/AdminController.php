@@ -28,4 +28,9 @@ class AdminController extends Controller
         $hotels = Hotel::with('Location')->paginate(6);
         return view('admin.hotels', compact('hotels'));
     }
+
+    public function transports(){
+        $transports = TransportService::paginate(6);
+        return view('admin.transports', compact('transports'));
+    }
 }

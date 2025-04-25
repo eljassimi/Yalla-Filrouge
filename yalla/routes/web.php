@@ -53,7 +53,7 @@ Route::view("/t","pdf.ticket");
 Route::get("/dashboard",[AdminController::class,'dashboard']);
 Route::get("/admin/matches",[AdminController::class,'matches']);
 Route::view("/users","admin.users");
-Route::view("/transports","admin.transports");
+Route::get("/transports",[AdminController::class,"transports"]);
 
 Route::post('/match',[EventController::class,'handleMatchForm']);
 Route::get('/deleteMatch/{id}',[EventController::class,'destroy']);

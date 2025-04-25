@@ -34,24 +34,26 @@
                             </tr>
                             </thead>
                             <tbody class="divide-y divide-gray-700">
+                            @foreach($transports as $transport)
                             <tr>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm font-medium">CTM</div>
+                                    <div class="text-sm font-medium">{{$transport->name}}</div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm">Bus</div>
+                                    <div class="text-sm">{{$transport->description}}</div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm">10 DH</div>
+                                    <div class="text-sm">{{$transport->price_per_km}} DH</div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm">50 passengers</div>
+                                    <div class="text-sm">{{$transport->availibale_seats}} passengers</div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                     <button class="text-primary hover:text-primary/80 mr-3">Edit</button>
                                     <button class="text-red-500 hover:text-red-400">Delete</button>
                                 </td>
                             </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
