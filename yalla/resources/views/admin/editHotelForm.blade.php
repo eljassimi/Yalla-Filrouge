@@ -115,8 +115,6 @@
 
                             </div>
                         </div>
-
-
                         <div class="mt-8 pt-6 border-t border-gray-700 flex justify-end">
                             <a href="/hotels" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg mr-2">Cancel</a>
                             <button type="submit" class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg">Save Changes</button>

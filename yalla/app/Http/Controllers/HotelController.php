@@ -98,14 +98,14 @@ class HotelController extends Controller
         ]);
 
         if ($request->hasFile('main_image')) {
-            $mainImagePath = $request->file('main_image')->store('hotels', 'public');
+            $mainImagePath = $request->file('main_image')->store('stay', 'public');
             $hotelData['main_image'] = $mainImagePath;
         }
 
         if ($request->hasFile('gallery_images')) {
             $galleryPaths = [];
             foreach ($request->file('gallery_images') as $image) {
-                $galleryPaths[] = $image->store('hotels/gallery', 'public');
+                $galleryPaths[] = $image->store('stay', 'public');
             }
             $hotelData['gallery_images'] = json_encode($galleryPaths);
         }
@@ -139,10 +139,50 @@ class HotelController extends Controller
 
         return redirect('/hotels');
     }
-    public function update(Request $request){
-      $data = $request->validate([]);
+    public function update(Request $request, $id)
+    {
+        $hotel = Hotel::findOrFail($id);
+
+        $hotel->location->update([
+            'city' => $request->city,
+            'address' => $request->address,
+            'coordinates' => $request->coordinates
+        ]);
+
+        $hotel->name = $request->name;
+        $hotel->description = $request->description;
+        $hotel->rooms = $request->rooms;
+        $hotel->amenities = $request->filled('amenities') ? json_encode($request->amenities) : null;
+
+        if ($request->hasFile('main_image')) {
+            $hotel->main_image = $request->file('main_image')->store('hotels', 'public');
+        }
+
+        if ($request->hasFile('gallery_images')) {
+            $galleryPaths = [];
+            foreach ($request->file('gallery_images') as $image) {
+                $galleryPaths[] = $image->store('hotels/gallery', 'public');
+            }
+            $hotel->gallery_images = json_encode($galleryPaths);
+        }
+
+        $hotel->save();
+
+        Room::where('hotel_id', $hotel->id)->delete();
+
+        for ($i = 0; $i < count($request->room_type_id); $i++) {
+            Room::create([
+                'hotel_id' => $hotel->id,
+                'room_type_id' => $request->room_type_id[$i],
+                'price_per_night' => $request->price_per_night[$i],
+                'number_of_rooms' => $request->number_of_rooms[$i],
+            ]);
+        }
+
+        return redirect('/hotels');
     }
-     public function showEditForm($id){
+
+    public function showEditForm($id){
         $hotel = Hotel::with('location')->with('room')->with('roomTypes')->findOrFail($id);
         return view('admin.editHotelForm', compact('hotel'));
      }

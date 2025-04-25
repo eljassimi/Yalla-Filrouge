@@ -61,9 +61,8 @@ Route::get('/deleteMatch/{id}',[EventController::class,'destroy']);
 Route::get("/hotels",[AdminController::class,'hotels']);
 Route::get('/deleteHotel/{id}',[HotelController::class,'destroy']);
 Route::post('/createHotel',[HotelController::class,'store']);
-Route::post('/editHotel',[HotelController::class,'update']);
-
 Route::view("/editHotelForm","admin.editHotelForm");
 Route::get('/editHotelForm/{id}',[HotelController::class,'showEditForm']);
+Route::post('/updateHotel/{id}',[HotelController::class,'update']);
 
 
