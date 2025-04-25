@@ -46,10 +46,10 @@
                                     <div class="text-sm">{{$transport->price_per_km}} DH</div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm">{{$transport->availibale_seats}} passengers</div>
+                                    <div class="text-sm">{{$transport->available_seats}} passengers</div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                    <button class="text-primary hover:text-primary/80 mr-3">Edit</button>
+                                    <button onclick='displayEditForm({{ $transport->id }}, {!! json_encode($transport->name) !!}, {!! json_encode($transport->description) !!}, {{ $transport->price_per_km }}, {{ $transport->available_seats }})' class="text-primary hover:text-primary/80 mr-3">Edit</button>
                                     <a href="/deleteTransport/{{$transport->id}}" class="text-red-500 hover:text-red-400">Delete</a>
                                 </td>
                             </tr>
@@ -96,13 +96,15 @@
                         <div class="p-4">
                             <form id="transport-form" action="/createTransport" method="POST" enctype="multipart/form-data">
                                 @csrf
+                                <input type="hidden" id="transportId" name="id" value="">
+                                <input type="hidden" id="methodField" name="_method" value="POST">
                                 <div class="mb-4">
                                     <label for="transportName" class="block text-sm font-medium text-lightgray mb-1">Transport Name</label>
                                     <input type="text" id="transportName" name="name" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary">
                                 </div>
                                 <div class="mb-4">
                                     <label for="transportDescription" class="block text-sm font-medium text-lightgray mb-1">Transport Description</label>
-                                    <textarea id="transportName" name="description" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                                    <textarea id="transportDescription" name="description" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
                                 </div>
                                 <div class="mb-4">
                                     <label for="transportLogo" class="block text-sm font-medium text-lightgray mb-1">Transport Logo</label>
@@ -138,6 +140,16 @@
 
     function ShowForm(){
         TransportForm.classList.remove('hidden');
+    }
+
+    function displayEditForm(id,name,description,price,seats){
+        console.log(id,name,description,price,seats);
+        TransportForm.classList.remove('hidden');
+        document.getElementById('transport-form-title').textContent = 'Edit Transport';
+        document.getElementById("transportName").value = name;
+        document.getElementById("transportDescription").value = description;
+        document.getElementById("transportPrice").value = price;
+        document.getElementById("transportCapacity").value = seats;
     }
 </script>
 </body>
