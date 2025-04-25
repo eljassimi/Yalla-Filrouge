@@ -66,5 +66,6 @@ Route::get('/editHotelForm/{id}',[HotelController::class,'showEditForm']);
 Route::post('/updateHotel/{id}',[HotelController::class,'update']);
 
 Route::post("createTransport",[TransportController::class,'createTransport']);
+Route::get("deleteTransport/{id}",[TransportController::class,'destroy']);
 
 

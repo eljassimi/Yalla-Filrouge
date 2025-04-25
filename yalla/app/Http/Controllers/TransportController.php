@@ -82,4 +82,11 @@ class TransportController extends Controller
         return redirect('/transports');
     }
 
+    public function destroy($id){
+        $transport = TransportService::findOrFail($id);
+        $transport->delete();
+        return redirect('/transports');
+    }
+
+
 }
