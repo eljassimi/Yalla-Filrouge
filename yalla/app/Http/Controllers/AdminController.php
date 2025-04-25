@@ -27,6 +27,5 @@ class AdminController extends Controller
     public function hotels(){
         $hotels = Hotel::with('Location')->paginate(6);
         return view('admin.hotels', compact('hotels'));
-
     }
 }

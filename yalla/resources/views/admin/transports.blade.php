@@ -79,17 +79,18 @@
                             </button>
                         </div>
                         <div class="p-4">
-                            <form id="transport-form">
+                            <form id="transport-form" action="/createTransport" method="POST" enctype="multipart/form-data">
+                                @csrf
                                 <div class="mb-4">
                                     <label for="transportName" class="block text-sm font-medium text-lightgray mb-1">Transport Name</label>
                                     <input type="text" id="transportName" name="name" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary">
                                 </div>
                                 <div class="mb-4">
-                                    <label for="transportDescription" class="block text-sm font-medium text-lightgray mb-1">Transport Name</label>
+                                    <label for="transportDescription" class="block text-sm font-medium text-lightgray mb-1">Transport Description</label>
                                     <textarea id="transportName" name="description" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
                                 </div>
                                 <div class="mb-4">
-                                    <label for="transportLogo" class="block text-sm font-medium text-lightgray mb-1">Transport Name</label>
+                                    <label for="transportLogo" class="block text-sm font-medium text-lightgray mb-1">Transport Logo</label>
                                     <input type="file" id="transportLogo" name="logo" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary">
                                 </div>
                                 <div class="mb-4">

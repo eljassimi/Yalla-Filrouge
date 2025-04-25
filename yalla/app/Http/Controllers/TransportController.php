@@ -63,4 +63,23 @@ class TransportController extends Controller
         return redirect('/transports');
     }
 
+    public function createTransport(Request $request) {
+
+        $attributes = $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'logo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'price_per_km' => 'required|numeric',
+            'available_seats' => 'required|numeric',
+        ]);
+
+        if ($request->hasFile('logo')) {
+            $logoPath = $request->file('logo')->store('Transport', 'public');
+            $attributes['logo'] = $logoPath;
+        }
+
+        TransportService::create($attributes);
+        return redirect('/transports');
+    }
+
 }
