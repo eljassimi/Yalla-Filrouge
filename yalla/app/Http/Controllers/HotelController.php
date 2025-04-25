@@ -143,7 +143,7 @@ class HotelController extends Controller
       $data = $request->validate([]);
     }
      public function showEditForm($id){
-        $hotel = Hotel::with('location')->with('room')->findOrFail($id);
-        dd($hotel->room);
+        $hotel = Hotel::with('location')->with('room')->with('roomTypes')->findOrFail($id);
+        return view('admin.editHotelForm', compact('hotel'));
      }
 }
