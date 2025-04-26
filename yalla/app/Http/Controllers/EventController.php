@@ -72,7 +72,7 @@ class EventController extends Controller
             }
             $event->update($matchData);
         }
-        return redirect('/matches');
+        return redirect('/admin/matches');
     }
 
     public function destroy($id){

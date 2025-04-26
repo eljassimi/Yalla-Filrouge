@@ -16,21 +16,25 @@ class TicketTypeSeeder extends Seeder
         TicketType::create([
             'name' => 'East Stand',
             'price' => 100,
+            'event_id'=>1
         ]);
 
         TicketType::create([
             'name' => 'South Stand',
             'price' => 100,
+            'event_id'=>1
         ]);
 
         TicketType::create([
             'name' => 'Family Stand',
             'price' => 200,
+            'event_id'=>1
         ]);
 
         TicketType::create([
             'name' => 'COLIN BELL STAND',
             'price' => 300,
+            'event_id'=>1
         ]);
     }
 }

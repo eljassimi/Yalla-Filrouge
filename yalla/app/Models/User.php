@@ -23,6 +23,7 @@ class User extends Authenticatable
         return $this->hasMany(Ticket::class);
     }
 
+
     public function location(): BelongsTo
     {
         return $this->belongsTo(Location::class);

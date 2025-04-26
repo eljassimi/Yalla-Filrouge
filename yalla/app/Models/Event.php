@@ -33,6 +33,11 @@ class Event extends Model
         return $this->belongsTo(Location::class);
     }
 
+    public function ticketTypes():hasMany
+    {
+        return $this->hasMany(TicketType::class);
+    }
+
     public function bundles(): HasMany
     {
         return $this->hasMany(Bundle::class);

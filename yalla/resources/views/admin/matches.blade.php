@@ -138,7 +138,7 @@
                                     </div>
                                     <div class="mb-4">
                                         <label for="matchDate" class="block text-sm font-medium text-lightgray mb-1">Date</label>
-                                        <input type="datetime-local" id="matchDate" name="date" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary">
+                                        <input type="datetime-local" min="{{ now()->format('Y-m-d\TH:i') }}" id="matchDate" name="date" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary">
                                     </div>
                                     <div class="mb-4">
                                         <label for="available_spots" class="block text-sm font-medium text-lightgray mb-1">available spots</label>
