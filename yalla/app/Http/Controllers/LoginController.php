@@ -16,12 +16,15 @@ class LoginController extends Controller
 
         if (Auth::attempt($attributes)) {
             $request->session()->regenerate();
-            return redirect('/');
-        }
 
+            if (auth()->user()->is_admin) {
+                return redirect('/admin/dashboard');
+            } else {
+                return redirect('/');
+            }
+        }
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ])->onlyInput('email');
     }
-
 }
