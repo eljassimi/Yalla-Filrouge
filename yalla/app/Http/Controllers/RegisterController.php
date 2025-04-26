@@ -11,23 +11,8 @@ use Illuminate\Support\Facades\Storage;
 
 class RegisterController extends Controller
 {
-    public function getCities()
-    {
-        $path = storage_path('app/moroccan_cities.csv');
-        $cities = [];
-
-        if (($handle = fopen($path, 'r')) !== FALSE) {
-            while (($data = fgetcsv($handle, 1000, ',')) !== FALSE) {
-                $cities[] = $data[0];
-            }
-            fclose($handle);
-        }
-        return $cities;
-    }
-
     public function index(){
-        $cities = $this->getCities();
-        return view('register', compact('cities'));
+        return view('register');
     }
 
 
@@ -37,33 +22,35 @@ class RegisterController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|confirmed',
-            'current_city'=>'required',
-            'latitude' => 'required',
-            'longitude' => 'required',
-            'city' => 'required',
-            'address' => 'required',
+            'latitude' => 'nullable',
+            'longitude' => 'nullable',
+            'city' => 'nullable',
+            'address' => 'nullable',
         ]);
 
-        $location = Location::create([
-            'coordinates' => json_encode([
-                'latitude' => $attributes['latitude'],
-                'longitude' => $attributes['longitude'],
-            ]),
-            'city' => $attributes['city'],
-            'address' => $attributes['address'],
-        ]);
+        $location = null;
+        if ($attributes['latitude'] && $attributes['longitude']) {
+            $location = Location::create([
+                'coordinates' => json_encode([
+                    'latitude' => $attributes['latitude'],
+                    'longitude' => $attributes['longitude'],
+                ]),
+                'city' => $attributes['city'] ?? 'Unknown',
+                'address' => $attributes['address'] ?? 'Unknown',
+            ]);
+        }
 
         $user = User::create([
             'name' => $attributes['name'],
             'email' => $attributes['email'],
             'password' => bcrypt($attributes['password']),
-            'current_city'=>$attributes['current_city'],
-            'location_id' => $location->id,
+            'location_id' => $location ? $location->id : null,
         ]);
 
         Auth::login($user);
         return redirect('/login');
     }
+
 
 
 }

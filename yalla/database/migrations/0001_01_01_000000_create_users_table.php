@@ -11,9 +11,8 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('current_city');
             $table->string('email')->unique();
-            $table->foreignId('location_id')->constrained();
+            $table->foreignId('location_id')->nullable()->constrained();
             $table->string('password');
             $table->boolean('is_admin')->default(false);
             $table->timestamps();

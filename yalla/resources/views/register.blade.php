@@ -8,7 +8,7 @@
     <div class="bg-[#1F1F1F] p-8 shadow-xl w-full max-w-md">
         <div class="text-center mb-6">
             <h1 class="text-white text-2xl font-extrabold mb-2">User Details</h1>
-            <p class="text-white text-sm">Let's get your Account created, so you can enjoy the Hayya experience!</p>
+            <p class="text-white text-sm">Let's get your Account created, so you can enjoy the Yalla experience!</p>
         </div>
 
         <form action="/register" method="POST" class="space-y-4">
@@ -33,27 +33,18 @@
                 <input type="text" name="name" placeholder="name" class="w-full px-4 py-3 bg-gray-100 border border-[#B9BAA3] focus:outline-none focus:border-[#B9BAA3]">
             </div>
 
-            <div>
-                <label class="block text-[#B9BAA3] mb-2">Current City*</label>
-                <select  name="current_city" class="w-full px-4 py-3 bg-gray-100 border border-[#B9BAA3] focus:outline-none focus:border-[#B9BAA3]" required>
-                    @foreach($cities as $city)
-                        <option value="{{ $city }}" >{{ $city }}</option>
-                    @endforeach
-                </select>
-            </div>
-
             <div class="space-y-4 mt-6">
-                <!-- Location Permission -->
+                <p class="text-[#B9BAA3]">Allow location access for a better experience (optional).</p>
                 <button type="button" onclick="getLocation()" class="w-full bg-[#B9BAA3] text-gray-900 py-3 px-6 font-medium transition-colors mt-6">Get My Location</button>
-                <input type="hidden" name="latitude" id="latitude">
-                <input type="hidden" name="longitude" id="longitude">
-                <input type="hidden" name="city" id="city">
-                <input type="hidden" name="address" id="address">
+                <input type="hidden" name="latitude" id="latitude" value="">
+                <input type="hidden" name="longitude" id="longitude" value="">
+                <input type="hidden" name="city" id="city" value="">
+                <input type="hidden" name="address" id="address" value="">
             </div>
 
             <div class="space-y-4 mt-6">
                 <div class="flex items-start gap-3">
-                    <input type="checkbox" class="custom-checkbox mt-1">
+                    <input type="checkbox" class="mt-1">
                     <label class="text-white text-sm">
                         I have read and accepted the
                         <a href="/privacy" class="text-[#B9BAA3] hover:text-[#a8a994]">Terms & Conditions</a> and the
@@ -62,7 +53,7 @@
                 </div>
 
                 <div class="flex items-start gap-3">
-                    <input type="checkbox" class="custom-checkbox mt-1">
+                    <input type="checkbox" class="mt-1">
                     <label class="text-white text-sm">
                         I wish to receive offers, marketing content & communications from Yalla.
                     </label>
@@ -79,10 +70,6 @@
         </form>
     </div>
 </div>
-
-<!-- Toast Notification -->
-<div id="toast" class="toast">Your location has been saved successfully!</div>
-
 <script>
     function getLocation() {
         if (navigator.geolocation) {
@@ -105,14 +92,6 @@
                         console.log("City:", city);
                         console.log("Address:", address);
 
-                        // Show the toast notification
-                        const toast = document.getElementById('toast');
-                        toast.classList.add('show');
-
-                        // Hide the toast after 3 seconds
-                        setTimeout(() => {
-                            toast.classList.remove('show');
-                        }, 3000);
                     })
                     .catch(error => {
                         alert("Error retrieving the address.");

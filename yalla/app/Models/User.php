@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends Authenticatable
 {
-    protected $fillable = ['name','current_city', 'email', 'password', 'is_admin','location_id'];
+    protected $fillable = ['name', 'email', 'password', 'is_admin','location_id'];
 
 
     protected function casts():array{
