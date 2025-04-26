@@ -12,7 +12,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-background" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                             </svg>
-                            <span class="text-background">{{ \Carbon\Carbon::parse($match['date'])->format('Y-m-d') }}</span>                        </div>
+                            <span class="text-background">{{ \Carbon\Carbon::parse($match['date'])->format('Y-m-d') }}</span></div>
                         <div class="flex items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-background" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -28,7 +28,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="/tickets" class="flex items-center text-primary mt-4 md:mt-0 hover:text-opacity-80 transition-colors duration-200">
+                <a href="/matches" class="flex items-center text-primary mt-4 md:mt-0 hover:text-opacity-80 transition-colors duration-200">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                     </svg>

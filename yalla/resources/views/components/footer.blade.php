@@ -151,9 +151,9 @@
         <div class="pt-6 flex flex-col md:flex-row justify-between items-center">
             <p class="text-lightgray text-sm mb-4 md:mb-0">© 2025 Yalla. All rights reserved. Official partner of the 2030 FIFA World Cup Morocco.</p>
             <div class="flex space-x-6">
-                <a href="#" class="text-lightgray hover:text-primary text-sm transition-colors">Privacy Policy</a>
-                <a href="#" class="text-lightgray hover:text-primary text-sm transition-colors">Terms of Service</a>
-                <a href="#" class="text-lightgray hover:text-primary text-sm transition-colors">Cookie Policy</a>
+                <a href="/privacy" class="text-lightgray hover:text-primary text-sm transition-colors">Privacy Policy</a>
+                <a href="/privacy" class="text-lightgray hover:text-primary text-sm transition-colors">Terms of Service</a>
+                <a href="/privacy" class="text-lightgray hover:text-primary text-sm transition-colors">Cookie Policy</a>
             </div>
         </div>
     </div>

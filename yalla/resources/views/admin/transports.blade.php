@@ -94,7 +94,7 @@
                             </button>
                         </div>
                         <div class="p-4">
-                            <form id="transport-form" action="/transport" method="POST" enctype="multipart/form-data">
+                            <form id="transport-form" action="/admin/transport" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <input type="hidden" id="transportId" name="id" value="">
                                 <input type="hidden" id="methodField" name="_method" value="POST">

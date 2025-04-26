@@ -17,7 +17,7 @@
                 </div>
 
                 <div class="bg-darkgray rounded-lg shadow p-6 md:p-8">
-                    <form id="edit-hotel-form" action="/updateHotel/{{ $hotel->id }}" method="POST" enctype="multipart/form-data">
+                    <form id="edit-hotel-form" action="/admin/updateHotel/{{ $hotel->id }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <input type="hidden" id="hotel_id" name="hotel_id" value="{{ $hotel->id }}">
 

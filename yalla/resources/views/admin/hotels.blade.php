@@ -49,8 +49,8 @@
                                     <div class="text-sm">{{$hotel->Location->city}} - {{$hotel->Location->address}}</div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                    <a href="/editHotelForm/{{$hotel->id}}" class="text-primary hover:text-primary/80 mr-3">Edit</a>
-                                    <a href="/deleteHotel/{{$hotel->id}}" class="text-red-500 hover:text-red-400">Delete</a>
+                                    <a href="/admin/editHotelForm/{{$hotel->id}}" class="text-primary hover:text-primary/80 mr-3">Edit</a>
+                                    <a href="/admin/deleteHotel/{{$hotel->id}}" class="text-red-500 hover:text-red-400">Delete</a>
                                 </td>
                             </tr>
                             @endforeach
@@ -95,7 +95,7 @@
                             </button>
                         </div>
                         <div class="p-4">
-                            <form id="hotel-form" action="/createHotel" method="POST" enctype="multipart/form-data">
+                            <form id="hotel-form" action="/admin/createHotel" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <input type="hidden" id="hotel_id" name="hotel_id">
                                 <div class="mb-4">

@@ -69,9 +69,7 @@
                     </div>
                     <div class="absolute bottom-0 p-6 bg-gradient-to-t from-darkgray via-darkgray/90 to-transparent z-20 w-full">
                         <div class="service-icon bg-primary/90 w-14 h-14 rounded-full flex items-center justify-center mb-4 -mt-10">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m-8 4H4m0 0l4 4m-4-4l4-4" />
-                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-24 h-8" width="20" height="20" viewBox="0 0 20 20"><path fill="#FFF" d="M12.78 3.22a.75.75 0 1 0-1.06 1.06L13.44 6H4.75a.75.75 0 0 0 0 1.5h8.69l-1.72 1.72a.75.75 0 1 0 1.06 1.06l3-3a.75.75 0 0 0 0-1.06zm-4.5 7.56a.75.75 0 1 0-1.06-1.06l-3 3a.75.75 0 0 0 0 1.06l3 3a.75.75 0 0 0 1.06-1.06L6.56 14h8.69a.75.75 0 0 0 0-1.5H6.56z"/></svg>
                         </div>
                         <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">Yalla Ride</h3>
                         <p class="text-lightgray text-sm">

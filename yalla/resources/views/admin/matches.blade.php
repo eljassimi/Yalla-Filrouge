@@ -49,7 +49,7 @@
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                     <button onclick="ShowEditForm({{ $match->id }},'{{ $match->name }}','{{ $match->description }}','{{ $match->team_1_name }}','{{ $match->team_2_name }}','{{ $match->flag_team_1 }}','{{ $match->flag_team_2 }}','{{ $match->date }}','{{ $match->available_spots }}','{{ $match->Location->city }}','{{ $match->Location->address }}','{{ $match->Location->coordinates }}')" class="text-primary hover:text-primary/80 mr-3">Edit</button>
-                                    <a href="/deleteMatch/{{$match->id}}"  class="text-red-500 hover:text-red-400">Delete</a>
+                                    <a href="/admin/deleteMatch/{{$match->id}}"  class="text-red-500 hover:text-red-400">Delete</a>
                                 </td>
                             </tr>
                             @endforeach
@@ -100,7 +100,7 @@
                                 </button>
                             </div>
                             <div class="p-4">
-                                <form action="/match" method="POST">
+                                <form action="/admin/match" method="POST">
                                     @csrf
                                     <input type="hidden" id="form_action" name="form_action" value="create">
                                     <input type="hidden" id="match_id" name="match_id" value="">
