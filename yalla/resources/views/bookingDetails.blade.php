@@ -121,8 +121,6 @@
             <div class="mb-8">
                 <h2 class="text-2xl font-bold mb-6 text-[#222222]">Location</h2>
                 <div id="map" class="h-[300px] relative rounded-lg overflow-hidden mb-6 bg-gray-200">
-                    @php $location = $hotel->location @endphp
-                    {{$location}}
                 </div>
             </div>
         </div>
@@ -189,6 +187,7 @@
     </div>
 </main>
 <x-footer />
+@php $location = $hotel->location @endphp
 <script>
 
     const roomSelect = document.getElementById('roomSelect');
@@ -240,12 +239,21 @@
 
 <script>
     let coordinates = {!! $location->coordinates !!};
-
     let latitude = coordinates.latitude;
     let longitude = coordinates.longitude;
     console.log("latitude : ", latitude);
     console.log("longitude : ", longitude);
 
+    var map = L.map('map').setView([latitude, longitude], 13);
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://carto.com/">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 19
+    }).addTo(map);
+
+    L.marker([latitude, longitude]).addTo(map)
+        .openPopup();
 </script>
 </body>
 </html>
