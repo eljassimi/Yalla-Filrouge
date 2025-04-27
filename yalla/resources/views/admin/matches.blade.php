@@ -151,6 +151,39 @@
                                         <input type="hidden" id="coordinates" name="coordinates">
                                         <div id="map" class="mt-2 rounded-lg" style="height: 300px;"></div>
                                     </div>
+                                    <div class="mt-8 mb-6 border-t border-gray-700 pt-6">
+                                        <h3 class="text-lg font-medium text-white mb-4">Ticket Types</h3>
+
+                                        <div id="ticket-container">
+                                            <div class="ticket-entry bg-gray-800 border border-gray-700 rounded-lg p-4 mb-4">
+                                                <div class="mb-3">
+                                                    <label class="block text-sm font-medium text-lightgray mb-1">Ticket Type</label>
+                                                    <input class="w-full bg-gray-800 border border-gray-700 rounded-lg pl-8 pr-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="block text-sm font-medium text-lightgray mb-1">Ticket Price</label>
+                                                    <div class="relative">
+                                                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                                            <span class="text-gray-400">$</span>
+                                                        </div>
+                                                        <input type="number" name="price_per_night[]" step="0.01" min="0" class="w-full bg-gray-800 border border-gray-700 rounded-lg pl-8 pr-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-2">
+                                                    <label class="block text-sm font-medium text-lightgray mb-1">Number of Tickets</label>
+                                                    <input type="number" name="number_of_tickets[]" min="1" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
+                                                </div>
+
+                                                <button type="button" id="remove-ticket" class="remove-ticket text-red-400 text-sm hover:text-red-300 mt-2 hidden">Remove ticket Type</button>
+                                            </div>
+                                        </div>
+
+                                        <button type="button" id="add-ticket" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg text-sm">
+                                            + Add Another ticket Type
+                                        </button>
+                                    </div>
+
                                     <div class="flex justify-end mt-6">
                                         <button onclick="HideForm()" type="button" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg mr-2">Cancel</button>
                                         <button type="submit" class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg">Save</button>
@@ -283,6 +316,47 @@
 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet-geosearch/dist/bundle.min.js"></script>
+<script>
+    let HotelForm = document.getElementById("hotel-form-modal");
+    let Addticket = document.getElementById('add-ticket');
+    let ticketContainer = document.getElementById("ticket-container")
+
+    function HideForm(){
+        HotelForm.classList.add("hidden");
+    }
+    function ShowForm(){
+        document.getElementById('hotel-form-title').innerText = 'Add New Hotel';
+        document.getElementById('hotel_id').value = '';
+        document.getElementById('hotelName').value = '';
+        document.getElementById('hotelDescription').value = '';
+        document.getElementById('tickets').value = '';
+        HotelForm.classList.remove("hidden");
+    }
+
+    Addticket.addEventListener('click',function(){
+        const ticketEntries = ticketContainer.querySelector('.ticket-entry').cloneNode(true);
+        ticketContainer.appendChild(ticketEntries);
+        DisplayRemoveButton();
+    });
+
+    function DisplayRemoveButton() {
+        const ticketEntries = ticketContainer.querySelectorAll('.ticket-entry');
+        ticketEntries.forEach((ticket, index) => {
+            const removeButton = ticket.querySelector('.remove-ticket');
+            if (index === 0) {
+                removeButton.classList.add("hidden");
+            } else {
+                removeButton.classList.remove("hidden");
+            }
+            removeButton.addEventListener('click',function(){
+                ticket.remove();
+            })
+        });
+    }
+
+
+</script>
+
 <script >
     document.addEventListener('DOMContentLoaded', function () {
         const map = L.map('map').setView([31.7917, -7.0926], 6);
