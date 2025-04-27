@@ -17,8 +17,8 @@ class EventController extends Controller
     }
 
     public function matchDetails($id){
-        $match = Event::with('location')->find($id);
-        $ticket_types = TicketType::whereNotIn('name', ['Normal', 'VIP'])->get();
+        $match = Event::with('location')->with('ticketTypes')->find($id);
+        $ticket_types = $match->ticketTypes;
         return view('MatchDetails', compact('match', 'ticket_types'));
     }
 
@@ -88,6 +88,6 @@ class EventController extends Controller
     public function destroy($id){
         $event = Event::find($id);
         $event->delete();
-        return redirect('/matches');
+        return redirect('/admin/matches');
     }
 }
