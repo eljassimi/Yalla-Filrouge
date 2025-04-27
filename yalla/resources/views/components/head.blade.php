@@ -33,5 +33,5 @@
     </style>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet-geosearch/dist/geosearch.css" />
-
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>

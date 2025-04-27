@@ -168,9 +168,7 @@
                             <p id="travelTime" class="text-xl font-bold">3h 15min</p>
                         </div>
                     </div>
-                    <div id="map" class="">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d612.8732090729193!2d-7.671812680675286!3d31.711966612469695!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafee8d96179e51%3A0x5950b6534f87adb8!2sMarrakech!5e0!3m2!1sfr!2sma!4v1743468423919!5m2!1sfr!2sma" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
+                    <div id="map" style="height: 400px;"></div>
                 </div>
             </div>
 
@@ -241,7 +239,6 @@
     $price_per_km = $transport["price_per_km"];
  @endphp
 <script>
-
     let userLocation = JSON.parse('<?php echo $userLocation; ?>');
     let eventLocation = JSON.parse('<?php echo $eventLocation; ?>');
     console.log("User Coordinates:", userLocation.latitude, userLocation.longitude);
@@ -259,8 +256,10 @@
 
     const map = L.map('map').setView([userLat, userLon], 10);
     console.log("map : ", map);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://carto.com/">CARTO</a> contributors',
+        subdomains: 'abcd',
+        maxZoom: 19
     }).addTo(map);
 
     const userMarker = L.marker([userLat, userLon]).addTo(map)
