@@ -98,14 +98,16 @@ class HotelController extends Controller
         ]);
 
         if ($request->hasFile('main_image')) {
-            $mainImagePath = $request->file('main_image')->store('stay', 'public');
+            $originalName = $request->file('main_image')->getClientOriginalName();
+            $mainImagePath = $request->file('main_image')->storeAs('stay', $originalName, 'public');
             $hotelData['main_image'] = $mainImagePath;
         }
 
         if ($request->hasFile('gallery_images')) {
             $galleryPaths = [];
             foreach ($request->file('gallery_images') as $image) {
-                $galleryPaths[] = $image->store('stay', 'public');
+                $originalName = $image->getClientOriginalName();
+                $galleryPaths[] = $image->storeAs('stay', $originalName, 'public');
             }
             $hotelData['gallery_images'] = json_encode($galleryPaths);
         }
@@ -137,7 +139,7 @@ class HotelController extends Controller
             ]);
         }
 
-        return redirect('/hotels');
+        return redirect('/admin/hotels');
     }
     public function update(Request $request, $id)
     {
