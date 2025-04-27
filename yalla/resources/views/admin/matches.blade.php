@@ -158,7 +158,7 @@
                                             <div class="ticket-entry bg-gray-800 border border-gray-700 rounded-lg p-4 mb-4">
                                                 <div class="mb-3">
                                                     <label class="block text-sm font-medium text-lightgray mb-1">Ticket Type</label>
-                                                    <input class="w-full bg-gray-800 border border-gray-700 rounded-lg pl-8 pr-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
+                                                    <input name="ticket_type[]" class="w-full bg-gray-800 border border-gray-700 rounded-lg pl-8 pr-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
                                                 </div>
                                                 <div class="mb-3">
                                                     <label class="block text-sm font-medium text-lightgray mb-1">Ticket Price</label>

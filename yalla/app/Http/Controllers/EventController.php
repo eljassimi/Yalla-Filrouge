@@ -57,10 +57,10 @@ class EventController extends Controller
 
         $matchData['event_type'] = 'Match';
 
-        if($request->form_action == 'create') {
+        if ($request->form_action == 'create') {
             $location = Location::create($locationData);
             $matchData['location_id'] = $location->id;
-            Event::create($matchData);
+            $event = Event::create($matchData);
         } else {
             $event = Event::findOrFail($request->match_id);
             if ($event->location_id) {
@@ -72,9 +72,19 @@ class EventController extends Controller
             }
             $event->update($matchData);
         }
+
+        if ($request->has('ticket_type') && $request->has('price_per_night') && $request->has('number_of_tickets')) {
+            foreach ($request->ticket_type as $index => $typeName) {
+                TicketType::create([
+                    'name' => $typeName,
+                    'price' => $request->price_per_night[$index],
+                    'event_id' => $event->id,
+                ]);
+            }
+        }
+
         return redirect('/admin/matches');
     }
-
     public function destroy($id){
         $event = Event::find($id);
         $event->delete();
