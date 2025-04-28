@@ -29,9 +29,14 @@ class EventController extends Controller
             'ticket_quantity'=>'required|numeric|min:1',
         ]);
 
+        $ticketType = TicketType::find($attributes['ticket_type_id']);
+
+        if($ticketType->seats < $attributes['ticket_quantity']) {
+            return back()->with('error', 'Not enough tickets available');
+        }
+
         $attributes['user_id'] = Auth::id();
         userSelections::create($attributes);
-
 
         session(['event_id' => $attributes['event_id']]);
         return redirect('/hotels');
