@@ -25,7 +25,7 @@ class HotelController extends Controller
     }
      public function hotelDetails($id){
          $hotel = Hotel::with('location')->findOrFail($id);
-         $rooms = Room::where('hotel_id', $id)->with('roomType')->get();
+         $rooms = Room::where('hotel_id', $id)->get();
          $hotel->gallery_images = json_decode($hotel->gallery_images, true);
          $amenities = json_decode($hotel->amenities);
          return view('bookingDetails', compact('hotel','rooms','amenities'));
@@ -76,7 +76,6 @@ class HotelController extends Controller
         $hotel->delete();
         return redirect('/hotels');
     }
-
     public function store(Request $request)
     {
         $locationData = $request->validate([
@@ -122,18 +121,18 @@ class HotelController extends Controller
         $hotel = Hotel::create($hotelData);
 
         $roomData = $request->validate([
-            'room_type_id' => 'required|array',
-            'room_type_id.*' => 'required|exists:room_types,id',
+            'room_type' => 'required|array',
+            'room_type.*' => 'required|string',
             'price_per_night' => 'required|array',
             'price_per_night.*' => 'required|numeric|min:0',
             'number_of_rooms' => 'required|array',
             'number_of_rooms.*' => 'required|integer|min:1',
         ]);
 
-        foreach ($request->room_type_id as $index => $typeId) {
+        foreach ($request->room_type as $index => $type) {
             Room::create([
                 'hotel_id' => $hotel->id,
-                'room_type_id' => $typeId,
+                'room_type' => $type,
                 'price_per_night' => $request->price_per_night[$index],
                 'number_of_rooms' => $request->number_of_rooms[$index],
             ]);
@@ -141,6 +140,7 @@ class HotelController extends Controller
 
         return redirect('/admin/hotels');
     }
+
     public function update(Request $request, $id)
     {
         $hotel = Hotel::findOrFail($id);
@@ -172,15 +172,14 @@ class HotelController extends Controller
 
         Room::where('hotel_id', $hotel->id)->delete();
 
-        for ($i = 0; $i < count($request->room_type_id); $i++) {
+        for ($i = 0; $i < count($request->room_type); $i++) {
             Room::create([
                 'hotel_id' => $hotel->id,
-                'room_type_id' => $request->room_type_id[$i],
+                'room_type' => $request->room_type[$i],
                 'price_per_night' => $request->price_per_night[$i],
                 'number_of_rooms' => $request->number_of_rooms[$i],
             ]);
         }
-
         return redirect('/hotels');
     }
 

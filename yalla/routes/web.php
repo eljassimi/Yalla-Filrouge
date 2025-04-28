@@ -38,7 +38,7 @@ Route::get('/transport-details/{id}',[TransportController::class,'show']);
 Route::post('/book-transport',[TransportController::class,'store']);
 Route::get('/skip-transport',[TransportController::class,'skipTransport']);
 
-Route::get('checkout',[PayementController::class,'index']);
+Route::get('/checkout',[PayementController::class,'index']);
 Route::post('/payment', [PayementController::class, 'checkout']);
 Route::get('/success',[PayementController::class,'success']);
 

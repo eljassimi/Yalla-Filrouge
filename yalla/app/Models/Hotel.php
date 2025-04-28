@@ -16,7 +16,8 @@ class Hotel extends Model
         return $this->belongsToMany(Bundle::class, 'bundle_Hotel');
     }
 
-    public function room(){
+    public function room():HasMany
+    {
         return $this->hasMany(room::class, 'hotel_id');
     }
 
@@ -25,9 +26,9 @@ class Hotel extends Model
         return $this->belongsTo(Location::class);
     }
 
-    public function roomTypes()
+    public function roomTypes(): HasMany
     {
-        return $this->hasManyThrough(RoomType::class, Room::class, 'hotel_id', 'id', 'id', 'room_type_id');
+        return $this->hasMany(RoomType::class, Room::class);
     }
 
 }

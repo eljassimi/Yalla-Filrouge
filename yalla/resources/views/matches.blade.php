@@ -95,7 +95,7 @@
                 </div>
                 <div class="flex flex-col align-center ">
                     <div class="text-xl self-center font-bold text-[#b9baa3]">VS</div>
-                    <p class="text-xs text-[#b9baa3]">{{$match->location["address"]}}</p>
+                    <p class="text-xs text-[#b9baa3]">{{$match->location["city"]}} | {{$match->location["address"]}}</p>
                 </div>
 
                 <div class="flex items-center space-x-4">

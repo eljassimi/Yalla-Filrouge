@@ -32,6 +32,7 @@ class EventController extends Controller
         $attributes['user_id'] = Auth::id();
         userSelections::create($attributes);
 
+
         session(['event_id' => $attributes['event_id']]);
         return redirect('/hotels');
     }
@@ -73,11 +74,12 @@ class EventController extends Controller
             $event->update($matchData);
         }
 
-        if ($request->has('ticket_type') && $request->has('price_per_night') && $request->has('number_of_tickets')) {
+        if ($request->has('ticket_type')) {
             foreach ($request->ticket_type as $index => $typeName) {
                 TicketType::create([
                     'name' => $typeName,
-                    'price' => $request->price_per_night[$index],
+                    'price' => $request->price_per_ticket[$index],
+                    'seats' => $request->seats[$index],
                     'event_id' => $event->id,
                 ]);
             }

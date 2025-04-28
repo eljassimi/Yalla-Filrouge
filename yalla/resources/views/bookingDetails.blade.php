@@ -4,7 +4,6 @@
 <main class="flex-1 container mx-auto px-4 py-6">
 
     <div class="relative mb-12 px-2">
-=
         <div class="mb-6 relative z-10">
             <h3 class="text-xl font-semibold text-white">Gallery</h3>
             <div class="w-20 h-1 bg-[#A22C29] rounded-full mt-2"></div>
@@ -137,7 +136,7 @@
                         <select id="roomSelect" name="room_price" class="w-full border border-[#d9d9d9] rounded-md p-2">
                             @foreach($rooms as $room)
                                 <option selected value="{{ $room->price_per_night }}">
-                                    {{ $room->roomType->type }}
+                                    {{ $room['room_type'] }}
                                 </option>
                             @endforeach
                         </select>
@@ -182,8 +181,6 @@
                 </ul>
             </div>
         @endif
-
-
     </div>
 </main>
 <x-footer />

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class TicketType extends Model
 {
-    protected $fillable = ['name', 'price','event_id'];
+    protected $fillable = ['name', 'price','seats','event_id'];
 
     public function tickets(): HasMany
     {

@@ -161,20 +161,18 @@
                                                     <input name="ticket_type[]" class="w-full bg-gray-800 border border-gray-700 rounded-lg pl-8 pr-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
                                                 </div>
                                                 <div class="mb-3">
+                                                    <label class="block text-sm font-medium text-lightgray mb-1">Seats</label>
+                                                    <input name="seats[]" type="number" class="w-full bg-gray-800 border border-gray-700 rounded-lg pl-8 pr-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
+                                                </div>
+                                                <div class="mb-3">
                                                     <label class="block text-sm font-medium text-lightgray mb-1">Ticket Price</label>
                                                     <div class="relative">
                                                         <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                                                             <span class="text-gray-400">$</span>
                                                         </div>
-                                                        <input type="number" name="price_per_night[]" step="0.01" min="0" class="w-full bg-gray-800 border border-gray-700 rounded-lg pl-8 pr-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
+                                                        <input type="number" name="price_per_ticket[]" step="0.01" min="0" class="w-full bg-gray-800 border border-gray-700 rounded-lg pl-8 pr-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
                                                     </div>
                                                 </div>
-
-                                                <div class="mb-2">
-                                                    <label class="block text-sm font-medium text-lightgray mb-1">Number of Tickets</label>
-                                                    <input type="number" name="number_of_tickets[]" min="1" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
-                                                </div>
-
                                                 <button type="button" id="remove-ticket" class="remove-ticket text-red-400 text-sm hover:text-red-300 mt-2 hidden">Remove ticket Type</button>
                                             </div>
                                         </div>
