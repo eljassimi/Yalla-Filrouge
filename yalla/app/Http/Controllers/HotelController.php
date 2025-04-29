@@ -27,7 +27,7 @@ class HotelController extends Controller
     }
      public function hotelDetails($id){
          $hotel = Hotel::with('location')->findOrFail($id);
-         $rooms = Room::where('hotel_id', $id)->get();
+         $rooms = Room::where('hotel_id', $id)->where('number_of_rooms', '>',0)->get();
          $hotel->gallery_images = json_decode($hotel->gallery_images, true);
          $amenities = json_decode($hotel->amenities);
          return view('bookingDetails', compact('hotel','rooms','amenities'));
