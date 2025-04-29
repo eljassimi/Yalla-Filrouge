@@ -20,6 +20,8 @@ class HotelController extends Controller
         $hotels = Hotel::with('location', 'room')
             ->whereHas('location', function ($query) use ($eventCity) {
                 $query->where('city', $eventCity);
+            })->whereHas('room',function($query){
+                $query->where('number_of_rooms', '>', 0);
             })->paginate(6);
         return view('hotels', compact('hotels'));
     }
