@@ -66,7 +66,9 @@
                     <div class="relative inline-block w-full group">
                         <select id="ticketType" name="ticket_type_id" class="w-full bg-black text-white border-none rounded-none h-12 px-4 flex justify-between items-center">
                             @foreach($ticket_types as $ticket_type)
+                                @if($ticket_type['seats'] > 0)
                                 <option class="py-3 px-4 block text-black hover:bg-[#f1f1f1]" data-price="{{$ticket_type['price']}}" value="{{$ticket_type['id']}}"> {{$ticket_type["name"]}}</option>
+                                @endif
                             @endforeach
                         </select>
                     </div>

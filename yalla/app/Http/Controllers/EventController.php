@@ -11,8 +11,13 @@ use Illuminate\Support\Facades\Auth;
 
 class EventController extends Controller
 {
-    public function index(){
-        $matches = Event::with('location')->where("event_type", "=", "Match")->paginate(6);
+    public function index()
+    {
+        $matches = Event::with('location')
+            ->where('event_type', 'Match')
+            ->whereHas('ticketTypes', function ($query) {
+                $query->where('seats', '>', 0);
+            })->paginate(6);
         return view('matches', compact('matches'));
     }
 
