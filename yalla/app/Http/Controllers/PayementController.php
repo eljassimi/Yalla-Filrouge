@@ -81,6 +81,8 @@ class PayementController extends Controller
                 'status' => 'success'
             ]);
 
+            session()->forget(['event_id']);
+
             $userSelection = userSelections::where('user_id', auth()->id())->first();
 
             if ($userSelection && !$userSelection->confirmed) {

@@ -10,6 +10,7 @@ use App\Http\Controllers\SessionController;
 use App\Http\Controllers\TicketController;
 use App\Http\Controllers\TransportController;
 use App\Http\Middleware\AuthMiddleware;
+use App\Http\Middleware\RestrictHotelTransportAccess;
 use Illuminate\Support\Facades\Route;
 
 
@@ -21,13 +22,7 @@ Route::view('/privacy', 'privacy');
 Route::get('/', function () {return view('home');});
 Route::post('/register', [RegisterController::class, 'register']);
 
-Route::middleware(AuthMiddleware::class)->group(function () {
-Route::get('/logout', [SessionController::class, 'destroy']);
-
-Route::get("/matches",[EventController::class,"index"]);
-Route::get('/ticket/{id}',[EventController::class,'matchDetails']);
-Route::post('/ticketpurshase',[EventController::class,'PurshaseEvent']);
-
+Route::middleware(RestrictHotelTransportAccess::class)->group(function (){
 Route::get('/hotels',[HotelController::class,'index']);
 Route::get('/hotel-details/{id}',[HotelController::class,'hotelDetails']);
 Route::post('/bookingHotel',[HotelController::class,'booking']);
@@ -37,6 +32,15 @@ Route::get('/transports',[TransportController::class,'index']);
 Route::get('/transport-details/{id}',[TransportController::class,'show']);
 Route::post('/book-transport',[TransportController::class,'store']);
 Route::get('/skip-transport',[TransportController::class,'skipTransport']);
+});
+
+Route::middleware(AuthMiddleware::class)->group(function () {
+Route::get('/logout', [SessionController::class, 'destroy']);
+
+Route::get("/matches",[EventController::class,"index"]);
+Route::get('/ticket/{id}',[EventController::class,'matchDetails']);
+Route::post('/ticketpurshase',[EventController::class,'PurshaseEvent']);
+
 
 Route::get('/checkout',[PayementController::class,'index']);
 Route::post('/payment', [PayementController::class, 'checkout']);
