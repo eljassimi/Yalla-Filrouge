@@ -13,7 +13,7 @@ return new class extends Migration
             $table->float('distance_km');
             $table->float('total_price');
             $table->dateTime('booking_date');
-            $table->foreignId('transport_service_id')->constrained();
+            $table->foreignId('transport_service_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

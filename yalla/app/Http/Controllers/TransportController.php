@@ -14,7 +14,7 @@ use App\Models\TransportService;
 class TransportController extends Controller
 {
     public function index(){
-        $transports = TransportService::paginate(6);
+        $transports = TransportService::where('available_seats','>',0)->paginate(6);
         return view('transports', compact('transports'));
     }
     public function show($id) {
@@ -78,9 +78,11 @@ class TransportController extends Controller
             $rules['logo'] = 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048';
         }
         $attributes = $request->validate($rules);
+
         if ($request->hasFile('logo')) {
-            $logoPath = $request->file('logo')->store('Transport', 'public');
-            $attributes['logo'] = $logoPath;
+            $originalName = $request->file('logo')->getClientOriginalName();
+            $request->file('logo')->storeAs('Transport', $originalName, 'public');
+            $attributes['logo'] = "assets/Transport/".$originalName;
         }
         if ($isUpdate) {
             $transport = TransportService::findOrFail($request->id);
@@ -89,11 +91,11 @@ class TransportController extends Controller
             }
             $transport->update($attributes);
         } else {
+            $attributes['logo'] =
             TransportService::create($attributes);
         }
         return redirect('/transports');
     }
-
     public function destroy($id){
         $transport = TransportService::findOrFail($id);
         $transport->delete();

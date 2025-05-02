@@ -73,9 +73,8 @@ class PayementController extends Controller
 
         $stripeSession = \Stripe\Checkout\Session::retrieve($sessionId);
 
-
         if ($stripeSession->payment_status === 'paid') {
-
+            // Create payment record
             $payment = Payment::create([
                 'amount' => $stripeSession->amount_total / 100,
                 'payment_date' => now(),
@@ -85,10 +84,27 @@ class PayementController extends Controller
             $userSelection = userSelections::where('user_id', auth()->id())->first();
 
             if ($userSelection && !$userSelection->confirmed) {
+
+                $ticketType = \App\Models\TicketType::find($userSelection->ticket_type_id);
+                if ($ticketType) {
+                    $ticketType->seats -= $userSelection->ticket_quantity;
+                    $ticketType->save();
+                }
+
+                $room = \App\Models\Room::where('hotel_id', $userSelection->hotel_id)->first();
+                if ($room) {
+                    $room->number_of_rooms -= 1;
+                    $room->save();
+                }
+
+                $transport = \App\Models\TransportService::find($userSelection->transport_booking_id);
+                if ($transport) {
+                    $transport->available_seats -= $userSelection->ticket_quantity;
+                    $transport->save();
+                }
                 $userSelection->confirmed = true;
                 $userSelection->save();
             }
-
 
             session()->forget('stripe_session_id');
 
