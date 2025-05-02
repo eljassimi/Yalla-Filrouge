@@ -80,7 +80,7 @@
                         <div class="flex justify-between items-start mb-1 text-darkgray">
                             <h3 class="text-lg text-white font-bold">{{$transport["name"]}}</h3>
                         </div>
-                        <p class="text-sm text-white mb-2">{{$transport["description"]}}</p>
+                        <p class="text-sm mb-4 text-white">{{ substr($transport['description'], 0, 100) . '...' }}</p>                        <div class="mt-auto">
                         <div class="flex justify-between items-center">
                             <div>
                                 <span class="font-bold text-red-600 bg-red-500 bg-opacity-20 px-4 rounded-xl">Bus</span>

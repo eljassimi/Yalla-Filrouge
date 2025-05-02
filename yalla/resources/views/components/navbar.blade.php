@@ -5,9 +5,8 @@
         </div>
         <nav class="hidden md:flex items-center gap-8">
             <a href="/matches" class="text-white hover:text-primary font-medium">Yalla Events</a>
-            <a href="/tickets" class="text-white hover:text-primary font-medium">Yalla Stay</a>
-            <a href="/tickets" class="text-white hover:text-primary font-medium">Yalla Ride</a>
-            <a href="/tickets" class="text-white hover:text-primary font-medium">Yalla Health</a>
+            <a href="/matches" class="text-white hover:text-primary font-medium">Yalla Stay</a>
+            <a href="/matches" class="text-white hover:text-primary font-medium">Yalla Ride</a>
         </nav>
         <div class="flex items-center space-x-2">
             @guest
