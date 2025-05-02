@@ -69,36 +69,31 @@
 </div>
 
 <!-- Main Content -->
-<main class="flex-1  py-6 px-6">
+<main class="flex-1 py-6 px-6 bg-darkgray">
     <div class="max-w-6xl mx-auto">
-
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Card 1 -->
             @foreach($hotels as $hotel)
-            <div class="shadow-xl rounded-lg overflow-hidden  transform transition-transform hover:-translate-y-2">
-                <div class="h-56 bg-gray-800 relative">
-                    <img src="/assets/{{$hotel["main_image"]}}" alt="Mountain View Villa" class="w-full h-full object-cover">
-                </div>
-                <div class="p-4">
-                    <div class="flex justify-between items-start mb-1 text-darkgray">
-                        <h3 class="text-lg text-white font-bold">{{$hotel["name"]}}</h3>
+                <div class="shadow-xl rounded-lg overflow-hidden transform transition-transform hover:-translate-y-2 bg-darkgray flex flex-col min-h-[400px]">
+                    <div class="h-56 bg-gray-800 relative aspect-[4/3]">
+                        <img src="{{ asset('assets/' . $hotel['main_image']) }}" alt="{{ $hotel['name'] }}" class="w-full h-full object-cover" onerror="this.src='/assets/fallback.jpg'">
                     </div>
-                    <p class="text-sm text-white mb-2">{{$hotel->location["city"]}}</p>
-                    <p class="text-sm mb-4 text-white">{{$hotel["description"]}}</p>
-                    <div class="flex justify-between items-center">
-                        <div>
-                            <span class="font-bold text-white text-lg">{{$hotel->room[0]["price_per_night"]}} DH</span>
+                    <div class="p-4 flex flex-col flex-1">
+                        <div class="flex justify-between items-start mb-1">
+                            <h3 class="text-lg text-white font-bold">{{ $hotel['name'] }}</h3>
+                        </div>
+                        <p class="text-sm text-white mb-2">{{ $hotel->location['city'] }}</p>
+                        <p class="text-sm mb-4 text-white">{{ substr($hotel['description'], 0, 100) . '...' }}</p>                        <div class="mt-auto">
+                            <span class="font-bold text-white text-lg">{{ $hotel->room[0]['price_per_night'] }} DH</span>
                             <span class="text-white">/night</span>
                         </div>
-                        <a href="/hotel-details/{{$hotel['id']}}" class="bg-primary hover:bg-primary/90 text-white px-4 py-1.5 text-sm font-medium rounded-md transition">
+                        <a href="/hotel-details/{{ $hotel['id'] }}" class="mt-4 bg-primary hover:bg-primary/90 text-white px-4 py-1.5 text-sm font-medium rounded-md transition inline-block">
                             Details
                         </a>
                     </div>
                 </div>
-            </div>
             @endforeach
         </div>
-        <!-- pagination -->
+        <!-- Pagination -->
         <div class="flex justify-center mt-8">
             {{ $hotels->links('vendor.pagination.tailwind') }}
         </div>
