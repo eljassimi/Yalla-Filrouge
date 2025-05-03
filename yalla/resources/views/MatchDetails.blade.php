@@ -47,7 +47,7 @@
             <div class="lg:col-span-2 bg-lightgray p-4 rounded shadow-lg">
                 <div class="relative">
                     <div class="w-full aspect-[4/3] rounded  relative overflow-hidden ">
-                        <img alt="feild" class="w-[90%] m-auto " src="/assets/Terrain/terran.png">
+                        <img alt="feild" class="w-[90%] m-auto " src='/assets/Terrain/vvip.png'>
                     </div>
                 </div>
 
@@ -147,6 +147,38 @@
 
     updatePrice();
 
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const ticketSelect = document.getElementById('ticketType');
+        const terrainImage = document.querySelector('img[alt="feild"]');
+
+        ticketSelect.addEventListener('change', function() {
+            const selectedOption = ticketSelect.options[ticketSelect.selectedIndex];
+            const ticketName = selectedOption.text.trim().toUpperCase();
+
+            let imagePath = '/assets/Terrain/terran.png'; // default
+
+            if (ticketName === 'VIP') {
+                imagePath = '/assets/Terrain/vvip.png';
+            } else if (ticketName === 'ZONE 2') {
+                imagePath = '/assets/Terrain/zone2.png';
+            } else if (ticketName === 'ZONE 3') {
+                imagePath = '/assets/Terrain/zone3.png';
+            } else if (ticketName === 'ZONE 4') {
+                imagePath = '/assets/Terrain/zone4.png';
+            } else if (ticketName === 'ZONE 5') {
+                imagePath = '/assets/Terrain/zone5.png';
+            } else if (ticketName === 'ZONE 6') {
+                imagePath = '/assets/Terrain/zone6.png';
+            } else if (ticketName === 'ZONE 7') {
+                imagePath = '/assets/Terrain/zone7.png';
+            }
+
+            terrainImage.src = imagePath;
+        });
+    });
 </script>
 </body>
 </html>

@@ -158,7 +158,15 @@
                                             <div class="ticket-entry bg-gray-800 border border-gray-700 rounded-lg p-4 mb-4">
                                                 <div class="mb-3">
                                                     <label class="block text-sm font-medium text-lightgray mb-1">Ticket Type</label>
-                                                    <input name="ticket_type[]" class="w-full bg-gray-800 border border-gray-700 rounded-lg pl-8 pr-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
+                                                    <select name="ticket_type[]" class="w-full bg-gray-800 border border-gray-700 rounded-lg pl-3 pr-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
+                                                        <option value="VIP">VIP</option>
+                                                        <option value="ZONE 2">ZONE 2</option>
+                                                        <option value="ZONE 3">ZONE 3</option>
+                                                        <option value="ZONE 4">ZONE 4</option>
+                                                        <option value="ZONE 5">ZONE 5</option>
+                                                        <option value="ZONE 6">ZONE 6</option>
+                                                        <option value="ZONE 7">ZONE 7</option>
+                                                    </select>
                                                 </div>
                                                 <div class="mb-3">
                                                     <label class="block text-sm font-medium text-lightgray mb-1">Seats</label>
