@@ -81,8 +81,6 @@ class PayementController extends Controller
                 'status' => 'success'
             ]);
 
-            session()->forget(['event_id']);
-
             $userSelection = userSelections::where('user_id', auth()->id())->first();
 
             if ($userSelection && !$userSelection->confirmed) {
@@ -112,7 +110,7 @@ class PayementController extends Controller
 
             $eventId = session('event_id');
             $event = Event::with('location')->find($eventId);
-
+            session()->forget(['event_id']);
             return view('payment.success', compact('payment', 'event'));
         } else {
             abort(403, 'Payment not completed.');

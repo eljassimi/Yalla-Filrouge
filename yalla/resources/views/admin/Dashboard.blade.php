@@ -77,39 +77,18 @@
 
                     <div class="p-4">
                         <ul class="divide-y divide-gray-700">
+                            @foreach($paymentsArray as $payment)
                             <li class="py-3">
                                 <div class="flex items-center">
                                     <div class="h-8 w-8 rounded-full bg-primary flex items-center justify-center text-white font-medium mr-3">
-                                        JD
+                                        {{ substr($payment['name'], 0, 2) }}
                                     </div>
                                     <div>
-                                        <p class="text-sm">John Doe registered as a new user</p>
-                                        <p class="text-xs text-lightgray">2 hours ago</p>
+                                        <p class="text-sm">{{$payment['name']}} Make a payement : <strong class=" text-primary">{{$payment['amount']}} DH</strong></p>
                                     </div>
                                 </div>
                             </li>
-                            <li class="py-3">
-                                <div class="flex items-center">
-                                    <div class="h-8 w-8 rounded-full bg-primary flex items-center justify-center text-white font-medium mr-3">
-                                        JD
-                                    </div>
-                                    <div>
-                                        <p class="text-sm">John Doe registered as a new user</p>
-                                        <p class="text-xs text-lightgray">2 hours ago</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="py-3">
-                                <div class="flex items-center">
-                                    <div class="h-8 w-8 rounded-full bg-primary flex items-center justify-center text-white font-medium mr-3">
-                                        JD
-                                    </div>
-                                    <div>
-                                        <p class="text-sm">John Doe registered as a new user</p>
-                                        <p class="text-xs text-lightgray">2 hours ago</p>
-                                    </div>
-                                </div>
-                            </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
