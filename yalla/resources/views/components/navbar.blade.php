@@ -4,9 +4,10 @@
             <a href="/"><img class="w-full h-auto" src="/assets/logo/Yalla2.png" alt="logo"></a>
         </div>
         <nav class="hidden md:flex items-center gap-8">
-            <a href="/matches" class="text-white hover:text-primary font-medium">Yalla Events</a>
-            <a href="/matches" class="text-white hover:text-primary font-medium">Yalla Stay</a>
-            <a href="/matches" class="text-white hover:text-primary font-medium">Yalla Ride</a>
+            <a href="/" class="text-white hover:text-primary font-medium">Home</a>
+            <a href="/matches" class="text-white hover:text-primary font-medium">Events</a>
+            <a href="/about" class="text-white hover:text-primary font-medium">About</a>
+            <a href="/contact" class="text-white hover:text-primary font-medium">Contact</a>
         </nav>
         <div class="flex items-center space-x-2">
             @guest
