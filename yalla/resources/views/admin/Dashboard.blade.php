@@ -96,10 +96,10 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     <div class="bg-darkgray rounded-lg shadow">
                         <div class="p-4 border-b border-gray-700">
-                            <h2 class="text-lg font-semibold">User Registration Stats</h2>
+                            <h2 class="text-lg font-semibold">Stats</h2>
                         </div>
-                        <div class="p-4 h-64 flex items-center justify-center">
-                            <p class="text-lightgray">User registration chart would go here</p>
+                        <div class="p-4 h-64">
+                            <canvas id="statsChart"></canvas>
                         </div>
                     </div>
 
@@ -127,6 +127,71 @@
     </div>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const ctx = document.getElementById('statsChart').getContext('2d');
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Users', 'Matches', 'Hotels'],
+                datasets: [{
+                    label: 'Dashboard Statistics',
+                    data: [
+                        {{ $usersCount }},
+                        {{ count($Matches) }},
+                        {{ $hotelsCount }}
+                    ],
+                    backgroundColor: [
+                        '#A22C29',
+                        '#A22C29',
+                        '#A22C29'
+                    ],
+                    borderWidth: 1,
+                    borderRadius: 8,
+                    maxBarThickness: 50
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        backgroundColor: '#1f1f1f',
+                        titleColor: '#fff',
+                        bodyColor: '#e2e2e2',
+                        padding: 10,
+                        cornerRadius: 4,
+                        displayColors: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        },
+                        ticks: {
+                            color: '#9ca3af'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                            color: '#9ca3af'
+                        }
+                    }
+                }
+            }
+        });
+    });
+</script>
 </body>
 </html>
