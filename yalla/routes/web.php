@@ -9,6 +9,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\TicketController;
 use App\Http\Controllers\TransportController;
+use App\Http\Middleware\AdminMiddleware;
 use App\Http\Middleware\AuthMiddleware;
 use App\Http\Middleware\RestrictHotelTransportAccess;
 use Illuminate\Support\Facades\Route;
@@ -49,28 +50,30 @@ Route::get('/success',[PayementController::class,'success']);
 Route::get('/ticket/download/{payment}', [TicketController::class, 'downloadTicket'])->name('ticket.download');
 Route::view("/t","pdf.ticket");
 
-Route::get("/admin/dashboard",[AdminController::class,'dashboard']);
-Route::view("/admin/users","admin.users");
+});
+
+Route::middleware(AdminMiddleware::class)->group(function () {
+
+    Route::get("/admin/dashboard",[AdminController::class,'dashboard']);
+    Route::view("/admin/users","admin.users");
 
 //  --- Admin Matches
-Route::get("/admin/matches",[AdminController::class,'matches']);
-Route::post('/admin/match',[EventController::class,'handleMatchForm']);
-Route::get('/admin/deleteMatch/{id}',[EventController::class,'destroy']);
+    Route::get("/admin/matches",[AdminController::class,'matches']);
+    Route::post('/admin/match',[EventController::class,'handleMatchForm']);
+    Route::get('/admin/deleteMatch/{id}',[EventController::class,'destroy']);
 
 
 //  --- Admin Hotels
-Route::get("/admin/hotels",[AdminController::class,'hotels']);
-Route::get('/admin/deleteHotel/{id}',[HotelController::class,'destroy']);
-Route::post('/admin/createHotel',[HotelController::class,'store']);
-Route::get('/admin/editHotelForm/{id}',[HotelController::class,'showEditForm']);
-Route::post('/admin/updateHotel/{id}',[HotelController::class,'update']);
+    Route::get("/admin/hotels",[AdminController::class,'hotels']);
+    Route::get('/admin/deleteHotel/{id}',[HotelController::class,'destroy']);
+    Route::post('/admin/createHotel',[HotelController::class,'store']);
+    Route::get('/admin/editHotelForm/{id}',[HotelController::class,'showEditForm']);
+    Route::post('/admin/updateHotel/{id}',[HotelController::class,'update']);
 
 
 //  --- Admin Transports
-Route::get("/admin/transports",[AdminController::class,"transports"]);
-Route::post("/admin/transport",[TransportController::class,'handleTransport']);
-Route::put("/transport",[TransportController::class,'handleTransport']);
-Route::get("deleteTransport/{id}",[TransportController::class,'destroy']);
-
+    Route::get("/admin/transports",[AdminController::class,"transports"]);
+    Route::post("/admin/transport",[TransportController::class,'handleTransport']);
+    Route::put("/transport",[TransportController::class,'handleTransport']);
+    Route::get("deleteTransport/{id}",[TransportController::class,'destroy']);
 });
-
