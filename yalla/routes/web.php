@@ -73,3 +73,4 @@ Route::put("/transport",[TransportController::class,'handleTransport']);
 Route::get("deleteTransport/{id}",[TransportController::class,'destroy']);
 
 });
+
