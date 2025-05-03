@@ -49,6 +49,8 @@ Route::get('/success',[PayementController::class,'success']);
 
 Route::get('/ticket/download/{payment}', [TicketController::class, 'downloadTicket'])->name('ticket.download');
 Route::view("/t","pdf.ticket");
+Route::view("/contact","contact");
+Route::view("/about","about");
 
 });
 
@@ -77,5 +79,3 @@ Route::middleware(AdminMiddleware::class)->group(function () {
     Route::put("/transport",[TransportController::class,'handleTransport']);
     Route::get("deleteTransport/{id}",[TransportController::class,'destroy']);
 });
-
-Route::view('/suspend', 'suspendAccount');
