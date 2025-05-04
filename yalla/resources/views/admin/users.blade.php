@@ -54,9 +54,9 @@
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                         @if($user['suspend'])
-                                        <button  class="text-green-500 hover:text-green-400">Activate</button>
+                                        <a href="/active-user/{{$user["id"]}}" class="text-green-500 hover:text-green-400">Activate</a>
                                         @else
-                                        <button  class="text-red-500 hover:text-red-400">Suspend</button>
+                                        <a href="/suspend-user" class="text-red-500 hover:text-red-400">Suspend</a>
                                         @endif
                                     </td>
                             </tr>

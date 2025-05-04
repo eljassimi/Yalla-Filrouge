@@ -79,4 +79,6 @@ Route::middleware(AdminMiddleware::class)->group(function () {
     Route::post("/admin/transport",[TransportController::class,'handleTransport']);
     Route::put("/transport",[TransportController::class,'handleTransport']);
     Route::get("deleteTransport/{id}",[TransportController::class,'destroy']);
+// --- Admin Users
+    Route::get('/active-user/{id}',[AdminController::class,'activeUser']);
 });

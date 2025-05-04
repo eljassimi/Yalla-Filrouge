@@ -57,4 +57,10 @@ class AdminController extends Controller
         $users = User::paginate(6);
         return view('admin.users', compact('users'));
     }
+
+    public function activeUser($id){
+        $user = User::find($id);
+        $user->suspend = false;
+        $user->save();
+    }
 }
