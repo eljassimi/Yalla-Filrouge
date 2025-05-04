@@ -81,4 +81,5 @@ Route::middleware(AdminMiddleware::class)->group(function () {
     Route::get("deleteTransport/{id}",[TransportController::class,'destroy']);
 // --- Admin Users
     Route::get('/active-user/{id}',[AdminController::class,'activeUser']);
+    Route::get('/suspend-user/{id}',[AdminController::class,'suspendUser']);
 });

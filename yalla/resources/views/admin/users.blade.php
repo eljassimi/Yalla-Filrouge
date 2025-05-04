@@ -56,7 +56,7 @@
                                         @if($user['suspend'])
                                         <a href="/active-user/{{$user["id"]}}" class="text-green-500 hover:text-green-400">Activate</a>
                                         @else
-                                        <a href="/suspend-user" class="text-red-500 hover:text-red-400">Suspend</a>
+                                        <a href="/suspend-user/"{{$user["id"]}}" class="text-red-500 hover:text-red-400">Suspend</a>
                                         @endif
                                     </td>
                             </tr>

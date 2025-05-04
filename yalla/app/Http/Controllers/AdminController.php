@@ -62,5 +62,12 @@ class AdminController extends Controller
         $user = User::find($id);
         $user->suspend = false;
         $user->save();
+        return redirect()->back();
+    }
+    public function suspendUser($id){
+        $user = User::find($id);
+        $user->suspend = true;
+        $user->save();
+        return redirect()->back();
     }
 }
