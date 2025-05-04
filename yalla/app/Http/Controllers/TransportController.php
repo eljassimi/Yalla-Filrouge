@@ -60,7 +60,7 @@ class TransportController extends Controller
 
     public function skipTransport(){
         session(['skip_transport' => true]);
-        return redirect('/transports');
+        return redirect('/checkout');
     }
 
     public function handleTransport(Request $request) {

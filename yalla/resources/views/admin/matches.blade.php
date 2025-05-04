@@ -323,7 +323,7 @@
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet-geosearch/dist/bundle.min.js"></script>
 <script>
-    let HotelForm = document.getElementById("hotel-form-modal");
+    let HotelForm = document.getElementById("match-form-modal");
     let Addticket = document.getElementById('add-ticket');
     let ticketContainer = document.getElementById("ticket-container")
 

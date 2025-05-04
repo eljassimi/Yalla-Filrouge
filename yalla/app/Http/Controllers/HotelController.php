@@ -76,7 +76,7 @@ class HotelController extends Controller
     public function destroy($id){
         $hotel = Hotel::findOrfail($id);
         $hotel->delete();
-        return redirect('/hotels');
+        return redirect('admin/hotels');
     }
     public function store(Request $request)
     {
@@ -173,7 +173,6 @@ class HotelController extends Controller
         $hotel->save();
 
         Room::where('hotel_id', $hotel->id)->delete();
-
         for ($i = 0; $i < count($request->room_type); $i++) {
             Room::create([
                 'hotel_id' => $hotel->id,
@@ -182,11 +181,11 @@ class HotelController extends Controller
                 'number_of_rooms' => $request->number_of_rooms[$i],
             ]);
         }
-        return redirect('/hotels');
+        return redirect('/admin/hotels');
     }
 
     public function showEditForm($id){
-        $hotel = Hotel::with('location')->with('room')->with('roomTypes')->findOrFail($id);
+        $hotel = Hotel::with('location')->with('room')->findOrFail($id);
         return view('admin.editHotelForm', compact('hotel'));
      }
 }

@@ -81,11 +81,11 @@
                                                 <input type="hidden" name="room_entry_id[]" value="{{ $room->id }}">
                                                 <div class="mb-3">
                                                     <label class="block text-sm font-medium text-lightgray mb-1">Room Type</label>
-                                                    <select name="room_type_id[]" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
-                                                        <option value="1" @selected($room->room_type_id == 1)>Standard</option>
-                                                        <option value="2" @selected($room->room_type_id == 2)>Royal</option>
-                                                        <option value="3" @selected($room->room_type_id == 3)>Deluxe</option>
-                                                        <option value="4" @selected($room->room_type_id == 4)>Suite</option>
+                                                    <select name="room_type[]" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
+                                                        <option value="Standard" @selected($room->room_type_id == 1)>Standard</option>
+                                                        <option value="Royal" @selected($room->room_type_id == 2)>Royal</option>
+                                                        <option value="Deluxe" @selected($room->room_type_id == 3)>Deluxe</option>
+                                                        <option value="Suite" @selected($room->room_type_id == 4)>Suite</option>
                                                     </select>
                                                 </div>
                                                 <div class="mb-3">
@@ -116,7 +116,7 @@
                             </div>
                         </div>
                         <div class="mt-8 pt-6 border-t border-gray-700 flex justify-end">
-                            <a href="/hotels" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg mr-2">Cancel</a>
+                            <a href="/admin/hotels" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg mr-2">Cancel</a>
                             <button type="submit" class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg">Save Changes</button>
                         </div>
                     </form>
