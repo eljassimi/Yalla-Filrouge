@@ -52,4 +52,9 @@ class AdminController extends Controller
         $transports = TransportService::paginate(6);
         return view('admin.transports', compact('transports'));
     }
+
+    public function users(){
+        $users = User::paginate(6);
+        return view('admin.users', compact('users'));
+    }
 }

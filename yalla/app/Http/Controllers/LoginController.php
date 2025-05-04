@@ -17,7 +17,9 @@ class LoginController extends Controller
         if (Auth::attempt($attributes)) {
             $request->session()->regenerate();
 
-            if (auth()->user()->is_admin) {
+            if(auth()->user()->suspend){
+                return redirect('/suspend');
+            }else if (auth()->user()->is_admin) {
                 return redirect('/admin/dashboard');
             } else {
                 return redirect('/');

@@ -16,7 +16,7 @@
                 <p class="text-sm text-lightgray">If you believe this is a mistake or would like to appeal this decision, please contact our support team.</p>
             </div>
 
-            <a href="/signin" class="inline-block w-full py-3 px-4 bg-primary hover:bg-opacity-90 text-white font-medium rounded-lg transition-colors duration-200">
+            <a href="/login" class="inline-block w-full py-3 px-4 bg-primary hover:bg-opacity-90 text-white font-medium rounded-lg transition-colors duration-200">
                 Return to Sign In
             </a>
         </div>

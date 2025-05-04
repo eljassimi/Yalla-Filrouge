@@ -16,12 +16,13 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::view('/login','login');
+Route::get('/login', function () {return view('login');});
 Route::post('/login',[LoginController::class,'login']);
 Route::get('/register', [RegisterController::class, 'index']);
 Route::view('/privacy', 'privacy');
 Route::get('/', function () {return view('home');});
 Route::post('/register', [RegisterController::class, 'register']);
+Route::get('/suspend', function () {return view('suspendAccount');});
 
 Route::middleware(RestrictHotelTransportAccess::class)->group(function (){
 Route::get('/hotels',[HotelController::class,'index']);
@@ -57,7 +58,7 @@ Route::view("/about","about");
 Route::middleware(AdminMiddleware::class)->group(function () {
 
     Route::get("/admin/dashboard",[AdminController::class,'dashboard']);
-    Route::view("/admin/users","admin.users");
+    Route::get('/admin/users',[AdminController::class,'users']);
 
 //  --- Admin Matches
     Route::get("/admin/matches",[AdminController::class,'matches']);

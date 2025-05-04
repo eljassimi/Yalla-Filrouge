@@ -16,11 +16,10 @@ return new class extends Migration
             $table->string('name');
             $table->float('price');
             $table->integer('seats');
-            $table->foreignId('event_id')->constrained();
+            $table->foreignId('event_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      */
