@@ -32,7 +32,7 @@
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="flex items-center">
                                             <div class="h-10 w-10 rounded-full bg-primary flex items-center justify-center text-white font-medium">
-                                                JD
+                                                {{ substr($user['name'],0,2)}}
                                             </div>
                                             <div class="ml-4">
                                                 <div class="text-sm font-medium">{{$user["name"]}}</div>
@@ -56,7 +56,7 @@
                                         @if($user['suspend'])
                                         <a href="/active-user/{{$user["id"]}}" class="text-green-500 hover:text-green-400">Activate</a>
                                         @else
-                                        <a href="/suspend-user/"{{$user["id"]}}" class="text-red-500 hover:text-red-400">Suspend</a>
+                                        <a href="/suspend-user/{{$user["id"]}}" class="text-red-500 hover:text-red-400">Suspend</a>
                                         @endif
                                     </td>
                             </tr>
